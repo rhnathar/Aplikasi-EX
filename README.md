@@ -1,7 +1,7 @@
 # Aplikasi-EX
 Platform penghubung antara pemilik limbah elektronik dengan pihak yang membutuhkan atau produsen elektronik tersebut
 
-## Kelompok Extra Kacau
+## Kelompok EXtra Safe
 Ketua Kelompok: **Muhammad Fajrulfalaq Izzulfirdausyah Suryaprabandaru**
 - Anggota 1: Muhammad Fajrulfalaq Izzulfirdausyah Suryaprabandaru - 22/494174/TK/54184
 - Anggota 2: Reihan Athar Zildaniar - 22/497191/TK/54482
