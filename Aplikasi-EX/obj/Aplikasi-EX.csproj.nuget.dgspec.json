@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lenovo\\source\\repos\\Aplikasi-EX\\Aplikasi-EX\\Aplikasi-EX.csproj": {}
+    "C:\\Users\\Lenovo\\Source\\Repos\\Aplikasi-EX\\Aplikasi-EX\\Aplikasi-EX.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lenovo\\source\\repos\\Aplikasi-EX\\Aplikasi-EX\\Aplikasi-EX.csproj": {
+    "C:\\Users\\Lenovo\\Source\\Repos\\Aplikasi-EX\\Aplikasi-EX\\Aplikasi-EX.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\Aplikasi-EX\\Aplikasi-EX\\Aplikasi-EX.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\Source\\Repos\\Aplikasi-EX\\Aplikasi-EX\\Aplikasi-EX.csproj",
         "projectName": "Aplikasi-EX",
-        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\Aplikasi-EX\\Aplikasi-EX\\Aplikasi-EX.csproj",
+        "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\Aplikasi-EX\\Aplikasi-EX\\Aplikasi-EX.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\Aplikasi-EX\\Aplikasi-EX\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo\\Source\\Repos\\Aplikasi-EX\\Aplikasi-EX\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
