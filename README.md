@@ -8,4 +8,4 @@ Ketua Kelompok: **Muhammad Fajrulfalaq Izzulfirdausyah Suryaprabandaru**
 - Anggota 3: Syaifullah Hilmi Ma'arij - 22/497775/TK/54568
 
 ## Class Diagram
-![Image](https://github.com/rhnathar/Aplikasi-EX/blob/main/img/ClassDiagram.jpg)
+![Image](https://github.com/rhnathar/Aplikasi-EX/blob/main/Aplikasi-EX/img/ClassDiagram.jpg)
