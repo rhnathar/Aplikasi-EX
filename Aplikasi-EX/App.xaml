@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:Aplikasi_EX"
              StartupUri="LoginPage.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/inputBox.xaml"/>
+                <!-- Update with the correct path -->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

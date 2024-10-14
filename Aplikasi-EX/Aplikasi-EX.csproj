@@ -9,12 +9,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="img\img-login.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="db\" />
     <Folder Include="Fonts\" />
     <Folder Include="ViewModel\" />
     <Folder Include="View\" />
     <Folder Include="Utilities\" />
-    <Folder Include="Styles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="img\img-login.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
