@@ -13,26 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Aplikasi_EX
+namespace Aplikasi_EX.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Account.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Account : UserControl
     {
-        public MainWindow()
+        public Account()
         {
             InitializeComponent();
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void Open_DetailProduct(object sender, MouseButtonEventArgs e)
-        {
-
         }
     }
 }

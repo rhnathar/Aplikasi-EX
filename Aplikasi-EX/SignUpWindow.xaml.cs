@@ -10,29 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Aplikasi_EX
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SignUpWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SignUpWindow : Window
     {
-        public MainWindow()
+        public SignUpWindow()
         {
             InitializeComponent();
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Open_DetailProduct(object sender, MouseButtonEventArgs e)
-        {
-
+            SignInWindow signInWindow = new SignInWindow();
+            signInWindow.Show();
+            this.Close();
         }
     }
 }

@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Aplikasi_EX
+namespace Aplikasi_EX.View
 {
     /// <summary>
-    /// Interaction logic for LoginPage.xaml
+    /// Interaction logic for ProductList.xaml
     /// </summary>
-    public partial class LoginPage : Window
+    public partial class ProductList : UserControl
     {
-        public LoginPage()
+        public ProductList()
         {
             InitializeComponent();
         }

@@ -9,19 +9,50 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="img\icon\BsReceipt.png" />
+    <None Remove="img\icon\cart.png" />
+    <None Remove="img\icon\search-icon.png" />
+    <None Remove="img\icon\User.png" />
     <None Remove="img\img-login.png" />
+    <None Remove="img\Logo.png" />
+    <None Remove="img\mainpage\ads1.png" />
+    <None Remove="img\mainpage\ads1new.png" />
+    <None Remove="img\mainpage\ads2.png" />
+    <None Remove="img\mainpage\rtx.png" />
+    <None Remove="img\mainpage\rtx2.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="db\" />
     <Folder Include="Fonts\" />
-    <Folder Include="ViewModel\" />
-    <Folder Include="View\" />
-    <Folder Include="Utilities\" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="img\icon\BsReceipt.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\icon\cart.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\icon\search-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\icon\User.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="img\img-login.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\Logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\mainpage\ads1new.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\mainpage\ads2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\mainpage\rtx2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

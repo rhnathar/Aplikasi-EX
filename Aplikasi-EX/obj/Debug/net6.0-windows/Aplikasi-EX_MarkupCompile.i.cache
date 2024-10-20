@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Syaifullah H\Source\Repos\Aplikasi-EX\Aplikasi-EX\obj\Debug\net6.0-windows\
+C:\Users\Lenovo\source\repos\Aplikasi-EX\Aplikasi-EX\obj\Debug\net6.0-windows\
 Aplikasi_EX
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\Syaifullah H\Source\Repos\Aplikasi-EX\Aplikasi-EX\App.xaml
-4-2023239668
+C:\Users\Lenovo\source\repos\Aplikasi-EX\Aplikasi-EX\App.xaml
+101665526193
 
-14-533613055
-194726069201
-LoginPage.xaml;MainWindow.xaml;Styles\button.xaml;Styles\inputBox.xaml;
+21-974273917
+194-1325968647
+MainWindow.xaml;SignInWindow.xaml;SignUpWindow.xaml;Styles\button.xaml;Styles\inputBox.xaml;Styles\PageStyle.xaml;Utilities\DataTemplate.xaml;View\Account.xaml;View\HomePage.xaml;View\ProductList.xaml;
 
 True
 
