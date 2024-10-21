@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="img\accountPage\info.png" />
+    <None Remove="img\accountPage\user-avatar.png" />
     <None Remove="img\icon\BsReceipt.png" />
     <None Remove="img\icon\cart.png" />
     <None Remove="img\icon\search-icon.png" />
@@ -28,6 +30,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="img\accountPage\info.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\accountPage\user-avatar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="img\icon\BsReceipt.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
