@@ -69,7 +69,7 @@
                     <Image Source="/img/icon/BsReceipt.png" Width="30" Height="32"  Margin="0 15 -90 0"/>
                 </StackPanel>
                 <StackPanel>
-                    <Image Source="/img/icon/User.png" Width="32" Height="32"  Margin="0 15 -180 0"/>
+                    <Image Source="/img/icon/User.png" Width="32" Height="32"  Margin="0 15 -180 0" MouseDown="Open_AccountInformation"/>
                 </StackPanel>
             </Grid>
         </Grid>

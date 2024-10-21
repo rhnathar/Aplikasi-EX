@@ -32,7 +32,17 @@ namespace Aplikasi_EX
 
         private void Open_DetailProduct(object sender, MouseButtonEventArgs e)
         {
+            DetailProduct detailProduct = new DetailProduct();
+            detailProduct.Show();
+            this.Close();
 
+        }
+
+        private void Open_AccountInformation(object sender, MouseButtonEventArgs e)
+        {
+            AccountTemp accountTemp = new AccountTemp();
+            accountTemp.Show();
+            this.Close();
         }
     }
 }

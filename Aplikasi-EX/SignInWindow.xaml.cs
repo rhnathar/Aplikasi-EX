@@ -31,7 +31,7 @@ namespace Aplikasi_EX
             this.Close();
         }
 
-        private void signInButton_Click(object sender, RoutedEventArgs e)
+        private void Open_MainWindow(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();

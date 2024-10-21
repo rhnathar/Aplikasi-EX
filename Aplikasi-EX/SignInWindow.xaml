@@ -29,7 +29,7 @@
                 <TextBox x:Name="txtPassword" Text="Masukkan passwordmu" Style="{StaticResource StyledTextBox}"/>
                 <Button Content="Forgot Password?" Width="100" Margin="0 10 -245 0" FontSize="11" Style="{StaticResource buttonLink}"/>
                 <Button x:Name="signInButton" Width="350" Height="36" Content="Sign In" Style="{StaticResource buttonMain}" Margin="-10 10 0 0" FontWeight="Bold"
-                        Click="signInButton_Click"
+                        Click="Open_MainWindow"
                         />
                 <Grid HorizontalAlignment="Center" Margin="0 10 0 0" Width="136">
                     <Grid.ColumnDefinitions>
