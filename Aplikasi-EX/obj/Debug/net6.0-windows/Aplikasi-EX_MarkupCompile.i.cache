@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\reiha\junpro\Aplikasi-EX\Aplikasi-EX\App.xaml
-131467889596
+11-1945145619
 
-28-693442753
+182081098108
 206529690741
-AccountTemp.xaml;DetailProduct.xaml;MainWindow.xaml;ProductInfoWindow.xaml;SignInWindow.xaml;SignUpWindow.xaml;Styles\button.xaml;Styles\inputBox.xaml;Styles\PageStyle.xaml;Utilities\DataTemplate.xaml;View\Account.xaml;View\HomePage.xaml;View\ProductList.xaml;
+AccountTemp.xaml;MainWindow.xaml;SignInWindow.xaml;SignUpWindow.xaml;Styles\button.xaml;Styles\inputBox.xaml;Styles\PageStyle.xaml;Utilities\DataTemplate.xaml;View\Account.xaml;View\HomePage.xaml;View\ProductList.xaml;
 
-False
+True
 
