@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Npgsql;
+using System.IO;
+using Microsoft.Extensions.Configuration;
 
 namespace Aplikasi_EX
 {
@@ -58,10 +61,48 @@ namespace Aplikasi_EX
             InitializeComponent();
         }
 
+        private string GetConnectionString()
+        {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "db"))
+                .AddJsonFile("appsettings.json");
+
+            IConfiguration configuration = builder.Build();
+            return configuration.GetConnectionString("AzureDbConnection");
+        }
+
         private bool ValidateLogin()
         {
-            return Username == "admin" && Password == "12345";
+            bool isValid = false;
+
+            try
+            {
+                string connectionString = GetConnectionString();
+                string query = "SELECT COUNT(1) FROM user_account WHERE email = @username AND password = @password";
+
+                using (var connection = new NpgsqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (var command = new NpgsqlCommand(query, connection))
+                    {
+                        // Set parameter values to prevent SQL injection
+                        command.Parameters.AddWithValue("@username", Username);
+                        command.Parameters.AddWithValue("@password", Password);
+
+                        // Execute the query and check if user exists
+                        int userCount = Convert.ToInt32(command.ExecuteScalar());
+                        isValid = userCount > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi kesalahan saat menghubungkan ke database: " + ex.Message);
+            }
+
+            return isValid;
         }
+
 
         public void Login()
         {
