@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:Aplikasi_EX.ViewModel"
+                    xmlns:view="clr-namespace:Aplikasi_EX.View">
+
+    <!-- Main Window -->
+    
+    
+    
+</ResourceDictionary>
