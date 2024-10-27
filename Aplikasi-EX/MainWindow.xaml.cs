@@ -18,31 +18,21 @@ namespace Aplikasi_EX
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
     public partial class MainWindow : Window
     {
+        private UserViewModel _viewModel;
+
         public MainWindow()
         {
             InitializeComponent();
+            _viewModel = new UserViewModel();
+            DataContext = _viewModel;
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void LoadUsersButton_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Open_DetailProduct(object sender, MouseButtonEventArgs e)
-        {
-            DetailProduct detailProduct = new DetailProduct();
-            detailProduct.Show();
-            this.Close();
-
-        }
-
-        private void Open_AccountInformation(object sender, MouseButtonEventArgs e)
-        {
-            AccountTemp accountTemp = new AccountTemp();
-            accountTemp.Show();
-            this.Close();
+            _viewModel.LoadUsers();
         }
     }
 }
