@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AccountTemp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DetailProduct.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SignInWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SignUpWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Account.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\HomePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ProductList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AccountTemp.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DetailProduct.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SignInWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SignUpWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\button.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\inputBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\PageStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Utilities\DataTemplate.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Account.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\HomePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ProductList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
