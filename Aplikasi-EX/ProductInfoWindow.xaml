@@ -1,0 +1,69 @@
+﻿<Window x:Class="Aplikasi_EX.ProductInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aplikasi_EX"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Background="#F5F7FF"
+        Title="ProductInfoWindow" Height="720" Width="1280">
+    <Grid Height="677px" Width="1040px" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="120px,26,120,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="82px"/>
+            <RowDefinition Height="595px"/>
+        </Grid.RowDefinitions>
+        <Grid Height="48" Width="48" VerticalAlignment="Top" HorizontalAlignment="Left" >
+            <Image Source="img/ArrowButton.png"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Border CornerRadius="6" BorderThickness="0" Background="#FFF" Grid.ColumnSpan="2"/>
+            <Grid Margin="24,24,0,0" Width="456" Height="307" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Image Source="img/rtx.png"/>
+                <Border CornerRadius="6" BorderThickness="1" Grid.ColumnSpan="2" BorderBrush="#959CB6"/>
+            </Grid>
+            <Grid Margin="24,361,0,0" Width="96" Height="96" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Image Source="img/rtx.png"/>
+                <Border CornerRadius="6" BorderThickness="1" Grid.ColumnSpan="2" BorderBrush="#1E4AE9"/>
+            </Grid>
+            <Grid Margin="144,361,0,0" Width="96" Height="96" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Image Source="img/rtx.png"/>
+                <Border CornerRadius="6" BorderThickness="1" Grid.ColumnSpan="2" BorderBrush="#E4E7E9"/>
+            </Grid>
+            <Grid Margin="264,361,0,0" Width="96" Height="96" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Image Source="img/rtx.png"/>
+                <Border CornerRadius="6" BorderThickness="1" Grid.ColumnSpan="2" BorderBrush="#E4E7E9"/>
+            </Grid>
+            <Grid Margin="384,361,0,0" Width="96" Height="96" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Image Source="img/rtx.png"/>
+                <Border CornerRadius="6" BorderThickness="1" Grid.ColumnSpan="2" BorderBrush="#E4E7E9"/>
+            </Grid>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="498,24,0,0" Width="520" Height="51" Text="ASUS ROG RTX 3070 Ti / RTX 3070TI ROG STRIX OC 8GB DDR6X" FontFamily="Inter" FontSize="20px" TextWrapping="Wrap"/>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="498,91,0,0" Width="49" Height="20" Text="Kondisi:" FontFamily="Inter" FontSize="14px" TextWrapping="Wrap" Foreground="#5F6C72"/>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="498,119,0,0" Width="56" Height="20" Text="Kategori:" FontFamily="Inter" FontSize="14px" TextWrapping="Wrap" Foreground="#5F6C72"/>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="552,91,0,0" Width="206" Height="20" Text="Bekas" FontFamily="Inter" FontSize="14px" TextWrapping="Wrap" Foreground="#191C1F" FontWeight="SemiBold"/>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="559,119,0,0" Width="199" Height="20" Text="Barang Elektronik" FontFamily="Inter" FontSize="14px" TextWrapping="Wrap" Foreground="#191C1F" FontWeight="SemiBold"/>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="834,91,0,0" Width="31" Height="20" Text="Stok:" FontFamily="Inter" FontSize="14px" TextWrapping="Wrap" Foreground="#5F6C72"/>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="870,91,0,0" Width="44" Height="20" Text="5" FontFamily="Inter" FontSize="14px" TextWrapping="Wrap" Foreground="#1E4AE9" FontWeight="SemiBold"/>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="834,119,0,0" Width="72" Height="20" Text="Dikirim dari " FontFamily="Inter" FontSize="14px" TextWrapping="Wrap" Foreground="#5F6C72"/>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="909,119,0,0" Width="44" Height="20" Text="Bogor" FontFamily="Inter" FontSize="14px" TextWrapping="Wrap" Foreground="#191C1F" FontWeight="SemiBold"/>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="498,155,0,0" Width="260" Height="32" Text="Rp. 5.000.000" FontFamily="Inter" FontSize="24px" TextWrapping="Wrap" Foreground="#1E4AE9" FontWeight="SemiBold"/>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="498,195,0,0" Width="130" Height="20" Text="Deskripsi" FontFamily="Inter" FontSize="16px" TextWrapping="Wrap" Foreground="#191C1F" FontWeight="SemiBold"/>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="498,231,0,0" Width="519" Height="226" Text="Kartu Grafis Rangkaian GeForce RTXTM 3070 didukung oleh Ampere — arsitektur NVIDIA generasi ke-2 RTX. Dibuat dengan Ray Tracing Core dan Tensor Core yang disempurnakan, multiprosesor streaming baru, dan memori berkecepatan tinggi. Perangkat ini menghadirkan keunggulan yang Anda perlukan untuk menjalankan game tersulit." FontFamily="Inter" FontSize="14px" TextWrapping="Wrap" Foreground="#5F6C72" TextAlignment="Justify"/>
+            <Border Width="131" Height="56" Margin="617,512,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="6" BorderThickness="1" BorderBrush="#E4E7E9">
+                <StackPanel Orientation="Horizontal">
+                    <Button Width="43" Height="56" HorizontalAlignment="Left" Content="-" FontSize="42" VerticalContentAlignment="Top" Background="{x:Null}" BorderThickness="0" FontWeight="SemiBold" FontFamily="Inter"/>
+                    <TextBlock Width="43" Text="01" TextAlignment="Center" Height="22" FontFamily="Inter" FontSize="16" Foreground="#475156"/>
+                    <Button Width="43" Height="56" Margin="0,0,0,0" HorizontalAlignment="Left" Content="+" FontSize="33" VerticalContentAlignment="Top" Background="{x:Null}" BorderThickness="0"/>
+                </StackPanel>
+            </Border>
+            <Border Margin="766,512,0,0" Width="251" Height="56" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#1E4AE9" CornerRadius="6" BorderThickness="0">
+                <Button Background="{x:Null}" BorderThickness="0" Foreground="#FFF" Content="BELI SEKARANG" FontFamily="Inter" FontWeight="SemiBold" FontSize="14px"/>
+            </Border>
+            <Grid.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Opacity="0.3" />
+            </Grid.Effect>
+
+        </Grid>
+    </Grid>
+</Window>
