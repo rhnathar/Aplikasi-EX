@@ -168,5 +168,10 @@ namespace Aplikasi_EX
                 textBox.Text = "Masukkan passwordmu";
             }
         }
+
+        private void close_app(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

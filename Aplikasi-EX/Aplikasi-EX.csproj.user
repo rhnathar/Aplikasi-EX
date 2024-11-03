@@ -36,10 +36,16 @@
     <Page Update="Styles\button.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Styles\imgClose.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Styles\inputBox.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\PageStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\radioButton.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Utilities\DataTemplate.xaml">

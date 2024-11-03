@@ -10,6 +10,7 @@
         Title="EX E-Commerce" Height="720" Width="1280"
         Background="#F5F7FF"
         WindowStartupLocation="CenterScreen"
+        Icon="/icon/icon-ex.ico"
         >
 
     <!-- Connection ke VM -->

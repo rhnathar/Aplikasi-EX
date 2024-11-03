@@ -30,5 +30,10 @@ namespace Aplikasi_EX
             signInWindow.Show();
             this.Close();
         }
+
+        private void close_app(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

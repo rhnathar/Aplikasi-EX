@@ -1,0 +1,39 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Custom RadioButton Style -->
+    <Style x:Key="radioButton" TargetType="RadioButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <StackPanel Orientation="Horizontal">
+                        <Grid Width="15" Height="15">
+                            <!-- Outer Circle -->
+                            <Ellipse Stroke="#D4D7E3" StrokeThickness="1"/>
+
+                            <!-- Inner Circle (visible only when selected) -->
+                            <Ellipse Width="8" Height="8" Fill="#1E4AE9" Visibility="Collapsed"/>
+
+                            <!-- Small white-bordered circle inside for selected state -->
+                            <Ellipse Width="10" Height="10" Stroke="White" StrokeThickness="1" Fill="Transparent" Visibility="Collapsed">
+                                <Ellipse.Style>
+                                    <Style TargetType="Ellipse">
+                                        <Style.Triggers>
+                                            <!-- Show inner circles when selected -->
+                                            <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}}" Value="True">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Ellipse.Style>
+                            </Ellipse>
+                        </Grid>
+
+                        <TextBlock Text="{TemplateBinding Content}" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
