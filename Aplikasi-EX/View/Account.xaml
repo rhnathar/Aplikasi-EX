@@ -3,10 +3,140 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Aplikasi_EX.View"
+             xmlns:vm="clr-namespace:Aplikasi_EX.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             d:DesignHeight="720" d:DesignWidth="1280"
+             Style="{StaticResource Page_Style}"
+             >
+
+    <UserControl.DataContext>
+        <vm:AccountVM/>
+    </UserControl.DataContext>
+
+    <Grid Background="#F5F7FF" >
+
+        <!--Start of main content-->
+        <Grid>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Grid VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 40 0 0">
+                    <Grid.Effect>
+                        <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Opacity="0.3" />
+                    </Grid.Effect>
+
+                    <Border Width="1060" Height="640" Background="White" CornerRadius="16">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <!--Title-->
+                            <Grid Grid.Row="0" Margin="16">
+                                <TextBlock Text="Halo, Kevin" FontSize="18" FontWeight="SemiBold" Foreground="Black"/>
+                            </Grid>
+
+                            <!--Akun section-->
+                            <Grid Grid.Row="1">
+                                <!--Informasi akun-->
+                                <Border Grid.Column="0" BorderBrush="LightGray" BorderThickness="1" Margin="20 0 20 20" Height="312" Width="420" HorizontalAlignment="Left">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <!--Title-->
+                                        <Grid Grid.Row="0">
+                                            <Border BorderBrush="LightGray" Height="40" BorderThickness="1">
+                                                <TextBlock Text="INFORMASI AKUN" FontSize="14" FontWeight="Regular" Margin="10"/>
+                                            </Border>
+                                        </Grid>
+
+                                        <!--Content-->
+                                        <Grid Grid.Row="1">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+                                            <!--Foto dan nama profile-->
+                                            <Grid Grid.Row="0" Margin="20 10 20 0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Grid Grid.Column="0">
+                                                    <Image Source="/img/accountPage/user-avatar.png" Width="40" Height="40" Margin="10"/>
+                                                </Grid>
+                                                <Grid Grid.Column="1">
+                                                    <TextBlock Text="Kevin Gilbert" FontWeight="SemiBold" FontSize="16" Margin="10" VerticalAlignment="Center"/>
+                                                </Grid>
+                                            </Grid>
+
+                                            <!--more information-->
+                                            <Grid Grid.Row="1" Margin="20 10 20 0">
+                                                <StackPanel Margin="10 0 10 0">
+                                                    <TextBlock Text="East Tejturi Bazar, Word No. 04, Road No. 13/x, House no. 1320/C, Flat No. 5D, Dhaka - 1200, Bangladesh" TextWrapping="Wrap" FontSize="14" Margin="0 0 0 0"/>
+                                                    <TextBlock Text="Email: kevin.gilbert@gmail.com" FontSize="14" Margin="0 8 0 0"/>
+                                                    <TextBlock Text="Username: kevin"  Margin="0 8 0 0" FontSize="14"/>
+                                                    <TextBlock Text="Phone: +1-202-555-0118"  Margin="0 8 0 0" FontSize="14"/>
+                                                </StackPanel>
+                                            </Grid>
+
+                                            <Grid Grid.Row="2" Margin="30 20 0 20">
+                                                <Button Content="Edit Akun" Width="100" Height="32" BorderThickness="1.25" HorizontalAlignment="Left" Background="White" BorderBrush="#1E4AE9" Foreground="#1E4AE9"/>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                            
+                            <!--Riwayat-->
+                            <Grid Grid.Row="2" Height="200" Margin="020">
+                                <DataGrid x:Name="OrderDataGrid" AutoGenerateColumns="False" HeadersVisibility="Column" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                    <DataGrid.Columns>
+                                        <!-- Order ID Column -->
+                                        <DataGridTextColumn Header="ORDER ID" Binding="{Binding OrderId}" Width="*"/>
+
+                                        <!-- Name Column -->
+                                        <DataGridTextColumn Header="NAME" Binding="{Binding Name}" Width="*"/>
+
+                                        <!-- Status Column with color coding -->
+                                        <DataGridTextColumn Header="STATUS" Width="*" Binding="{Binding Status}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="Black"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Status}" Value="IN PROGRESS">
+                                                            <Setter Property="Foreground" Value="Blue"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Status}" Value="COMPLETED">
+                                                            <Setter Property="Foreground" Value="Green"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Status}" Value="CANCELED">
+                                                            <Setter Property="Foreground" Value="Red"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                        <!-- Last Updated (Date) Column -->
+                                        <DataGridTextColumn Header="DATE" Binding="{Binding LastUpdated}" Width="*"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+
+                        </Grid>
+                    </Border>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+
+
+
     </Grid>
 </UserControl>

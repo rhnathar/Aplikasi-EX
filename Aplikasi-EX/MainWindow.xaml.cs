@@ -10,7 +10,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Aplikasi_EX
@@ -18,21 +17,11 @@ namespace Aplikasi_EX
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-
     public partial class MainWindow : Window
     {
-        private UserViewModel _viewModel;
-
         public MainWindow()
         {
             InitializeComponent();
-            _viewModel = new UserViewModel();
-            DataContext = _viewModel;
-        }
-
-        private void LoadUsersButton_Click(object sender, RoutedEventArgs e)
-        {
-            _viewModel.LoadUsers();
         }
     }
 }

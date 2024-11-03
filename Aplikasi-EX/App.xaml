@@ -9,6 +9,8 @@
                 <ResourceDictionary Source="Styles/inputBox.xaml"/>
                 <ResourceDictionary Source="Styles/PageStyle.xaml"/>
                 <ResourceDictionary Source="Styles/button.xaml"/>
+
+                <ResourceDictionary Source="Utilities/DataTemplate.xaml"/>
                 <!-- Update with the correct path -->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

@@ -24,5 +24,6 @@ namespace Aplikasi_EX.View
         {
             InitializeComponent();
         }
+
     }
 }

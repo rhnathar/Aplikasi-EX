@@ -13,6 +13,7 @@
     <None Remove="img\accountPage\user-avatar.png" />
     <None Remove="img\icon\BsReceipt.png" />
     <None Remove="img\icon\cart.png" />
+    <None Remove="img\icon\home.png" />
     <None Remove="img\icon\search-icon.png" />
     <None Remove="img\icon\User.png" />
     <None Remove="img\img-login.png" />
@@ -20,8 +21,14 @@
     <None Remove="img\mainpage\ads1.png" />
     <None Remove="img\mainpage\ads1new.png" />
     <None Remove="img\mainpage\ads2.png" />
+    <None Remove="img\mainpage\camera.png" />
+    <None Remove="img\mainpage\computer.png" />
+    <None Remove="img\mainpage\gaming.png" />
+    <None Remove="img\mainpage\keyboard.png" />
     <None Remove="img\mainpage\rtx.png" />
     <None Remove="img\mainpage\rtx2.png" />
+    <None Remove="img\mainpage\smartphone.png" />
+    <None Remove="img\mainpage\tv.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,6 +55,9 @@
     <Resource Include="img\icon\cart.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="img\icon\home.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="img\icon\search-icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -66,7 +76,25 @@
     <Resource Include="img\mainpage\ads2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="img\mainpage\camera.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\mainpage\computer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\mainpage\gaming.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\mainpage\keyboard.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="img\mainpage\rtx2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\mainpage\smartphone.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\mainpage\tv.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
