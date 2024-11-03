@@ -38,6 +38,7 @@
     <None Remove="img\mainpage\rtx2.png" />
     <None Remove="img\mainpage\smartphone.png" />
     <None Remove="img\mainpage\tv.png" />
+    <None Remove="img\rtx.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -106,6 +107,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="img\mainpage\tv.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\rtx.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

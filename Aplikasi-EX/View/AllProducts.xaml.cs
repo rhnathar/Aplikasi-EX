@@ -16,21 +16,13 @@ using System.Windows.Shapes;
 namespace Aplikasi_EX.View
 {
     /// <summary>
-    /// Interaction logic for HomePage.xaml
+    /// Interaction logic for AllProducts.xaml
     /// </summary>
-    public partial class HomePage : UserControl
+    public partial class AllProducts : UserControl
     {
-        public HomePage()
+        public AllProducts()
         {
             InitializeComponent();
-        }
-
-        private void CategoryButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-            /*var button = sender as Button;
-            var category = button?.Tag.ToString();
-            MainFrame.Navigate(new Tes(category));*/
         }
     }
 }

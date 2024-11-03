@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Aplikasi_EX"
         mc:Ignorable="d"
-        WindowStyle="None"
         Background="#F5F7FF"
         Title="ProductInfoWindow" Height="720" Width="1280">
     <Grid Height="677px" Width="1040px" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="120px,26,120,0">
@@ -19,7 +18,7 @@
         <Grid Grid.Row="1">
             <Border CornerRadius="6" BorderThickness="0" Background="#FFF" Grid.ColumnSpan="2"/>
             <Grid Margin="24,24,0,0" Width="456" Height="307" VerticalAlignment="Top" HorizontalAlignment="Left">
-                <Image Source="img/rtx.png"/>
+                <Image Source="/img/rtx.png"/>
                 <Border CornerRadius="6" BorderThickness="1" Grid.ColumnSpan="2" BorderBrush="#959CB6"/>
             </Grid>
             <Grid Margin="24,361,0,0" Width="96" Height="96" HorizontalAlignment="Left" VerticalAlignment="Top">

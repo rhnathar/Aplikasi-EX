@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Lenovo\source\repos\Aplikasi-EX\Aplikasi-EX\App.xaml
-122081368764
+13-43219921
 
-19-1039246515
+21618153459
 206497195088
-MainWindow.xaml;ProductInfoWindow.xaml;SignInWindow.xaml;SignUpWindow.xaml;Styles\button.xaml;Styles\imgClose.xaml;Styles\inputBox.xaml;Styles\PageStyle.xaml;Styles\radioButton.xaml;Utilities\DataTemplate.xaml;View\Account.xaml;View\HomePage.xaml;
+MainWindow.xaml;ProductInfoWindow.xaml;SignInWindow.xaml;SignUpWindow.xaml;Styles\button.xaml;Styles\imgClose.xaml;Styles\inputBox.xaml;Styles\PageStyle.xaml;Styles\radioButton.xaml;Utilities\DataTemplate.xaml;View\Account.xaml;View\AllProducts.xaml;View\HomePage.xaml;
 
 False
 

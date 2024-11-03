@@ -27,10 +27,12 @@ namespace Aplikasi_EX.ViewModel
         //buyer POV
         public ICommand HomePageCommand { get; set; }
         public ICommand AccountCommand { get; set; }
+        public ICommand AllProductCommand { get; set; }
 
 
         private void HomePage(object obj) => CurrentView = new HomePageVM();
         private void Account(object obj) => CurrentView = new AccountVM();
+        private void AllProduct(object obj) => CurrentView = new AllProductsVM();
 
 
         /*public ICommand SignUpCommand { get; set; }
@@ -47,6 +49,7 @@ namespace Aplikasi_EX.ViewModel
         {
             HomePageCommand = new RelayCommand(HomePage);
             AccountCommand = new RelayCommand(Account);
+            AllProductCommand = new RelayCommand(AllProduct);
             CurrentView = new HomePageVM();
         }
     }

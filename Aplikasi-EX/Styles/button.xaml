@@ -54,4 +54,43 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="CategoryButtonStyle" TargetType="Button">
+        <!-- Default cursor -->
+        <Setter Property="Cursor" Value="Arrow"/>
+        <Setter Property="Width" Value="160"/>
+        <Setter Property="Height" Value="200"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="BorderBrush" Value="#E4E7E9"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Opacity="0.3" />
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="8" BorderBrush="{TemplateBinding BorderBrush}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Image and Description Content Goes Here -->
+                            <ContentPresenter/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <!-- Hand cursor on hover -->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
 </ResourceDictionary>

@@ -11,7 +11,11 @@
     <DataTemplate DataType="{x:Type vm:AccountVM}">
         <view:Account/>
     </DataTemplate>
-    
-    
-    
+
+    <DataTemplate DataType="{x:Type vm:AllProductsVM}">
+        <view:AllProducts/>
+    </DataTemplate>
+
+
+
 </ResourceDictionary>
