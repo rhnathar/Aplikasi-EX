@@ -2,7 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Aplikasi_EX"
-             StartupUri="ProductInfoWindow.xaml">
+             xmlns:conv="clr-namespace:Aplikasi_EX.Converters"
+             StartupUri="/View/AllProducts.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -11,10 +12,9 @@
                 <ResourceDictionary Source="Styles/button.xaml"/>
                 <ResourceDictionary Source="Styles/radioButton.xaml"/>
                 <ResourceDictionary Source="Styles/imgClose.xaml"/>
-
                 <ResourceDictionary Source="Utilities/DataTemplate.xaml"/>
-                <!-- Update with the correct path -->
             </ResourceDictionary.MergedDictionaries>
+            <conv:ByteArrayToImageConverter x:Key="ByteArrayToImageConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

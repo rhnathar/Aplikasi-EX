@@ -12,19 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Aplikasi_EX.ViewModel;
 
 namespace Aplikasi_EX.View
 {
     /// <summary>
-    /// Interaction logic for AllProducts.xaml
+    /// Interaction logic for ProductCard.xaml
     /// </summary>
-    public partial class AllProducts : UserControl
+    public partial class ProductCard : UserControl
     {
-        public AllProducts()
+        public ProductCard()
         {
             InitializeComponent();
-            DataContext = new AllProductsVM();
         }
     }
 }

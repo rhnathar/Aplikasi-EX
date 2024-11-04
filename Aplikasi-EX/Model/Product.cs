@@ -13,8 +13,11 @@ namespace Aplikasi_EX.Model
         public decimal Price { get; set; }
         public DateTime DateAdded { get; set; }
         public string Description { get; set; }
-        public byte[] ProductImage { get; set; }
+        //public byte[] ProductImage { get; set; } -> ntar waktu connect db
         public int SellerID { get; set; }
         public int Quantity { get; set; }
+
+        //nyoba pake gambar local
+        public string ImagePath { get; set; }
     }
 }
