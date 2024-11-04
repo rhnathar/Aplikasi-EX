@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:Aplikasi_EX.Utilities"
             xmlns:vm="clr-namespace:Aplikasi_EX.ViewModel"
              xmlns:view="clr-namespace:Aplikasi_EX.View"
-             xmlns:conv="clr-namespace:Aplikasi_EX.Converters"
+             xmlns:utils="clr-namespace:Aplikasi_EX.Utilities"
+             Background="#F5F7FF"
             mc:Ignorable="d" 
             d:DesignHeight="650" d:DesignWidth="1280"
             Style="{StaticResource Page_Style}"
@@ -16,10 +17,10 @@
     </UserControl.DataContext>
 
     <UserControl.Resources>
-        <conv:ByteArrayToImageConverter x:Key="ByteArrayToImageConverter"/>
+        <utils:ByteArrayToImageConverter x:Key="ByteArrayToImageConverter"/>
     </UserControl.Resources>
     
-    <Grid Background="White">
+    <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <Grid>
                 <Grid.RowDefinitions>

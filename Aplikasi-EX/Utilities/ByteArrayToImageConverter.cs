@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
 
-namespace Aplikasi_EX.Converters
+namespace Aplikasi_EX.Utilities
 {
     public class ByteArrayToImageConverter : IValueConverter
     {
