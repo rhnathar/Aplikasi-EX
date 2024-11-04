@@ -13,7 +13,7 @@
             <RowDefinition Height="595px"/>
         </Grid.RowDefinitions>
         <Grid Height="48" Width="48" VerticalAlignment="Top" HorizontalAlignment="Left" >
-            <Image Source="img/ArrowButton.png"/>
+            <Image Source="img/icon/ArrowButton.png"/>
         </Grid>
         <Grid Grid.Row="1">
             <Border CornerRadius="6" BorderThickness="0" Background="#FFF" Grid.ColumnSpan="2"/>
