@@ -27,5 +27,30 @@ namespace Aplikasi_EX.View
             InitializeComponent();
             DataContext = new DetailProductVM(); // Using dummy data
         }
+
+        private void decreaseButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Parse the current quantity from the TextBlock
+            if (int.TryParse(QuantityTextBlock.Text, out int quantity))
+            {
+                // Decrease the quantity by 1, ensuring it doesn't go below 1
+                if (quantity > 1)
+                {
+                    quantity--;
+                    QuantityTextBlock.Text = quantity.ToString();
+                }
+            }
+        }
+
+        private void increaseButton_CLick(object sender, RoutedEventArgs e)
+        {
+            // Parse the current quantity from the TextBlock
+            if (int.TryParse(QuantityTextBlock.Text, out int quantity))
+            {
+                // Increase the quantity by 1
+                quantity++;
+                QuantityTextBlock.Text = quantity.ToString();
+            }
+        }
     }
 }

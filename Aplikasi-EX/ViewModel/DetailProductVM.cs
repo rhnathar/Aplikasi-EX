@@ -79,7 +79,8 @@ namespace Aplikasi_EX.ViewModel
             Stock = 5;
             Location = "Bogor";
             Price = 5000000;
-            Description = "Powerful GPU suitable for gaming and professional work.";
+            Description = "Kartu Grafis Rangkaian GeForce RTXTM 3070 didukung oleh Ampere — arsitektur NVIDIA generasi ke-2 RTX. Dibuat dengan Ray Tracing Core dan Tensor Core yang disempurnakan, " +
+                "multiprosesor streaming baru, dan memori berkecepatan tinggi. Perangkat ini menghadirkan keunggulan yang Anda perlukan untuk menjalankan game tersulit.";
             ProductImage = "/img/rtx.png"; // Relative path to image
         }
 
