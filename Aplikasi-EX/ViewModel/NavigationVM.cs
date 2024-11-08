@@ -35,15 +35,7 @@ namespace Aplikasi_EX.ViewModel
         private void AllProduct(object obj) => CurrentView = new AllProductsVM();
 
 
-        /*public ICommand SignUpCommand { get; set; }
-        public ICommand SignInCommand { get; set; }
-
-
-        private void SignUp(object obj) => CurrentView = new SignUpVM();
-        private void SignIn(object obj) => CurrentView = new SignInVM();
-
-        }*/
-
+        
 
         public NavigationVM()
         {

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Aplikasi_EX"
              xmlns:utils="clr-namespace:Aplikasi_EX.Utilities"
-             StartupUri="/View/DetailProduct.xaml">
+             StartupUri="View/SellerOrderView.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -13,6 +13,7 @@
                 <ResourceDictionary Source="Styles/radioButton.xaml"/>
                 <ResourceDictionary Source="Styles/imgClose.xaml"/>
                 <ResourceDictionary Source="Utilities/DataTemplate.xaml"/>
+                <ResourceDictionary Source="Styles/dataGrid.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <utils:ByteArrayToImageConverter x:Key="ByteArrayToImageConverter"/>
         </ResourceDictionary>

@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using Aplikasi_EX.Model;
+using Aplikasi_EX.Utilities;
 
 namespace Aplikasi_EX.ViewModel
 {
-    class AccountVM : Utilities.ViewModelBase
+    class SellerAccountVM : Utilities.ViewModelBase
     {
-        // User account information properties
         private string _greeting;
         private string _fullName;
         private string _address;
@@ -14,10 +13,7 @@ namespace Aplikasi_EX.ViewModel
         private string _username;
         private string _phoneNumber;
 
-        // Orders collection
-        public ObservableCollection<Order> Orders { get; set; }
-
-        // Properties for user details
+        // Properties for seller account details
         public string Greeting
         {
             get => _greeting;
@@ -55,24 +51,15 @@ namespace Aplikasi_EX.ViewModel
         }
 
         // Constructor to initialize dummy data
-        public AccountVM()
+        public SellerAccountVM()
         {
-            // Initialize dummy data for user details
-            Greeting = "Halo, Kevin";
+            // Dummy data for testing
+            Greeting = "Halo, Seller Kevin";
             FullName = "Kevin Gilbert";
             Address = "East Tejturi Bazar, Word No. 04, Road No. 13/x, House no. 1320/C, Flat No. 5D, Dhaka - 1200, Bangladesh";
-            Email = "kevin.gilbert@gmail.com";
-            Username = "kevin";
-            PhoneNumber = "+1-202-555-0118";
-
-            // Initialize dummy data for Orders
-            Orders = new ObservableCollection<Order>
-            {
-                new Order { OrderID = 1001, Name = "Laptop ASUS", Status = "IN PROGRESS", LastUpdated = DateTime.Now.AddDays(-1) },
-                new Order { OrderID = 1002, Name = "Keyboard Razer", Status = "COMPLETED", LastUpdated = DateTime.Now.AddDays(-5) },
-                new Order { OrderID = 1003, Name = "Mouse Logitech", Status = "CANCELED", LastUpdated = DateTime.Now.AddDays(-10) },
-                new Order { OrderID = 1004, Name = "Monitor Samsung", Status = "IN PROGRESS", LastUpdated = DateTime.Now.AddDays(-2) }
-            };
+            Email = "seller.kevin@gmail.com";
+            Username = "seller_kevin";
+            PhoneNumber = "+1-202-555-0123";
         }
     }
 }
