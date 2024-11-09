@@ -19,5 +19,7 @@ namespace Aplikasi_EX.Model
 
         //nyoba pake gambar local
         public string ImagePath { get; set; }
+        //temporary placeholder buat binding category
+        public string Category { get; set; }
     }
 }

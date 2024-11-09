@@ -22,6 +22,9 @@
     <Compile Update="View\Account.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\AddProductPopUp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\AllProducts.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -34,10 +37,16 @@
     <Compile Update="View\ProductCard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\ProductCardSeller.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\SellerAccount.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\SellerOrderView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\SellerProduct.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -78,6 +87,9 @@
     <Page Update="View\Account.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\AddProductPopUp.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\AllProducts.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -90,10 +102,16 @@
     <Page Update="View\ProductCard.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\ProductCardSeller.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\SellerAccount.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\SellerOrderView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\SellerProduct.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

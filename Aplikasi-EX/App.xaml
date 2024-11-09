@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Aplikasi_EX"
              xmlns:utils="clr-namespace:Aplikasi_EX.Utilities"
-             StartupUri="View/SellerOrderView.xaml">
+             StartupUri="View/SellerProduct.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
