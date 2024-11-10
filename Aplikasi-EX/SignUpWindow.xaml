@@ -20,7 +20,7 @@
         </Grid.ColumnDefinitions>
 
         <Border CornerRadius="10 0 0 10" Background="#fff">
-            <StackPanel VerticalAlignment="Center" Margin="0 0 0 90">
+            <StackPanel VerticalAlignment="Center" Margin="0 0 0 0">
                 <Image Source="/img/Logo.png" Width="40" Height="40" Margin="-310 0 0 0"/>
                 <TextBlock Text="Bergabung ke EX Platform" FontSize="24" FontWeight="Bold" Margin="60 0 0 0" Foreground="#1E4AE9"/>
                 <TextBlock Text="Nama" FontSize="16" Margin="60 20 0 0" FontWeight="SemiBold"/>
@@ -29,6 +29,8 @@
                 <TextBox x:Name="txtEmail" Text="Masukkan passwordmu" Style="{StaticResource StyledTextBox}"/>
                 <TextBlock Text="Alamat" FontSize="16" Margin="60 10 0 0" FontWeight="SemiBold"/>
                 <TextBox x:Name="txtAlamat" Text="Masukkan alamatmu" Style="{StaticResource StyledTextBox}"/>
+                <TextBlock Text="No. Telephone" FontSize="16" Margin="60 10 0 0" FontWeight="SemiBold"/>
+                <TextBox x:Name="txtNoPhone" Text="Masukkan nomormu" Style="{StaticResource StyledTextBox}"/>
             </StackPanel>
         </Border>
         
@@ -39,7 +41,7 @@
                        MouseUp="close_app"
                        />
 
-                <StackPanel VerticalAlignment="Center"  Margin="0 0 0 -50">
+                <StackPanel VerticalAlignment="Center"  Margin="0 0 0 -60">
                     <TextBlock Text="Password" FontSize="16" Margin="60 10 0 0" FontWeight="SemiBold"/>
                     <TextBox x:Name="txtPassword" Text="Masukkan passwordmu" Style="{StaticResource StyledTextBox}"/>
                     <TextBlock Text="Konfirmasi Password" FontSize="16" Margin="60 10 0 0" FontWeight="SemiBold"/>
