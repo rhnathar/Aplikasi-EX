@@ -6,64 +6,92 @@ namespace Aplikasi_EX.ViewModel
 {
     class AccountVM : Utilities.ViewModelBase
     {
-        // User account information properties
-        private string _greeting;
-        private string _fullName;
-        private string _address;
-        private string _email;
-        private string _username;
-        private string _phoneNumber;
+        private User _currentUser;
+
+        public User CurrentUser
+        {
+            get => _currentUser;
+            set { _currentUser = value; OnPropertyChanged(nameof(CurrentUser));}
+        }
 
         // Orders collection
         public ObservableCollection<Order> Orders { get; set; }
 
         // Properties for user details
-        public string Greeting
-        {
-            get => _greeting;
-            set { _greeting = value; OnPropertyChanged(nameof(Greeting)); }
-        }
+        public string Greeting => $"Hello, {CurrentUser?.Name}";
 
         public string FullName
         {
-            get => _fullName;
-            set { _fullName = value; OnPropertyChanged(nameof(FullName)); }
+            get => CurrentUser?.Name;
+            set
+            {
+                if (CurrentUser != null)
+                {
+                    CurrentUser.Name = value;
+                    OnPropertyChanged(nameof(FullName));
+                }
+            }
         }
 
         public string Address
         {
-            get => _address;
-            set { _address = value; OnPropertyChanged(nameof(Address)); }
+            get => CurrentUser?.Address;
+            set
+            {
+                if (CurrentUser != null)
+                {
+                    CurrentUser.Address = value;
+                    OnPropertyChanged(nameof(Address));
+                }
+            }
         }
 
         public string Email
         {
-            get => _email;
-            set { _email = value; OnPropertyChanged(nameof(Email)); }
+            get => CurrentUser?.Email;
+            set
+            {
+                if (CurrentUser != null)
+                {
+                    CurrentUser.Email = value;
+                    OnPropertyChanged(nameof(Email));
+                }
+            }
         }
 
         public string Username
         {
-            get => _username;
-            set { _username = value; OnPropertyChanged(nameof(Username)); }
+            get => CurrentUser?.Name; // Assuming Username is the same as Name
+            set
+            {
+                if (CurrentUser != null)
+                {
+                    CurrentUser.Name = value;
+                    OnPropertyChanged(nameof(Username));
+                }
+            }
         }
 
         public string PhoneNumber
         {
-            get => _phoneNumber;
-            set { _phoneNumber = value; OnPropertyChanged(nameof(PhoneNumber)); }
+            get => CurrentUser?.PhoneNumber;
+            set
+            {
+                if (CurrentUser != null)
+                {
+                    CurrentUser.PhoneNumber = value;
+                    OnPropertyChanged(nameof(PhoneNumber));
+                }
+            }
         }
 
         // Constructor to initialize dummy data
         public AccountVM()
         {
-            // Initialize dummy data for user details
-            Greeting = "Halo, Kevin";
-            FullName = "Kevin Gilbert";
-            Address = "East Tejturi Bazar, Word No. 04, Road No. 13/x, House no. 1320/C, Flat No. 5D, Dhaka - 1200, Bangladesh";
-            Email = "kevin.gilbert@gmail.com";
-            Username = "kevin";
-            PhoneNumber = "+1-202-555-0118";
+            if (UserSession.IsUserLoggedIn)
+            {
+                CurrentUser = UserSession.CurrentUser;
+            }
 
             // Initialize dummy data for Orders
             Orders = new ObservableCollection<Order>
