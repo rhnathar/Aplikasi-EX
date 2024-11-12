@@ -58,7 +58,10 @@ namespace Aplikasi_EX.ViewModel
                 try
                 {
                     User user = await _userRepository.LoginAsync(Email, Password);
-                    if (user != null) {
+                    if (user != null) 
+                    {
+                        UserSession.CurrentUser = user;
+
                         if (user.Type == "Pembeli")
                         {
                             MessageBox.Show("Login berhasil, selamat datang pembeli!");
