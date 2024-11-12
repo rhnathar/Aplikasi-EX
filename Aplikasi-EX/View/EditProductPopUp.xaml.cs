@@ -15,15 +15,13 @@ using System.Windows.Shapes;
 namespace Aplikasi_EX.View
 {
     /// <summary>
-    /// Interaction logic for AddProductPopUp.xaml
+    /// Interaction logic for EditProductPopUp.xaml
     /// </summary>
-    public partial class AddProductPopUp : Window
+    public partial class EditProductPopUp : Window
     {
-        public AddProductPopUp()
+        public EditProductPopUp()
         {
             InitializeComponent();
         }
-
-
     }
 }

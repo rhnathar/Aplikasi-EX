@@ -20,11 +20,16 @@ namespace Aplikasi_EX.ViewModel
         public ICommand ConfirmCommand { get; }
         public ICommand CancelCommand { get; }
         public ICommand CloseCommand { get; }
+        public ICommand UploadFileCommand { get; }
 
         private void Confirm(object parameter)
         {
-            // Handle confirm action, such as saving data
-            MessageBox.Show("Product saved successfully!");
+            MessageBox.Show($"Product Name: {ProductName}\n" +
+                         $"Category: {SelectedCategory}\n" +
+                         $"Price: {Price}\n" +
+                         $"Stock: {Stock}\n" +
+                         $"Description: {Description}\n" +
+                         $"Product Photo: {ProductPhoto}");
             Close(parameter);
         }
 
@@ -39,13 +44,24 @@ namespace Aplikasi_EX.ViewModel
             Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive)?.Close();
         }
 
+        private void UploadFile(object parameter)
+        {
+            var openFileDialog = new Microsoft.Win32.OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                ProductPhoto = openFileDialog.FileName;
+                OnPropertyChanged(nameof(ProductPhoto)); // Trigger UI update if bound to the view
+            }
+        }
+
         public AddProductPopUpVM()
         {
-            // Initialize the categories list and commands
-            Categories = new ObservableCollection<string> { "Kategori 1", "Kategori 2" };
             ConfirmCommand = new RelayCommand(Confirm);
             CancelCommand = new RelayCommand(Cancel);
             CloseCommand = new RelayCommand(Close);
+            UploadFileCommand = new RelayCommand(UploadFile);
         }
     }
 }

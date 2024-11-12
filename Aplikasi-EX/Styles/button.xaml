@@ -27,6 +27,19 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="buttonRounded" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="6" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
     <Style x:Key="buttonLink" TargetType="Button">
         <Setter Property="Background" Value="White"/>
         <Setter Property="BorderThickness" Value="0"/>
