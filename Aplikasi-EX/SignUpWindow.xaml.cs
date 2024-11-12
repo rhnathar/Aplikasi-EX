@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
+
 
 namespace Aplikasi_EX
 {
@@ -22,6 +24,7 @@ namespace Aplikasi_EX
         public SignUpWindow()
         {
             InitializeComponent();
+            DataContext = new Aplikasi_EX.ViewModel.SignUpVM(); // Atur DataContext ke SignUpVM
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -29,6 +32,11 @@ namespace Aplikasi_EX
             SignInWindow signInWindow = new SignInWindow();
             signInWindow.Show();
             this.Close();
+        }
+
+        private void close_app(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

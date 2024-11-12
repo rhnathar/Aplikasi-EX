@@ -10,32 +10,39 @@ namespace Aplikasi_EX.ViewModel
 {
     class NavigationVM : Utilities.ViewModelBase
     {
-        private object _currentview;
+        private object _currentView;
 
         public object CurrentView
         {
-            get { return _currentview; }
+            get { return _currentView; }
             set
             {
-                _currentview = value;
+                _currentView = value;
                 OnPropertyChanged();
             }
         }
 
  
 
-        //Auth Window  
-        /*public ICommand SignUpCommand { get; set; }
-        public ICommand SignInCommand { get; set; }
+        //buyer POV
+        public ICommand HomePageCommand { get; set; }
+        public ICommand AccountCommand { get; set; }
+        public ICommand AllProductCommand { get; set; }
 
 
-        private void SignUp(object obj) => CurrentView = new SignUpVM();
-        private void SignIn(object obj) => CurrentView = new SignInVM();
+        private void HomePage(object obj) => CurrentView = new HomePageVM();
+        private void Account(object obj) => CurrentView = new AccountVM();
+        private void AllProduct(object obj) => CurrentView = new AllProductsVM();
+
+
+        
 
         public NavigationVM()
         {
-            SignUpCommand = new RelayCommand(SignUp);
-            SignInCommand = new RelayCommand(SignIn);
-        }*/
+            HomePageCommand = new RelayCommand(HomePage);
+            AccountCommand = new RelayCommand(Account);
+            AllProductCommand = new RelayCommand(AllProduct);
+            CurrentView = new HomePageVM();
+        }
     }
 }

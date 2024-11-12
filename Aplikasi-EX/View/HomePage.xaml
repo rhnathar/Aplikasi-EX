@@ -4,9 +4,126 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Aplikasi_EX.View"
+             xmlns:vm="clr-namespace:Aplikasi_EX.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             d:DesignHeight="650" d:DesignWidth="1280"
+             Style="{StaticResource Page_Style}"
+             >
+
+    <UserControl.DataContext>
+        <vm:HomePageVM/>
+    </UserControl.DataContext>
+    
+
+    <!--Start of grid main-->
+    <Grid Background="#F5F7FF">
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
+        
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <!-- Define grid rows and columns -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <!-- Add as many rows as needed -->
+                </Grid.RowDefinitions>
+
+                <!--Section Pertama-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="692"/>
+                        <ColumnDefinition Width="588"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Margin="40 40 0 0">
+                        <Image Source="/img/mainpage/ads1new.png" HorizontalAlignment="Right" VerticalAlignment="Top" Width="602"/>
+                    </Grid>
+                    <Grid Grid.Column="1" Margin="0 40 40 0">
+                        <Image Source="/img/mainpage/ads2.png" HorizontalAlignment="Left" Width="460" VerticalAlignment="Top"/>
+                    </Grid>
+                </Grid>
+
+                <!--Section Kedua-->
+                <Grid Grid.Row="1" Margin="0 60 0 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--Title-->
+                    <Grid>
+                        <TextBlock Text="Cari Sesuai Kategori" FontWeight="bold" FontSize="28" HorizontalAlignment="Center"/>
+                    </Grid>
+
+
+                    <!--Content-->
+                    <Grid Grid.Row="1">
+                        <Grid Margin="80 10 80 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--card 1-->
+                            <Button Margin="10" Style="{StaticResource CategoryButtonStyle}" Click="CategoryButton_Click" Tag="Computer">
+                                <StackPanel>
+                                    <Image Source="/img/mainpage/computer.png" Margin="20"/>
+                                    <TextBlock Text="Computer and Laptop" FontWeight="SemiBold" TextAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+
+
+                            <!--card 2-->
+                            <Button Margin="10" Style="{StaticResource CategoryButtonStyle}" Click="CategoryButton_Click" Tag="Smartphone" Grid.Column="1">
+                                <StackPanel>
+                                    <Image Source="/img/mainpage/smartphone.png" Margin="20"/>
+                                    <TextBlock Text="Smartphone" FontWeight="SemiBold" TextAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+
+
+                            <!--card 3-->
+                            <Button Margin="10" Style="{StaticResource CategoryButtonStyle}" Click="CategoryButton_Click" Tag="Keyboards" Grid.Column="2">
+                                <StackPanel>
+                                    <Image Source="/img/mainpage/keyboard.png" Margin="20"/>
+                                    <TextBlock Text="Keyboards" FontWeight="SemiBold" TextAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+
+
+                            <!--card 4-->
+                            <Button Margin="10" Style="{StaticResource CategoryButtonStyle}" Click="CategoryButton_Click" Tag="Camera" Grid.Column="3">
+                                <StackPanel>
+                                    <Image Source="/img/mainpage/camera.png" Margin="20"/>
+                                    <TextBlock Text="Camera" FontWeight="SemiBold" TextAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+
+
+                            <!--card 5-->
+                            <Button Margin="10" Style="{StaticResource CategoryButtonStyle}" Click="CategoryButton_Click" Tag="TV" Grid.Column="4">
+                                <StackPanel>
+                                    <Image Source="/img/mainpage/tv.png" Margin="20"/>
+                                    <TextBlock Text="TV and Homes" FontWeight="SemiBold" TextAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+
+
+                            <!--card 6-->
+                            <Button Margin="10" Style="{StaticResource CategoryButtonStyle}" Click="CategoryButton_Click" Tag="Gaming" Grid.Column="5">
+                                <StackPanel>
+                                    <Image Source="/img/mainpage/gaming.png" Margin="20,20,20,50"/>
+                                    <TextBlock Text="Gaming" FontWeight="SemiBold" TextAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </UserControl>

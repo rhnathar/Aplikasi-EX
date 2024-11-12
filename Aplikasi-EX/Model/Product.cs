@@ -8,29 +8,18 @@ namespace Aplikasi_EX.Model
 {
     public class Product
     {
-        public int ProductId { get; set; }
+        public int ProductID { get; set; }
         public string ProductName { get; set; }
-        public long Price { get; set; }
-        public DateTime Date { get; set; }
+        public decimal Price { get; set; }
+        public DateTime DateAdded { get; set; }
+        public string Description { get; set; }
+        //public byte[] ProductImage { get; set; } -> ntar waktu connect db
+        public int SellerID { get; set; }
+        public int Quantity { get; set; }
 
-        public void GetProductDetails(int productId)
-        {
-            // Logic to get product details
-            Console.WriteLine($"Product ID: {productId}, Name: {ProductName}, Price: {Price}");
-        }
-
-        public bool AddProduct(int productId)
-        {
-            // Logic to add product
-            Console.WriteLine($"Product {productId} added successfully.");
-            return true;
-        }
-
-        public void UpdateProduct()
-        {
-            // Logic to update product details
-            Console.WriteLine($"Product {ProductId} updated successfully.");
-        }
+        //nyoba pake gambar local
+        public string ImagePath { get; set; }
+        //temporary placeholder buat binding category
+        public string Category { get; set; }
     }
-
 }

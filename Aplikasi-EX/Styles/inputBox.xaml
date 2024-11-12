@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <!-- StyledTextBox Style -->
     <Style x:Key="StyledTextBox" TargetType="TextBox">
         <Setter Property="Background" Value="#F7FBFF"/>
         <Setter Property="BorderBrush" Value="#D4D7E3"/>
@@ -22,6 +23,9 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+
+
 
 
 </ResourceDictionary>

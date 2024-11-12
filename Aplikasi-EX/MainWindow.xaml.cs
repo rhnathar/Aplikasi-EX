@@ -10,7 +10,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Aplikasi_EX
@@ -23,26 +22,6 @@ namespace Aplikasi_EX
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void Open_DetailProduct(object sender, MouseButtonEventArgs e)
-        {
-            DetailProduct detailProduct = new DetailProduct();
-            detailProduct.Show();
-            this.Close();
-
-        }
-
-        private void Open_AccountInformation(object sender, MouseButtonEventArgs e)
-        {
-            AccountTemp accountTemp = new AccountTemp();
-            accountTemp.Show();
-            this.Close();
         }
     }
 }

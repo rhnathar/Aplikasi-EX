@@ -10,23 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Aplikasi_EX
+namespace Aplikasi_EX.View
 {
     /// <summary>
-    /// Interaction logic for AccountTemp.xaml
+    /// Interaction logic for SellerProduct.xaml
     /// </summary>
-    public partial class AccountTemp : Window
+    public partial class SellerProduct : UserControl
     {
-        public AccountTemp()
+        public SellerProduct()
         {
             InitializeComponent();
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }

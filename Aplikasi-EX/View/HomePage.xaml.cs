@@ -24,5 +24,13 @@ namespace Aplikasi_EX.View
         {
             InitializeComponent();
         }
+
+        private void CategoryButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+            /*var button = sender as Button;
+            var category = button?.Tag.ToString();
+            MainFrame.Navigate(new Tes(category));*/
+        }
     }
 }

@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Aplikasi_EX
 {
     /// <summary>
-    /// Interaction logic for DetailProduct.xaml
+    /// Interaction logic for SellerMainWindow.xaml
     /// </summary>
-    public partial class DetailProduct : Window
+    public partial class SellerMainWindow : Window
     {
-        public DetailProduct()
+        public SellerMainWindow()
         {
             InitializeComponent();
         }

@@ -4,7 +4,18 @@
                     xmlns:view="clr-namespace:Aplikasi_EX.View">
 
     <!-- Main Window -->
-    
-    
-    
+    <DataTemplate DataType="{x:Type vm:HomePageVM}">
+        <view:HomePage/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AccountVM}">
+        <view:Account/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AllProductsVM}">
+        <view:AllProducts/>
+    </DataTemplate>
+
+
+
 </ResourceDictionary>
