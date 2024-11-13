@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using Aplikasi_EX.DataAccess;
 using Aplikasi_EX.Model;
 
 namespace Aplikasi_EX.ViewModel
 {
     class AccountVM : Utilities.ViewModelBase
     {
+        private readonly OrderRepository _orderRepository;
+
         private User _currentUser;
 
         public User CurrentUser
@@ -15,7 +19,13 @@ namespace Aplikasi_EX.ViewModel
         }
 
         // Orders collection
-        public ObservableCollection<Order> Orders { get; set; }
+        private ObservableCollection<Order> _orders;
+        public ObservableCollection<Order> Orders
+        {
+            get => _orders;
+            set { _orders = value; OnPropertyChanged(nameof(Orders)); }
+        }
+
 
         // Properties for user details
         public string Greeting => $"Hello, {CurrentUser?.Name}";
@@ -88,19 +98,25 @@ namespace Aplikasi_EX.ViewModel
         // Constructor to initialize dummy data
         public AccountVM()
         {
+            _orderRepository = new OrderRepository();
             if (UserSession.IsUserLoggedIn)
             {
                 CurrentUser = UserSession.CurrentUser;
+                Task.Run(async () => await LoadOrders());
             }
-
-            // Initialize dummy data for Orders
-            Orders = new ObservableCollection<Order>
+        }
+        private async Task LoadOrders()
+        {
+            if (CurrentUser.Type == "Penjual")
             {
-                new Order { OrderID = 1001, Name = "Laptop ASUS", Status = "IN PROGRESS", LastUpdated = DateTime.Now.AddDays(-1) },
-                new Order { OrderID = 1002, Name = "Keyboard Razer", Status = "COMPLETED", LastUpdated = DateTime.Now.AddDays(-5) },
-                new Order { OrderID = 1003, Name = "Mouse Logitech", Status = "CANCELED", LastUpdated = DateTime.Now.AddDays(-10) },
-                new Order { OrderID = 1004, Name = "Monitor Samsung", Status = "IN PROGRESS", LastUpdated = DateTime.Now.AddDays(-2) }
-            };
+                var ordersFromDb = await _orderRepository.getSellerOrderAsync(CurrentUser.UserID);
+                Orders = new ObservableCollection<Order>(ordersFromDb);
+            }
+            else if (CurrentUser.Type == "Pembeli")
+            {
+                var ordersFromDb = await _orderRepository.getBuyerOrderAsync(CurrentUser.UserID);
+                Orders = new ObservableCollection<Order>(ordersFromDb);
+            }
         }
     }
 }
