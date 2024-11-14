@@ -58,26 +58,30 @@
 
                                 <Grid Grid.Column="1">
                                     <StackPanel>
-                                        <TextBox x:Name="tbOrderID" Style="{StaticResource StyledTextBox}"                                             
+                                        <TextBox x:Name="tbOrderID" Background="#E8E8E8"                                             
                                                  Width="240" Height="32" 
-                                                 HorizontalAlignment="Left" Margin="0 5 0 2" Padding="5"
+                                                 HorizontalAlignment="Left" Margin="0 5 0 2" Padding="8"
                                                  />
-                                        <TextBox x:Name="tbNama" Style="{StaticResource StyledTextBox}"
+                                        <TextBox x:Name="tbNama" Background="#E8E8E8"
                                                  Width="240" Height="32"
-                                                 HorizontalAlignment="Left" Margin="0 5 0 2" Padding="5"
+                                                 HorizontalAlignment="Left" Margin="0 5 0 2" Padding="8"
                                                  />
-                                        <TextBox x:Name="tbLastUpdate" Style="{StaticResource StyledTextBox}"
+                                        <TextBox x:Name="tbLastUpdate" Background="#E8E8E8"
                                                  Width="240" Height="32"
-                                                 HorizontalAlignment="Left" Margin="0 5 0 2" Padding="5"
+                                                 HorizontalAlignment="Left" Margin="0 5 0 2" Padding="8"
                                                  />
-                                        <TextBox x:Name="tbQuanity" Style="{StaticResource StyledTextBox}"
+                                        <TextBox x:Name="tbQuanity" Background="#E8E8E8"
                                                  Width="240" Height="32"
-                                                 HorizontalAlignment="Left" Margin="0 5 0 2" Padding="5"
+                                                 HorizontalAlignment="Left" Margin="0 5 0 2" Padding="8"
                                                  />
-                                        <TextBox x:Name="tbStatus" Style="{StaticResource StyledTextBox}"
-                                                 Width="240" Height="32"
-                                                 HorizontalAlignment="Left" Margin="0 5 0 2" Padding="5"
-                                                 /> 
+
+                                        <ComboBox x:Name="cbStatus" Width="240" Height="32"
+                                                  HorizontalAlignment="Left" Margin="0 5 0 2" Padding="8">
+                                            <ComboBoxItem>PENDING</ComboBoxItem>
+                                            <ComboBoxItem>CANCELED</ComboBoxItem>
+                                            <ComboBoxItem>IN PROGRESS</ComboBoxItem>
+                                            <ComboBoxItem>COMPLETED</ComboBoxItem>
+                                        </ComboBox>
 
                                         <Grid HorizontalAlignment="Left" Margin="140 16 0 0" >
                                             <Button Content="Update Status" Width="100" Height="32" BorderThickness="1.25" HorizontalAlignment="Center" Background="White" BorderBrush="#1E4AE9" Foreground="#1E4AE9"/>
