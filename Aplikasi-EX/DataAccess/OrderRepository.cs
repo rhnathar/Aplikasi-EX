@@ -72,5 +72,27 @@ namespace Aplikasi_EX.DataAccess
             }
             return orders;
         }
+
+        public async Task UpdateStatusOrderAsync(Order order)
+        {
+            try
+            {
+                using (var conn = new NpgsqlConnection(_connectionString))
+                {
+                    await conn.OpenAsync();
+                    string query = "SELECT updateorderstatus(@orderID, @status)";
+                    using (var cmd = new NpgsqlCommand(query,conn))
+                    {
+                        cmd.Parameters.AddWithValue("@orderID", order.OrderID);
+                        cmd.Parameters.AddWithValue("@status", order.Status);
+                        await cmd.ExecuteNonQueryAsync();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error during update status: " + ex.Message, ex);
+            }
+        }
     }
 }

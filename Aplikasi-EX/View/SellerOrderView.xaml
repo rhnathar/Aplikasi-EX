@@ -61,22 +61,24 @@
                                         <TextBox x:Name="tbOrderID" Background="#E8E8E8"                                             
                                                  Width="240" Height="32" 
                                                  HorizontalAlignment="Left" Margin="0 5 0 2" Padding="8"
-                                                 />
+                                                 Text="{Binding SelectedOrder.OrderID, Mode=OneWay}" IsReadOnly="True"/>
                                         <TextBox x:Name="tbNama" Background="#E8E8E8"
                                                  Width="240" Height="32"
                                                  HorizontalAlignment="Left" Margin="0 5 0 2" Padding="8"
-                                                 />
+                                                 Text="{Binding SelectedOrder.Name, Mode=OneWay}" IsReadOnly="True"/>
                                         <TextBox x:Name="tbLastUpdate" Background="#E8E8E8"
                                                  Width="240" Height="32"
                                                  HorizontalAlignment="Left" Margin="0 5 0 2" Padding="8"
-                                                 />
+                                                 Text="{Binding SelectedOrder.LastUpdated, Mode=OneWay}" IsReadOnly="True"/>
                                         <TextBox x:Name="tbQuanity" Background="#E8E8E8"
                                                  Width="240" Height="32"
                                                  HorizontalAlignment="Left" Margin="0 5 0 2" Padding="8"
-                                                 />
+                                                 Text="{Binding SelectedOrder.Quantity, Mode=OneWay}" IsReadOnly="True"/>
 
                                         <ComboBox x:Name="cbStatus" Width="240" Height="32"
-                                                  HorizontalAlignment="Left" Margin="0 5 0 2" Padding="8">
+                                                  HorizontalAlignment="Left" Margin="0 5 0 2" Padding="8"
+                                                  SelectedValue="{Binding SelectedOrder.Status, Mode=TwoWay}"
+                                                  SelectedValuePath="Content">
                                             <ComboBoxItem>PENDING</ComboBoxItem>
                                             <ComboBoxItem>CANCELED</ComboBoxItem>
                                             <ComboBoxItem>IN PROGRESS</ComboBoxItem>
@@ -84,7 +86,8 @@
                                         </ComboBox>
 
                                         <Grid HorizontalAlignment="Left" Margin="140 16 0 0" >
-                                            <Button Content="Update Status" Width="100" Height="32" BorderThickness="1.25" HorizontalAlignment="Center" Background="White" BorderBrush="#1E4AE9" Foreground="#1E4AE9"/>
+                                            <Button Content="Update Status" Width="100" Height="32" BorderThickness="1.25" HorizontalAlignment="Center" Background="White" BorderBrush="#1E4AE9" Foreground="#1E4AE9"
+                                                    Command="{Binding UpdateStatusCommand}"/>
                                         </Grid>
                                     </StackPanel>
                                 </Grid>
@@ -99,7 +102,7 @@
                                        Margin="20 0 0 0 "
                                        />
                                     <Grid Height="240" Margin="20">
-                                        <DataGrid x:Name="OrderDataGrid" ItemsSource="{Binding Orders}" AutoGenerateColumns="False"
+                                        <DataGrid x:Name="OrderDataGrid" ItemsSource="{Binding Orders}" SelectedItem="{Binding SelectedOrder}" AutoGenerateColumns="False"
                                           HeadersVisibility="Column" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                                           Style="{StaticResource StyledDataGrid}">
                                             <DataGrid.Columns>
