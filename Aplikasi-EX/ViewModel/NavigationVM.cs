@@ -11,6 +11,7 @@ namespace Aplikasi_EX.ViewModel
     class NavigationVM : Utilities.ViewModelBase
     {
         private object _currentView;
+        private object _currentViewSeller;
 
         public object CurrentView
         {
@@ -24,10 +25,10 @@ namespace Aplikasi_EX.ViewModel
 
         public object CurrentViewSeller
         {
-            get { return _currentView; }
+            get { return _currentViewSeller; }
             set
             {
-                _currentView = value; 
+                _currentViewSeller = value; 
                 OnPropertyChanged();
             }
         }

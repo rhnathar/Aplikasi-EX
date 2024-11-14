@@ -27,6 +27,8 @@
                            FontSize="14" Margin="0 8 0 0"/>
                 <ComboBox Width="540" HorizontalAlignment="Left" Height="35"
                           Margin="0 4 0 0" Padding="8"
+                          SelectedValue="{Binding SelectedCategory}"
+                          SelectedValuePath="Content"
                           >
                     <ComboBoxItem>Computer</ComboBoxItem>
                     <ComboBoxItem>Handphone</ComboBoxItem>
@@ -38,7 +40,7 @@
 
                 <!-- Kondisi Produk -->
                 <TextBlock Text="Kondisi Produk" FontWeight="SemiBold" FontSize="14" Margin="0 8 0 0"/>
-                <TextBox Text="{Binding ProductName}" Background="#E8E8E8" 
+                <TextBox Text="{Binding Condition}" Background="#E8E8E8" 
                          Margin="0 4 0 0" Width="540" Height="35" Padding="8"
                          HorizontalAlignment="Left"/>
 

@@ -25,10 +25,9 @@ namespace Aplikasi_EX.DataAccess
                 using (var conn = new NpgsqlConnection(_connectionString))
                 {
                     await conn.OpenAsync();
-                    string query = "SELECT RegisterUser(@productID, @product_name, @price, @date_added, @description, @product_image, @sellerID, @quantity, @condition, @category)";
+                    string query = "SELECT from insert_product(@product_name, @price, @date_added, @description, @product_image, @sellerID, @quantity, @condition, @category)";
                     using (var cmd = new NpgsqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@productID", product.ProductID);
                         cmd.Parameters.AddWithValue("@product_name", product.ProductName);
                         cmd.Parameters.AddWithValue("@price", product.Price);
                         cmd.Parameters.AddWithValue("@date_added", product.DateAdded);
