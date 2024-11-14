@@ -107,12 +107,7 @@ namespace Aplikasi_EX.ViewModel
         }
         private async Task LoadOrders()
         {
-            if (CurrentUser.Type == "Penjual")
-            {
-                var ordersFromDb = await _orderRepository.getSellerOrderAsync(CurrentUser.UserID);
-                Orders = new ObservableCollection<Order>(ordersFromDb);
-            }
-            else if (CurrentUser.Type == "Pembeli")
+            if (CurrentUser != null)
             {
                 var ordersFromDb = await _orderRepository.getBuyerOrderAsync(CurrentUser.UserID);
                 Orders = new ObservableCollection<Order>(ordersFromDb);
