@@ -99,19 +99,9 @@ namespace Aplikasi_EX.ViewModel
         // Constructor to initialize dummy data
         public SellerAccountVM()
         {
-            _orderRepository = new OrderRepository();
             if (UserSession.IsUserLoggedIn)
             {
                 CurrentUser = UserSession.CurrentUser;
-                Task.Run(async () => await LoadOrders());
-            }
-        }
-        private async Task LoadOrders()
-        {
-            if (CurrentUser != null)
-            {
-                var ordersFromDb = await _orderRepository.getSellerOrderAsync(CurrentUser.UserID);
-                Orders = new ObservableCollection<Order>(ordersFromDb);
             }
         }
     }

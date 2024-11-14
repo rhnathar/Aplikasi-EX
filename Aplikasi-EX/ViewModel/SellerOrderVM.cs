@@ -6,53 +6,46 @@ using System.Threading.Tasks;
 using Aplikasi_EX.Utilities;
 using System.Collections.ObjectModel;
 using Aplikasi_EX.Model;
+using Aplikasi_EX.DataAccess;
 
 namespace Aplikasi_EX.ViewModel
 {
     class SellerOrderVM : Utilities.ViewModelBase
     {
+        private readonly OrderRepository _orderRepository;
         // Orders collection
-        public ObservableCollection<Order> Orders { get; set; }
+        private ObservableCollection<Order> _orders;
+        public ObservableCollection<Order> Orders
+        {
+            get => _orders;
+            set { _orders = value; OnPropertyChanged(nameof(Orders)); }
+        }
+
+        private User _currentUser;
+
+        public User CurrentUser
+        {
+            get => _currentUser;
+            set { _currentUser = value; OnPropertyChanged(nameof(CurrentUser)); }
+        }
 
         // Constructor to initialize dummy data for orders
         public SellerOrderVM()
         {
-            // Initialize dummy data for Orders
-            Orders = new ObservableCollection<Order>
+            _orderRepository = new OrderRepository();
+            if (UserSession.IsUserLoggedIn)
             {
-                new Order
-                {
-                    OrderID = 101,
-                    Name = "Smartphone Samsung Galaxy",
-                    Quantity = 15,
-                    Status = "Pending",
-                    LastUpdated = DateTime.Now.AddDays(-1)
-                },
-                new Order
-                {
-                    OrderID = 102,
-                    Name = "Laptop HP Pavilion",
-                    Quantity = 7,
-                    Status = "Shipped",
-                    LastUpdated = DateTime.Now.AddDays(-3)
-                },
-                new Order
-                {
-                    OrderID = 103,
-                    Name = "Wireless Headphones Sony",
-                    Quantity = 20,
-                    Status = "Delivered",
-                    LastUpdated = DateTime.Now.AddDays(-5)
-                },
-                new Order
-                {
-                    OrderID = 104,
-                    Name = "Monitor LG UltraWide",
-                    Quantity = 10,
-                    Status = "Pending",
-                    LastUpdated = DateTime.Now.AddDays(-7)
-                }
-            };
+                CurrentUser = UserSession.CurrentUser;
+                Task.Run(async () => await LoadOrders());
+            }
+        }
+        private async Task LoadOrders()
+        {
+            if (CurrentUser != null)
+            {
+                var ordersFromDb = await _orderRepository.getSellerOrderAsync(CurrentUser.UserID);
+                Orders = new ObservableCollection<Order>(ordersFromDb);
+            }
         }
     }
 }
