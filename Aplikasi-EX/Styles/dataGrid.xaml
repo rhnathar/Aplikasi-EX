@@ -54,14 +54,17 @@
     <Style TargetType="TextBlock" x:Key="StatusTextStyle">
         <Setter Property="Foreground" Value="Black"/>
         <Style.Triggers>
-            <DataTrigger Binding="{Binding Status}" Value="IN PROGRESS">
+            <DataTrigger Binding="{Binding Status}" Value="in progress">
                 <Setter Property="Foreground" Value="Blue"/>
             </DataTrigger>
-            <DataTrigger Binding="{Binding Status}" Value="COMPLETED">
+            <DataTrigger Binding="{Binding Status}" Value="completed">
                 <Setter Property="Foreground" Value="Green"/>
             </DataTrigger>
-            <DataTrigger Binding="{Binding Status}" Value="CANCELED">
+            <DataTrigger Binding="{Binding Status}" Value="canceled">
                 <Setter Property="Foreground" Value="Red"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Status}" Value="pending">
+                <Setter Property="Foreground" Value="yellow"/>
             </DataTrigger>
         </Style.Triggers>
     </Style>

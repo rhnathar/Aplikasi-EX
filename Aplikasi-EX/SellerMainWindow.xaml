@@ -42,17 +42,17 @@
             <!--icon menu-->
             <Grid Grid.Column="2">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Margin="0 0 80 0" HorizontalAlignment="Right" >
-                    <Button Command="{Binding AllProductCommand}" Background="Transparent" BorderBrush="Transparent" Width="30">
+                    <Button Command="{Binding SellerProductCommand}" Background="Transparent" BorderBrush="Transparent" Width="30">
                         <Grid>
                             <Image Source="/img/icon/product.png" Width="30" Height="32" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Grid>
                     </Button>
-                    <Button Command="{Binding AllProductCommand}" Background="Transparent" BorderBrush="Transparent" Width="30" Margin="10 0 0 0">
+                    <Button Command="{Binding SellerOrderCommand}" Background="Transparent" BorderBrush="Transparent" Width="30" Margin="10 0 0 0">
                         <Grid>
                             <Image Source="/img/icon/order.png" Width="30" Height="32" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Grid>
                     </Button>
-                    <Button Command="{Binding AccountCommand}" Background="Transparent" BorderBrush="Transparent" Width="35" Margin="10 0 0 0">
+                    <Button Command="{Binding SellerAccountCommand}" Background="Transparent" BorderBrush="Transparent" Width="35" Margin="10 0 0 0">
                         <Image Source="/img/icon/User.png" Width="30" Height="30"/>
                     </Button>
                 </StackPanel>
@@ -62,7 +62,7 @@
         <!--Content-->
         <Grid Grid.Row="1">
             <ContentControl x:Name="Pages"
-                        Content="{Binding CurrentView}" Margin="0 0 0 0"/>
+                        Content="{Binding CurrentViewSeller}" Margin="0 0 0 0"/>
         </Grid>
     </Grid>
 </Window>

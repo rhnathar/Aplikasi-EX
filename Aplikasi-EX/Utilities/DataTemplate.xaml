@@ -16,6 +16,19 @@
         <view:AllProducts/>
     </DataTemplate>
 
+    <!--Seller POV-->
+    <DataTemplate DataType="{x:Type vm:SellerProductVM}">
+        <view:SellerProduct/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:SellerOrderVM}">
+        <view:SellerOrderView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:SellerAccountVM}">
+        <view:SellerAccount/>
+    </DataTemplate>
+
 
 
 </ResourceDictionary>
