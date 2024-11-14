@@ -4,15 +4,20 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+using Aplikasi_EX.DataAccess;
+using System.Threading.Tasks;
+using Microsoft.VisualBasic;
+using Aplikasi_EX.Model;
 
 namespace Aplikasi_EX.ViewModel
 {
     public class AddProductPopUpVM : BaseViewModel
     {
+        private readonly ProductRepository _productrepository;
         public string ProductName { get; set; }
         public ObservableCollection<string> Categories { get; set; }
         public string SelectedCategory { get; set; }
-        public string Price { get; set; }
+        public int Price { get; set; }
         public string Stock { get; set; }
         public string Description { get; set; }
         public string ProductPhoto { get; set; }
@@ -22,15 +27,41 @@ namespace Aplikasi_EX.ViewModel
         public ICommand CloseCommand { get; }
         public ICommand UploadFileCommand { get; }
 
-        private void Confirm(object parameter)
+        public AddProductPopUpVM()
         {
-            MessageBox.Show($"Product Name: {ProductName}\n" +
-                         $"Category: {SelectedCategory}\n" +
-                         $"Price: {Price}\n" +
-                         $"Stock: {Stock}\n" +
-                         $"Description: {Description}\n" +
-                         $"Product Photo: {ProductPhoto}");
-            Close(parameter);
+            _productrepository = new ProductRepository();
+            ConfirmCommand = new RelayCommand(async (parameter) => await Confirm(parameter));
+            CancelCommand = new RelayCommand(Cancel);
+            CloseCommand = new RelayCommand(Close);
+            UploadFileCommand = new RelayCommand(UploadFile);
+        }
+
+        private async Task Confirm(object parameter)
+        {
+            var product = new Product
+            {
+                //ProductID = Guid.NewGuid(),
+                ProductName = ProductName,
+                Price = Price,
+                DateAdded = DateTime.Now,
+                Description = Description,
+                ImagePath = ProductPhoto,
+                //SellerID = Guid.NewGuid(),
+                Quantity = int.TryParse(Stock, out var parsedStock) ? parsedStock : 0,
+                //Condition = "Baru",
+                Category = SelectedCategory
+            };
+
+            try
+            {
+                await _productrepository.InsertProductAsync(product);
+                MessageBox.Show("Produk Berhasil Ditambahkan.");
+                Close(parameter);
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Error saat menambahkan: " + ex.Message);
+            }
         }
 
         private void Cancel(object parameter)
@@ -54,14 +85,6 @@ namespace Aplikasi_EX.ViewModel
                 ProductPhoto = openFileDialog.FileName;
                 OnPropertyChanged(nameof(ProductPhoto)); // Trigger UI update if bound to the view
             }
-        }
-
-        public AddProductPopUpVM()
-        {
-            ConfirmCommand = new RelayCommand(Confirm);
-            CancelCommand = new RelayCommand(Cancel);
-            CloseCommand = new RelayCommand(Close);
-            UploadFileCommand = new RelayCommand(UploadFile);
         }
     }
 }
