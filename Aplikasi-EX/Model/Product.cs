@@ -10,7 +10,7 @@ namespace Aplikasi_EX.Model
     {
         public int ProductID { get; set; }
         public string ProductName { get; set; }
-        public decimal Price { get; set; }
+        public int Price { get; set; }
         public DateTime DateAdded { get; set; }
         public string Description { get; set; }
         //public byte[] ProductImage { get; set; } -> ntar waktu connect db
@@ -19,7 +19,7 @@ namespace Aplikasi_EX.Model
         public string ImagePath { get; set; }
         public int SellerID { get; set; }
         public int Quantity { get; set; }
-        public int Condition { get; set; }
+        public string Condition { get; set; }
 
         //temporary placeholder buat binding category
         public string Category { get; set; }
