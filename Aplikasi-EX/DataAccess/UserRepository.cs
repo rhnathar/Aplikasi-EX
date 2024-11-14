@@ -101,5 +101,31 @@ namespace Aplikasi_EX.DataAccess
             }
             return users;
         }
+
+        public async Task UpdateDataAccount(User user)
+        {
+            try
+            {
+                using (var conn = new NpgsqlConnection(_connectionString))
+                {
+                    await conn.OpenAsync();
+                    string query = "SELECT updatedatauseraccount(@userID, @name, @address, @phone_number, @email, @password)";
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@userID", user.UserID);
+                        cmd.Parameters.AddWithValue("@name", user.Name);
+                        cmd.Parameters.AddWithValue("@address", user.Address);
+                        cmd.Parameters.AddWithValue("phone_number", user.PhoneNumber);
+                        cmd.Parameters.AddWithValue("@email", user.Email);
+                        cmd.Parameters.AddWithValue("Password", user.Password);
+                        await cmd.ExecuteNonQueryAsync();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error during update data account: " + ex.Message, ex);
+            }
+        }
     }
 }
