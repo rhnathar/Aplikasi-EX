@@ -99,7 +99,7 @@
                 <Button Content="Hapus" Width="100" Height="35" Background="Red" Foreground="White" FontWeight="Bold"
                         Style="{StaticResource buttonRounded}" Cursor="Hand"
                         Margin="0 0 8 0"
-                        Command="{Binding ConfirmCommand}" />
+                        Command="{Binding DeleteCommand}" />
                 <Button Content="Confirm" Width="100" Height="35" Background="#1E4AE9" Foreground="White" FontWeight="Bold"
                         Style="{StaticResource buttonRounded}" Cursor="Hand"
                         Command="{Binding ConfirmCommand}" />

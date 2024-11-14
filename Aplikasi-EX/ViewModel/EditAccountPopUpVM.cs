@@ -1,27 +1,23 @@
-﻿using Aplikasi_EX.Model;
-using Aplikasi_EX.Utilities;
+﻿using Aplikasi_EX.Utilities;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
+using System.Windows;
 
 namespace Aplikasi_EX.ViewModel
 {
-    public class EditProductPopUpVM : BaseViewModel
+    internal class EditAccountPopUpVM : BaseViewModel
     {
         public ICommand ConfirmCommand { get; }
         public ICommand CancelCommand { get; }
-        public ICommand DeleteCommand { get; }
 
-        public EditProductPopUpVM()
+        public EditAccountPopUpVM()
         {
             ConfirmCommand = new RelayCommand(Confirm);
             CancelCommand = new RelayCommand(Cancel);
-            DeleteCommand = new RelayCommand(Delete);
         }
 
         private void Confirm(object parameter)
@@ -40,15 +36,6 @@ namespace Aplikasi_EX.ViewModel
             Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive)?.Close();
         }
 
-        private void Delete(object parameter)
-        {
-            //handle action
-        }
-
-
-
-
 
     }
-
 }

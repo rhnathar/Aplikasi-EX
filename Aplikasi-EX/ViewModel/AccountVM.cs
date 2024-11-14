@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Aplikasi_EX.DataAccess;
 using Aplikasi_EX.Model;
+using Aplikasi_EX.Utilities;
+using Aplikasi_EX.View;
 
 namespace Aplikasi_EX.ViewModel
 {
@@ -95,7 +98,9 @@ namespace Aplikasi_EX.ViewModel
             }
         }
 
-        // Constructor to initialize dummy data
+        public ICommand OpenEditAccountCommand { get; }
+
+        // Constructor 
         public AccountVM()
         {
             _orderRepository = new OrderRepository();
@@ -104,6 +109,8 @@ namespace Aplikasi_EX.ViewModel
                 CurrentUser = UserSession.CurrentUser;
                 Task.Run(async () => await LoadOrders());
             }
+
+            OpenEditAccountCommand = new RelayCommand(OpenEditAccount);
         }
         private async Task LoadOrders()
         {
@@ -112,6 +119,15 @@ namespace Aplikasi_EX.ViewModel
                 var ordersFromDb = await _orderRepository.getBuyerOrderAsync(CurrentUser.UserID);
                 Orders = new ObservableCollection<Order>(ordersFromDb);
             }
+        }
+
+        void OpenEditAccount(object parameter)
+        {
+            // Create an instance of the popup window
+            var EditAccountWindow = new EditAccountPopUp();
+
+            // Show the popup as a dialog
+            EditAccountWindow.ShowDialog();
         }
     }
 }
