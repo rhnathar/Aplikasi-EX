@@ -53,6 +53,7 @@
     <!-- Style for Status TextBlock with color triggers -->
     <Style TargetType="TextBlock" x:Key="StatusTextStyle">
         <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
         <Style.Triggers>
             <DataTrigger Binding="{Binding Status}" Value="IN PROGRESS">
                 <Setter Property="Foreground" Value="Blue"/>

@@ -1,4 +1,5 @@
 ﻿using Aplikasi_EX.Utilities;
+using Aplikasi_EX.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Windows.Input;
 
 namespace Aplikasi_EX.ViewModel
 {
-    class NavigationVM : Utilities.ViewModelBase
+    public class NavigationVM : Utilities.ViewModelBase
     {
         private object _currentView;
         private object _currentViewSeller;
@@ -46,19 +47,24 @@ namespace Aplikasi_EX.ViewModel
 
         private void HomePage(object obj) => CurrentView = new HomePageVM();
         private void Account(object obj) => CurrentView = new AccountVM();
-        private void AllProduct(object obj) => CurrentView = new AllProductsVM();
+        //private void AllProduct(object obj) => CurrentView = new AllProductsVM();
         private void SellerProduct (object obj) => CurrentViewSeller = new SellerProductVM();
         private void SellerOrder (object obj) => CurrentViewSeller = new SellerOrderVM();
         private void SellerAccount (object obj) => CurrentViewSeller = new SellerAccountVM();
+        private void NavigateToAllProduct(object obj)
+        {
+            CurrentView = new AllProductsVM();
+        }
 
 
-        
+
 
         public NavigationVM()
         {
             HomePageCommand = new RelayCommand(HomePage);
             AccountCommand = new RelayCommand(Account);
-            AllProductCommand = new RelayCommand(AllProduct);
+            //AllProductCommand = new RelayCommand(AllProduct);
+            AllProductCommand = new RelayCommand(NavigateToAllProduct);
 
             SellerProductCommand = new RelayCommand(SellerProduct);
             SellerOrderCommand = new RelayCommand (SellerOrder);
