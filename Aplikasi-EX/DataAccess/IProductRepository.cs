@@ -6,4 +6,5 @@ using Aplikasi_EX.Model;
 public interface IProductRepository
 {
     Task InsertProductAsync(Product product);
+    Task<List<Product>> GetSellerProductsAsync(int sellerID);
 }

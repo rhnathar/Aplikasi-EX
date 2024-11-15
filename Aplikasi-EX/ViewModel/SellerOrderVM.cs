@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using Aplikasi_EX.Model;
 using Aplikasi_EX.DataAccess;
 using System.Windows.Input;
+using System.Windows;
 
 namespace Aplikasi_EX.ViewModel
 {
