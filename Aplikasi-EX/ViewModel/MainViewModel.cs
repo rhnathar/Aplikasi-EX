@@ -15,7 +15,7 @@ namespace Aplikasi_EX.ViewModel
         public MainViewModel()
         {
             Products = new ObservableCollection<Product>();
-            LoadProducts();
+            //LoadProducts();
         }
 
         private void LoadProducts()
