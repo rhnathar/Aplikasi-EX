@@ -49,7 +49,7 @@ namespace Aplikasi_EX.ViewModel
         }
         private async Task LoadProducts()
         {
-            if (CurrentUser.Type == "Penjual")
+            if (CurrentUser!=null)
             {
                 var productsFromDb = await _productRepository.GetSellerProductsAsync(CurrentUser.UserID);
                 foreach (var product in productsFromDb)

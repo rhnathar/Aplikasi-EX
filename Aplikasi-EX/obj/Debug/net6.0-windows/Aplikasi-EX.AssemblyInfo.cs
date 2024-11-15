@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Aplikasi-EX")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76d33f2253793cddb650811d0b4b6857b4f6fabd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76235d8cb6e42fef6cbede5df534a512c0d2e8e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Aplikasi-EX")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Aplikasi-EX")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

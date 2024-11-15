@@ -1,4 +1,5 @@
-﻿using Aplikasi_EX.Utilities;
+﻿using Aplikasi_EX.Model;
+using Aplikasi_EX.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,12 +29,16 @@ namespace Aplikasi_EX.ViewModel
             get { return _currentViewSeller; }
             set
             {
-                _currentViewSeller = value; 
+                _currentViewSeller = value;
                 OnPropertyChanged();
             }
         }
-
- 
+        private User _currentUser;
+        public User CurrentUser
+        {
+            get => _currentUser;
+            set { _currentUser = value; OnPropertyChanged(nameof(CurrentUser)); }
+        }
 
         //buyer POV
         public ICommand HomePageCommand { get; set; }
@@ -47,25 +52,34 @@ namespace Aplikasi_EX.ViewModel
         private void HomePage(object obj) => CurrentView = new HomePageVM();
         private void Account(object obj) => CurrentView = new AccountVM();
         private void AllProduct(object obj) => CurrentView = new AllProductsVM();
-        private void SellerProduct (object obj) => CurrentViewSeller = new SellerProductVM();
-        private void SellerOrder (object obj) => CurrentViewSeller = new SellerOrderVM();
-        private void SellerAccount (object obj) => CurrentViewSeller = new SellerAccountVM();
+        private void SellerProduct(object obj) => CurrentViewSeller = new SellerProductVM();
+        private void SellerOrder(object obj) => CurrentViewSeller = new SellerOrderVM();
+        private void SellerAccount(object obj) => CurrentViewSeller = new SellerAccountVM();
 
 
-        
+
 
         public NavigationVM()
         {
-            HomePageCommand = new RelayCommand(HomePage);
-            AccountCommand = new RelayCommand(Account);
-            AllProductCommand = new RelayCommand(AllProduct);
+            if (UserSession.IsUserLoggedIn)
+            {
+                CurrentUser = UserSession.CurrentUser;
+                if (CurrentUser.Type == "Pembeli")
+                {
+                    HomePageCommand = new RelayCommand(HomePage);
+                    AccountCommand = new RelayCommand(Account);
+                    AllProductCommand = new RelayCommand(AllProduct);
+                    CurrentView = new HomePageVM();
 
-            SellerProductCommand = new RelayCommand(SellerProduct);
-            SellerOrderCommand = new RelayCommand (SellerOrder);
-            SellerAccountCommand = new RelayCommand(SellerAccount);
-
-            CurrentView = new HomePageVM();
-            CurrentViewSeller = new SellerProductVM();
+                }
+                else if(CurrentUser.Type == "Penjual")
+                {
+                    SellerProductCommand = new RelayCommand(SellerProduct);
+                    SellerOrderCommand = new RelayCommand(SellerOrder);
+                    SellerAccountCommand = new RelayCommand(SellerAccount);
+                    CurrentViewSeller = new SellerProductVM();
+                }
+            }
         }
     }
 }
