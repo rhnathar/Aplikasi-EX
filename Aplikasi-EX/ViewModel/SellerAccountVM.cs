@@ -4,6 +4,8 @@ using System.Collections.ObjectModel;
 using Aplikasi_EX.Model;
 using Aplikasi_EX.Utilities;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Aplikasi_EX.View;
 
 namespace Aplikasi_EX.ViewModel
 {
@@ -96,6 +98,8 @@ namespace Aplikasi_EX.ViewModel
             }
         }
 
+        public ICommand OpenEditAccountCommand { get; }
+
         // Constructor to initialize dummy data
         public SellerAccountVM()
         {
@@ -103,6 +107,17 @@ namespace Aplikasi_EX.ViewModel
             {
                 CurrentUser = UserSession.CurrentUser;
             }
+
+            OpenEditAccountCommand = new RelayCommand(OpenEditAccount);
+        }
+
+        void OpenEditAccount(object parameter)
+        {
+            // Create an instance of the popup window
+            var EditAccountWindow = new EditAccountPopUp();
+
+            // Show the popup as a dialog
+            EditAccountWindow.ShowDialog();
         }
     }
 }

@@ -4,8 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Aplikasi_EX.View"
+             xmlns:vm="clr-namespace:Aplikasi_EX.ViewModel"
              mc:Ignorable="d" 
-             Width="460" Height="150"  Margin="10">
+             Width="460" Height="180"  Margin="10">
+
+    <UserControl.Resources>
+        <!-- Resource ini memungkinkan kita untuk membuat instance ProductCardSellerVM sebagai StaticResource -->
+        <vm:ProductCardSellerVM x:Key="ProductCardSellerVMInstance" />
+    </UserControl.Resources>
+
+
     <Border BorderBrush="LightGray" BorderThickness="1" Padding="10" CornerRadius="10" Background="#F9FAFB">
         <!-- Apply DropShadowEffect -->
         <Border.Effect>
@@ -36,6 +44,13 @@
                 <TextBlock Text="{Binding Description}" FontSize="12" Foreground="Gray" TextWrapping="Wrap" MaxHeight="40" />
                 <TextBlock Text="{Binding Price, StringFormat=Rp {0:N0}}" FontSize="14" Foreground="#1E4AE9" Margin="0 4 0 0"/>
             </StackPanel>
+
+            <Grid Grid.Column="1">
+                <Button Content="Edit Product" BorderThickness="1.25" HorizontalAlignment="Left" Background="White" BorderBrush="#1E4AE9" Foreground="#1E4AE9"
+                        VerticalAlignment="Bottom" Width="80" Height="24"
+                        Command="{Binding Source={StaticResource ProductCardSellerVMInstance}, Path=OpenEditProductCommand}"
+                        />  
+            </Grid>
         </Grid>
     </Border>
 </UserControl>

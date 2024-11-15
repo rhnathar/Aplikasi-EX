@@ -31,6 +31,9 @@
     <Compile Update="View\DetailProduct.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\EditAccountPopUp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\HomePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -94,6 +97,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\DetailProduct.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\EditAccountPopUp.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\HomePage.xaml">

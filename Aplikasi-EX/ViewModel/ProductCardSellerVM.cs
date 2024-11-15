@@ -8,12 +8,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Aplikasi_EX.Utilities;
 
 namespace Aplikasi_EX.ViewModel
 {
-    public class ProductCardSellerVM 
+    class ProductCardSellerVM : Utilities.ViewModelBase
     {
 
+        public ICommand OpenEditProductCommand { get; set; }
+
+        public ProductCardSellerVM() 
+        {
+            OpenEditProductCommand = new RelayCommand(OpenEditProduct);
+        }
+
+        void OpenEditProduct(object parameter)
+        {
+            var EditProductWindow = new EditProductPopUp();
+            EditProductWindow.ShowDialog();
+        }
 
     }
+
 }
