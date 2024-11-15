@@ -7,10 +7,10 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="AccountTemp.xaml.cs">
+    <Compile Update="MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="DetailProduct.xaml.cs">
+    <Compile Update="SellerMainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="SignInWindow.xaml.cs">
@@ -22,21 +22,42 @@
     <Compile Update="View\Account.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\AddProductPopUp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AllProducts.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\DetailProduct.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\EditAccountPopUp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\HomePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\ProductList.xaml.cs">
+    <Compile Update="View\ProductCard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ProductCardSeller.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\SellerAccount.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\SellerOrderView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\SellerProduct.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="AccountTemp.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="DetailProduct.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SellerMainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SignInWindow.xaml">
@@ -48,10 +69,19 @@
     <Page Update="Styles\button.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Styles\dataGrid.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\imgClose.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Styles\inputBox.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\PageStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\radioButton.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Utilities\DataTemplate.xaml">
@@ -60,10 +90,34 @@
     <Page Update="View\Account.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\AddProductPopUp.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AllProducts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\DetailProduct.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\EditAccountPopUp.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\HomePage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\ProductList.xaml">
+    <Page Update="View\ProductCard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ProductCardSeller.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\SellerAccount.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\SellerOrderView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\SellerProduct.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -2,6 +2,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Aplikasi_EX"
+             xmlns:utils="clr-namespace:Aplikasi_EX.Utilities"
              StartupUri="SignInWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -9,8 +10,12 @@
                 <ResourceDictionary Source="Styles/inputBox.xaml"/>
                 <ResourceDictionary Source="Styles/PageStyle.xaml"/>
                 <ResourceDictionary Source="Styles/button.xaml"/>
-                <!-- Update with the correct path -->
+                <ResourceDictionary Source="Styles/radioButton.xaml"/>
+                <ResourceDictionary Source="Styles/imgClose.xaml"/>
+                <ResourceDictionary Source="Utilities/DataTemplate.xaml"/>
+                <ResourceDictionary Source="Styles/dataGrid.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            <utils:ByteArrayToImageConverter x:Key="ByteArrayToImageConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Lenovo\source\repos\Aplikasi-EX\Aplikasi-EX\obj\Debug\net6.0-windows\
+C:\Users\reiha\junpro\Aplikasi-EX\Aplikasi-EX\obj\Debug\net6.0-windows\
 Aplikasi_EX
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\Lenovo\source\repos\Aplikasi-EX\Aplikasi-EX\App.xaml
-12130870363
+C:\Users\reiha\junpro\Aplikasi-EX\Aplikasi-EX\App.xaml
+23-2089998631
 
-231776058536
-194-1325968647
-AccountTemp.xaml;DetailProduct.xaml;MainWindow.xaml;SignInWindow.xaml;SignUpWindow.xaml;Styles\button.xaml;Styles\inputBox.xaml;Styles\PageStyle.xaml;Utilities\DataTemplate.xaml;View\Account.xaml;View\HomePage.xaml;View\ProductList.xaml;
+52-588648463
+206643415931
+MainWindow.xaml;ProductInfoWindow.xaml;SellerMainWindow.xaml;SignInWindow.xaml;SignUpWindow.xaml;Styles\button.xaml;Styles\dataGrid.xaml;Styles\imgClose.xaml;Styles\inputBox.xaml;Styles\PageStyle.xaml;Styles\radioButton.xaml;Utilities\DataTemplate.xaml;View\Account.xaml;View\AddProductPopUp.xaml;View\AllProducts.xaml;View\DetailProduct.xaml;View\EditProductPopUp.xaml;View\HomePage.xaml;View\ProductCard.xaml;View\ProductCardSeller.xaml;View\SellerAccount.xaml;View\SellerOrderView.xaml;View\SellerProduct.xaml;
 
 False
 

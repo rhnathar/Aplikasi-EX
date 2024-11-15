@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+Aplikasi-EX/db/appsettings.json
+Aplikasi-EX/obj/
+
 # User-specific files
 *.rsuser
 *.suo

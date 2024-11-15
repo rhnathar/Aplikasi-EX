@@ -10,32 +10,62 @@ namespace Aplikasi_EX.ViewModel
 {
     class NavigationVM : Utilities.ViewModelBase
     {
-        private object _currentview;
+        private object _currentView;
+        private object _currentViewSeller;
 
         public object CurrentView
         {
-            get { return _currentview; }
+            get { return _currentView; }
             set
             {
-                _currentview = value;
+                _currentView = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public object CurrentViewSeller
+        {
+            get { return _currentViewSeller; }
+            set
+            {
+                _currentViewSeller = value; 
                 OnPropertyChanged();
             }
         }
 
  
 
-        //Auth Window  
-        /*public ICommand SignUpCommand { get; set; }
-        public ICommand SignInCommand { get; set; }
+        //buyer POV
+        public ICommand HomePageCommand { get; set; }
+        public ICommand AccountCommand { get; set; }
+        public ICommand AllProductCommand { get; set; }
+        public ICommand SellerProductCommand { get; set; }
+        public ICommand SellerOrderCommand { get; set; }
+        public ICommand SellerAccountCommand { get; set; }
 
 
-        private void SignUp(object obj) => CurrentView = new SignUpVM();
-        private void SignIn(object obj) => CurrentView = new SignInVM();
+        private void HomePage(object obj) => CurrentView = new HomePageVM();
+        private void Account(object obj) => CurrentView = new AccountVM();
+        private void AllProduct(object obj) => CurrentView = new AllProductsVM();
+        private void SellerProduct (object obj) => CurrentViewSeller = new SellerProductVM();
+        private void SellerOrder (object obj) => CurrentViewSeller = new SellerOrderVM();
+        private void SellerAccount (object obj) => CurrentViewSeller = new SellerAccountVM();
+
+
+        
 
         public NavigationVM()
         {
-            SignUpCommand = new RelayCommand(SignUp);
-            SignInCommand = new RelayCommand(SignIn);
-        }*/
+            HomePageCommand = new RelayCommand(HomePage);
+            AccountCommand = new RelayCommand(Account);
+            AllProductCommand = new RelayCommand(AllProduct);
+
+            SellerProductCommand = new RelayCommand(SellerProduct);
+            SellerOrderCommand = new RelayCommand (SellerOrder);
+            SellerAccountCommand = new RelayCommand(SellerAccount);
+
+            CurrentView = new HomePageVM();
+            CurrentViewSeller = new SellerProductVM();
+        }
     }
 }
