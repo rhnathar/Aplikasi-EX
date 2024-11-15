@@ -29,7 +29,7 @@
             </Grid.ColumnDefinitions>
 
             <!-- Product Image -->
-            <Image Source="{Binding ImagePath}" Width="150" Height="128" Stretch="Uniform"/>
+            <Image Source="{Binding Image}" Width="150" Height="128" Stretch="Uniform"/>
 
             <!-- Product Details -->
             <StackPanel Grid.Column="1" VerticalAlignment="Top">

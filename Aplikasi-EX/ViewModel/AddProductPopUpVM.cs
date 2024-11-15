@@ -70,6 +70,7 @@ namespace Aplikasi_EX.ViewModel
         public ICommand CancelCommand { get; }
         public ICommand CloseCommand { get; }
         public ICommand UploadFileCommand { get; }
+        public event EventHandler ProductAdded;
 
         public AddProductPopUpVM()
         {
@@ -103,6 +104,7 @@ namespace Aplikasi_EX.ViewModel
             {
                 await _productrepository.InsertProductAsync(product);
                 MessageBox.Show("Produk Berhasil Ditambahkan.");
+                ProductAdded?.Invoke(this, EventArgs.Empty);
                 Close(parameter);
             }
             catch (Exception ex) 

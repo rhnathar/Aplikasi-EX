@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace Aplikasi_EX.Model
 {
@@ -17,6 +18,7 @@ namespace Aplikasi_EX.Model
 
         //nyoba pake gambar local
         public string ImagePath { get; set; }
+        public BitmapImage Image { get; set; }
         public int SellerID { get; set; }
         public int Quantity { get; set; }
         public string Condition { get; set; }

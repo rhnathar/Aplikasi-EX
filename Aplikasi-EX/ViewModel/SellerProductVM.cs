@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows;
 using System;
+using System.IO;
+using System.Windows.Media.Imaging;
 
 namespace Aplikasi_EX.ViewModel
 {
@@ -50,16 +52,37 @@ namespace Aplikasi_EX.ViewModel
             if (CurrentUser != null)
             {
                 var productsFromDb = await _productRepository.GetSellerProductsAsync(CurrentUser.UserID);
+                foreach (var product in productsFromDb)
+                {
+                    product.Image = ConvertBase64ToImage(product.ImagePath);
+                }
                 Products = new ObservableCollection<Product>(productsFromDb);
             }
+        }
+        private BitmapImage ConvertBase64ToImage(string base64String)
+        {
+            byte[] binaryData = Convert.FromBase64String(base64String);
+
+            BitmapImage bi = new BitmapImage();
+            bi.BeginInit();
+            bi.StreamSource = new MemoryStream(binaryData);
+            bi.EndInit();
+
+            return bi;
         }
         void OpenAddProduct(object parameter)
         {
             // Create an instance of the popup window
-            var addProductWindow = new AddProductPopUp();
+            var addProductPopUpVM = new AddProductPopUpVM();
+            addProductPopUpVM.ProductAdded += OnProductAdded;
+            var addProductWindow = new AddProductPopUp { DataContext = addProductPopUpVM };
 
             // Show the popup as a dialog
             addProductWindow.ShowDialog();
+        }
+        private async void OnProductAdded(object sender, EventArgs e)
+        {
+            await LoadProducts();
         }
     }
 }

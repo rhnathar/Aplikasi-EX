@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\reiha\junpro\Aplikasi-EX\Aplikasi-EX\App.xaml
-23-2089998631
+24-657320885
 
-52-588648463
+54518203307
 206643415931
-MainWindow.xaml;ProductInfoWindow.xaml;SellerMainWindow.xaml;SignInWindow.xaml;SignUpWindow.xaml;Styles\button.xaml;Styles\dataGrid.xaml;Styles\imgClose.xaml;Styles\inputBox.xaml;Styles\PageStyle.xaml;Styles\radioButton.xaml;Utilities\DataTemplate.xaml;View\Account.xaml;View\AddProductPopUp.xaml;View\AllProducts.xaml;View\DetailProduct.xaml;View\EditProductPopUp.xaml;View\HomePage.xaml;View\ProductCard.xaml;View\ProductCardSeller.xaml;View\SellerAccount.xaml;View\SellerOrderView.xaml;View\SellerProduct.xaml;
+MainWindow.xaml;ProductInfoWindow.xaml;SellerMainWindow.xaml;SignInWindow.xaml;SignUpWindow.xaml;Styles\button.xaml;Styles\dataGrid.xaml;Styles\imgClose.xaml;Styles\inputBox.xaml;Styles\PageStyle.xaml;Styles\radioButton.xaml;Utilities\DataTemplate.xaml;View\Account.xaml;View\AddProductPopUp.xaml;View\AllProducts.xaml;View\DetailProduct.xaml;View\EditAccountPopUp.xaml;View\EditProductPopUp.xaml;View\HomePage.xaml;View\ProductCard.xaml;View\ProductCardSeller.xaml;View\SellerAccount.xaml;View\SellerOrderView.xaml;View\SellerProduct.xaml;
 
 False
 
