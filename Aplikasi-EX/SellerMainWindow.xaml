@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Aplikasi_EX"
         xmlns:vm="clr-namespace:Aplikasi_EX.ViewModel"
         mc:Ignorable="d"
-        Title="EX E-Commerce" Height="720" Width="1280"
+        Title="EX E-Commerce | Dashboard Penjual" Height="720" Width="1280"
         Background="#F5F7FF"
         WindowStartupLocation="CenterScreen"
         Icon="/img/LogoBlue.png"

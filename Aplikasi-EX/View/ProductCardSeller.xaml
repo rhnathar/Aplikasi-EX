@@ -29,10 +29,12 @@
             </Grid.ColumnDefinitions>
 
             <!-- Product Image -->
-            <Image Source="{Binding Image}" Width="150" Height="128" Stretch="Uniform"/>
+            <Image Source="{Binding Image}" Width="150" Height="128" Stretch="Uniform"
+                   Margin="8"
+                   />
 
             <!-- Product Details -->
-            <StackPanel Grid.Column="1" VerticalAlignment="Top">
+            <StackPanel Grid.Column="1" VerticalAlignment="Top" Margin="4 0 0 0">
                 <TextBlock Text="{Binding ProductName}" FontSize="16" FontWeight="Bold" Foreground="Black" />
                 <TextBlock Text="{Binding Category}" FontSize="12" FontWeight="Bold" Foreground="Gray" Margin="0 4 0 0"/>
                 <StackPanel Orientation="Horizontal">

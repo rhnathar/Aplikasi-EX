@@ -22,7 +22,7 @@
                         <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Opacity="0.3" />
                     </Grid.Effect>
 
-                    <Border Width="1060" Height="700" Background="White" CornerRadius="16">
+                    <Border Width="1060" Height="800" Background="White" CornerRadius="16" Margin="0 0 0 40">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
@@ -52,7 +52,7 @@
                             <!--List Product-->
                             <Grid Grid.Row="2" Margin="0 30 0 0">
                                 <!--Fetch area-->
-                                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                    <ScrollViewer VerticalScrollBarVisibility="Auto" Height="600">
                                         <ItemsControl ItemsSource="{Binding Products}">
                                             <ItemsControl.ItemsPanel>
                                                 <ItemsPanelTemplate>
