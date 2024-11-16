@@ -6,113 +6,112 @@
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="1280"
              Style="{StaticResource Page_Style}"
-             >
+             DataContext="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext}">
+	<Grid Background="#F5F7FF">
+		<ScrollViewer VerticalScrollBarVisibility="Auto">
+			<!-- Main Grid for product details layout -->
+			<Grid Height="677" Width="1040" VerticalAlignment="Top" Margin="0 60 0 0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="82"/>
+					<RowDefinition Height="540"/>
+				</Grid.RowDefinitions>
 
-    <Grid Background="#F5F7FF">
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <!-- Main Grid for product details layout -->
-            <Grid Height="677" Width="1040" VerticalAlignment="Top" Margin="0 60 0 0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="82"/>
-                    <RowDefinition Height="540"/>
-                </Grid.RowDefinitions>
+				<!-- Back Button -->
+				<Grid Height="48" Width="48" VerticalAlignment="Top" HorizontalAlignment="Left">
+					<Image Source="/img/icon/ArrowButton.png"/>
+				</Grid>
 
-                <!-- Back Button -->
-                <Grid Height="48" Width="48" VerticalAlignment="Top" HorizontalAlignment="Left">
-                    <Image Source="/img/icon/ArrowButton.png"/>
-                </Grid>
+				<!-- Product Detail Content -->
+				<Grid Grid.Row="1">
+					<Border CornerRadius="6" Background="White" BorderBrush="LightGray" BorderThickness="1">
+						<Border.Effect>
+							<DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Opacity="0.3" />
+						</Border.Effect>
 
-                <!-- Product Detail Content (dummy data bound to ViewModel) -->
-                <Grid Grid.Row="1">
-                    <Border CornerRadius="6" Background="White" BorderBrush="LightGray" BorderThickness="1">
-                        <Border.Effect>
-                            <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Opacity="0.3" />
-                        </Border.Effect>
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
 
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
+							<!-- Main Product Image -->
+							<Grid Grid.Column="0" Width="456" Height="307" VerticalAlignment="Top" HorizontalAlignment="Center">
+								<Border CornerRadius="6" BorderBrush="Gray" BorderThickness="1" Margin="0 32 0 0">
+									<Image Source="{Binding Product.Image}" Stretch="Uniform"/>
+								</Border>
+							</Grid>
 
-                            <!-- Main Product Image -->
-                            <Grid Grid.Column="0" Width="456" Height="307" VerticalAlignment="Top" HorizontalAlignment="Center">
-                                <Border CornerRadius="6" BorderBrush="Gray" BorderThickness="1" Margin="0 32 0 0">
-                                    <Image Source="{Binding ProductImage}" Stretch="Uniform"/>
-                                </Border>
-                            </Grid>
+							<Grid Grid.Column="1">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="2.5*"/>
+									<RowDefinition Height="*"/>
+								</Grid.RowDefinitions>
 
-                            <Grid Grid.Column="1">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2.5*"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
+								<Grid Grid.Row="0">
+									<StackPanel Margin="0 32 0 0">
+										<TextBlock Text="{Binding Product.ProductName}" FontSize="20" FontWeight="Bold"/>
+										<Grid Margin="0 10 0 10">
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition Width="*"/>
+												<ColumnDefinition Width="*"/>
+											</Grid.ColumnDefinitions>
 
-                                <Grid Grid.Row="0">
-                                    <StackPanel Margin="0 32 0 0">
-                                        <TextBlock Text="{Binding ProductName}" FontSize="20" FontWeight="Bold"/>
-                                        <Grid Margin="0 10 0 10">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="*"/>
-                                            </Grid.ColumnDefinitions>
+											<Grid Grid.Column="0">
+												<StackPanel>
+													<StackPanel Orientation="Horizontal">
+														<TextBlock Text="Kondisi:" FontSize="14px" Foreground="#191C1F"/>
+														<TextBlock Text="{Binding Product.Condition}" Margin="4 0 0 0" FontSize="14" FontWeight="SemiBold"/>
+													</StackPanel>
+													<StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+														<TextBlock Text="Kategori:" FontSize="14px" Foreground="#191C1F"/>
+														<TextBlock Text="{Binding Product.Category}" Margin="4 0 0 0" FontSize="14" FontWeight="SemiBold"/>
+													</StackPanel>
+												</StackPanel>
+											</Grid>
 
-                                            <Grid Grid.Column="0">
-                                                <StackPanel>
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <TextBlock Text="Kondisi:" FontSize="14px" Foreground="#191C1F"/>
-                                                        <TextBlock Text="{Binding Condition}" Margin="4 0 0 0" FontSize="14" FontWeight="SemiBold"/>
-                                                    </StackPanel>
-                                                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
-                                                        <TextBlock Text="Kategori:" FontSize="14px" Foreground="#191C1F"/>
-                                                        <TextBlock Text="{Binding Category}" Margin="4 0 0 0" FontSize="14" FontWeight="SemiBold"/>
-                                                    </StackPanel>
-                                                </StackPanel>
-                                            </Grid>
+											<Grid Grid.Column="1">
+												<StackPanel>
+													<StackPanel Orientation="Horizontal">
+														<TextBlock Text="Stok:" FontSize="14px" Foreground="#191C1F"/>
+														<TextBlock Text="{Binding Product.Quantity}" Margin="4 0 0 0" FontSize="14" FontWeight="SemiBold"/>
+													</StackPanel>
+													<StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+														<TextBlock Text="Dikirim dari:" FontSize="14px" Foreground="#191C1F"/>
+														<TextBlock Text="{Binding Product.Location}" Margin="4 0 0 0" FontSize="14" FontWeight="SemiBold"/>
+													</StackPanel>
+												</StackPanel>
+											</Grid>
+										</Grid>
 
-                                            <Grid Grid.Column="1">
-                                                <StackPanel>
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <TextBlock Text="Stok:" FontSize="14px" Foreground="#191C1F"/>
-                                                        <TextBlock Text="{Binding Stock}" Margin="4 0 0 0" FontSize="14" FontWeight="SemiBold"/>
-                                                    </StackPanel>
-                                                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
-                                                        <TextBlock Text="Dikirim dari:" FontSize="14px" Foreground="#191C1F"/>
-                                                        <TextBlock Text="{Binding Location}" Margin="4 0 0 0" FontSize="14" FontWeight="SemiBold"/>
-                                                    </StackPanel>
-                                                </StackPanel>
-                                            </Grid>
-                                        </Grid>
+										<TextBlock Text="{Binding Product.Price, StringFormat=C}" FontSize="24" FontWeight="SemiBold" Foreground="Blue"/>
+										<StackPanel Margin="0 20 0 0">
+											<TextBlock Text="Deskripsi" FontSize="16" FontWeight="SemiBold"/>
+											<TextBlock Margin="0 16 0 0" Text="{Binding Product.Description}" TextWrapping="Wrap" Foreground="Gray"/>
+										</StackPanel>
+									</StackPanel>
+								</Grid>
 
-                                        <TextBlock Text="{Binding Price, StringFormat=C}" FontSize="24" FontWeight="SemiBold" Foreground="Blue"/>
-                                        <StackPanel Margin="0 20 0 0">
-                                            <TextBlock Text="Deskripsi" FontSize="16" FontWeight="SemiBold"/>
-                                            <TextBlock Margin="0 16 0 0" Text="{Binding Description}" TextWrapping="Wrap" Foreground="Gray"/>
-                                        </StackPanel>
-                                    </StackPanel>
-                                </Grid>
-
-                                <!--Button-->
-                                <Grid Grid.Row="1">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Border Width="131" Height="56" HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="6" BorderThickness="1" BorderBrush="#E4E7E9">
-                                            <StackPanel Orientation="Horizontal">
-                                                <!--decrease button-->
-                                                <Button x:Name="decreaseButton" Width="43" Height="56" HorizontalAlignment="Left" Content="-" FontSize="42" VerticalContentAlignment="Top" Background="{x:Null}" BorderThickness="0" FontWeight="SemiBold" FontFamily="Inter" Click="decreaseButton_Click"/>
-                                                <TextBlock x:Name="QuantityTextBlock" Width="43" Text="01" TextAlignment="Center" Height="22" FontFamily="Inter" FontSize="16" Foreground="#475156"/>
-                                                <Button x:Name="increaseButton" Width="43" Height="56" Margin="0,0,0,0" HorizontalAlignment="Left" Content="+" FontSize="33" VerticalContentAlignment="Top" Background="{x:Null}" BorderThickness="0" Click="increaseButton_CLick"/>
-                                            </StackPanel>
-                                        </Border>
-                                        <Button Content="BELI SEKARANG" Style="{StaticResource buttonMain}" 
+								<!--Button-->
+								<Grid Grid.Row="1">
+									<StackPanel Orientation="Horizontal">
+										<Border Width="131" Height="56" HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="6" BorderThickness="1" BorderBrush="#E4E7E9">
+											<StackPanel Orientation="Horizontal">
+												<!--decrease button-->
+												<Button x:Name="decreaseButton" Width="43" Height="56" HorizontalAlignment="Left" Content="-" FontSize="42" VerticalContentAlignment="Top" Background="{x:Null}" BorderThickness="0" FontWeight="SemiBold" FontFamily="Inter" Click="decreaseButton_Click"/>
+												<TextBlock x:Name="QuantityTextBlock" Width="43" Text="01" TextAlignment="Center" Height="22" FontFamily="Inter" FontSize="16" Foreground="#475156"/>
+												<Button x:Name="increaseButton" Width="43" Height="56" Margin="0,0,0,0" HorizontalAlignment="Left" Content="+" FontSize="33" VerticalContentAlignment="Top" Background="{x:Null}" BorderThickness="0" Click="increaseButton_CLick"/>
+											</StackPanel>
+										</Border>
+										<Button Content="BELI SEKARANG" Style="{StaticResource buttonMain}" 
                                                 VerticalAlignment="Top" Margin="16 0 0 0"
                                                 Foreground="White" Width="251" Height="56" FontSize="16"/>
-                                    </StackPanel>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                    </Border>
-                </Grid>
-            </Grid>
-        </ScrollViewer>
-    </Grid>
+									</StackPanel>
+								</Grid>
+							</Grid>
+						</Grid>
+					</Border>
+				</Grid>
+			</Grid>
+		</ScrollViewer>
+	</Grid>
 </UserControl>

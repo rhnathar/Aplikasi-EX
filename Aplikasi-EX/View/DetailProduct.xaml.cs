@@ -25,7 +25,6 @@ namespace Aplikasi_EX.View
         public DetailProduct()
         {
             InitializeComponent();
-            DataContext = new DetailProductVM(); // Using dummy data
         }
 
         private void decreaseButton_Click(object sender, RoutedEventArgs e)

@@ -29,6 +29,9 @@
         <view:SellerAccount/>
     </DataTemplate>
 
+	<DataTemplate DataType="{x:Type vm:DetailProductVM}">
+		<view:DetailProduct/>
+	</DataTemplate>
 
 
 </ResourceDictionary>
