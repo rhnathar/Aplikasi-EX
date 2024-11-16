@@ -54,12 +54,14 @@
 
                 <!-- TextBox for 'Cari di EX' -->
                 <TextBox Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" 
-                 Height="40" FontSize="16" Foreground="Gray" Text="Cari di EX" 
+                 Height="40" FontSize="16" Foreground="Gray" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
                  Padding="10,7,0,0" />
 
                 <!-- Search Button with an icon -->
                 <Button Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" 
-                Width="40" Height="40" Background="White">
+                Width="40" Height="40" Background="White"
+						Command="{Binding SearchBarCommand}" CommandParameter="{Binding SearchText}"
+						>
                     <Image Source="/img/icon/search-icon.png" Width="20" Height="20" />
                 </Button>
             </Grid>

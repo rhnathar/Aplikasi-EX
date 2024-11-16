@@ -15,6 +15,7 @@ namespace Aplikasi_EX.ViewModel
 	{
 		private object _currentView;
 		private object _currentViewSeller;
+		private string _searchText;
 
 		public object CurrentView
 		{
@@ -42,6 +43,16 @@ namespace Aplikasi_EX.ViewModel
 			set { _currentUser = value; OnPropertyChanged(nameof(CurrentUser)); }
 		}
 
+		public string SearchText
+		{
+			get => _searchText;
+			set
+			{
+				_searchText = value;
+				OnPropertyChanged();
+			}
+		}
+
 		//buyer POV
 		public ICommand HomePageCommand { get; set; }
 		public ICommand AccountCommand { get; set; }
@@ -51,6 +62,7 @@ namespace Aplikasi_EX.ViewModel
 		public ICommand SellerOrderCommand { get; set; }
 		public ICommand SellerAccountCommand { get; set; }
 		public ICommand NavigateToDetailCommand { get; set; }
+		public ICommand SearchBarCommand {get; set; }
 
 
 		private void HomePage(object obj) => CurrentView = new HomePageVM();
@@ -73,7 +85,14 @@ namespace Aplikasi_EX.ViewModel
                 CurrentView = new AllProductsVM(search, true);
             }
         }
-        public void NavigateToDetailProduct(Product product)
+		private void SearchBar(object obj)
+		{
+			if (obj is string searchText)
+			{
+				NavigateToSearchProduct(searchText);
+			}
+		}
+		public void NavigateToDetailProduct(Product product)
 		{
 			CurrentView = new DetailProductVM(product);
 		}
@@ -91,6 +110,7 @@ namespace Aplikasi_EX.ViewModel
 					AllProductCommand = new RelayCommand(NavigateToAllProduct);
 					SearchProductCommand = new RelayCommand(NavigateToSearchProduct);
                     NavigateToDetailCommand = new RelayCommand(param => NavigateToDetailProduct((Product)param));
+					SearchBarCommand = new RelayCommand(SearchBar);
 					CurrentView = new HomePageVM();
 
 				}
