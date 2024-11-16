@@ -24,7 +24,6 @@ namespace Aplikasi_EX.View
         public AllProducts()
         {
             InitializeComponent();
-            DataContext = new AllProductsVM();
         }
     }
 }

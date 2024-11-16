@@ -72,6 +72,7 @@
                             <!--card 1-->
                             <Button Margin="10" Style="{StaticResource CategoryButtonStyle}" 
                                     Command="{Binding AllProductCommand}"
+                                    CommandParameter="{Binding Tag, RelativeSource={RelativeSource Self}}"
                                     Tag="Computer">
                                 <StackPanel>
                                     <Image Source="/img/mainpage/computer.png" Margin="20"/>
@@ -81,7 +82,11 @@
 
 
                             <!--card 2-->
-                            <Button Margin="10" Style="{StaticResource CategoryButtonStyle}" Click="CategoryButton_Click" Tag="Smartphone" Grid.Column="1">
+                            <Button Margin="10" 
+                                    Style="{StaticResource CategoryButtonStyle}"
+                                    Command="{Binding AllProductCommand}"
+                                    CommandParameter="{Binding Tag, RelativeSource={RelativeSource Self}}"
+                                    Tag="Handphone" Grid.Column="1">
                                 <StackPanel>
                                     <Image Source="/img/mainpage/smartphone.png" Margin="20"/>
                                     <TextBlock Text="Smartphone" FontWeight="SemiBold" TextAlignment="Center"/>
@@ -92,7 +97,8 @@
                             <!--card 3-->
                             <Button Margin="10" Style="{StaticResource CategoryButtonStyle}" 
                                     Command="{Binding AllProductCommand}"
-                                    Tag="Keyboards" Grid.Column="2">
+                                    CommandParameter="{Binding Tag, RelativeSource={RelativeSource Self}}"
+                                    Tag="Keyboard" Grid.Column="2">
                                 <StackPanel>
                                     <Image Source="/img/mainpage/keyboard.png" Margin="20"/>
                                     <TextBlock Text="Keyboards" FontWeight="SemiBold" TextAlignment="Center"/>
@@ -103,6 +109,7 @@
                             <!--card 4-->
                             <Button Margin="10" Style="{StaticResource CategoryButtonStyle}" 
                                     Command="{Binding AllProductCommand}"
+                                    CommandParameter="{Binding Tag, RelativeSource={RelativeSource Self}}"
                                     Tag="Camera" Grid.Column="3">
                                 <StackPanel>
                                     <Image Source="/img/mainpage/camera.png" Margin="20"/>
@@ -114,6 +121,7 @@
                             <!--card 5-->
                             <Button Margin="10" Style="{StaticResource CategoryButtonStyle}" 
                                     Command="{Binding AllProductCommand}"
+                                    CommandParameter="{Binding Tag, RelativeSource={RelativeSource Self}}"
                                     Tag="TV" Grid.Column="4">
                                 <StackPanel>
                                     <Image Source="/img/mainpage/tv.png" Margin="20"/>
@@ -125,6 +133,7 @@
                             <!--card 6-->
                             <Button Margin="10" Style="{StaticResource CategoryButtonStyle}" 
                                     Command="{Binding AllProductCommand}"
+                                    CommandParameter="{Binding Tag, RelativeSource={RelativeSource Self}}"
                                     Tag="Gaming" Grid.Column="5">
                                 <StackPanel>
                                     <Image Source="/img/mainpage/gaming.png" Margin="20,20,20,50"/>

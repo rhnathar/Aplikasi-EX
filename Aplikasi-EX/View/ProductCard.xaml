@@ -12,7 +12,7 @@
             <!-- Product Image -->
             <!--Image Source="{Binding ProductImage, Converter={StaticResource ByteArrayToImageConverter}}" 
                 Height="100" Width="100" />-->
-            <Image Source="{Binding ImagePath}" Width="180" Height="150" Stretch="Uniform"/>
+            <Image Source="{Binding Image}" Width="180" Height="150" Stretch="Uniform"/>
 
             <!-- Product Name -->
             <TextBlock Text="{Binding ProductName}" FontWeight="Bold" Margin="0,5,0,0" />

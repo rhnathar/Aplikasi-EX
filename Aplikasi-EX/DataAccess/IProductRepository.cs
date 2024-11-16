@@ -7,4 +7,5 @@ public interface IProductRepository
 {
     Task InsertProductAsync(Product product);
     Task<List<Product>> GetSellerProductsAsync(int sellerID);
+    Task<List<Product>> GetProductsByCategoryAsync(string category);
 }

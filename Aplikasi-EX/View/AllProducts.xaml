@@ -12,10 +12,6 @@
             d:DesignHeight="650" d:DesignWidth="1280"
             Style="{StaticResource Page_Style}"
             >
-    <UserControl.DataContext>
-        <vm:AllProductsVM/>
-    </UserControl.DataContext>
-
     <UserControl.Resources>
         <utils:ByteArrayToImageConverter x:Key="ByteArrayToImageConverter"/>
     </UserControl.Resources>

@@ -58,7 +58,10 @@ namespace Aplikasi_EX.ViewModel
         private void SellerAccount (object obj) => CurrentViewSeller = new SellerAccountVM();
         private void NavigateToAllProduct(object obj)
         {
-            CurrentView = new AllProductsVM();
+            if(obj is string category)
+            {
+                CurrentView = new AllProductsVM(category);
+            }
         }
 
 
