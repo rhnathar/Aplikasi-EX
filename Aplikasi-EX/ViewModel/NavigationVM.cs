@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Navigation;
 
 namespace Aplikasi_EX.ViewModel
 {
@@ -45,7 +46,8 @@ namespace Aplikasi_EX.ViewModel
 		public ICommand HomePageCommand { get; set; }
 		public ICommand AccountCommand { get; set; }
 		public ICommand AllProductCommand { get; set; }
-		public ICommand SellerProductCommand { get; set; }
+        public ICommand SearchProductCommand { get; set; }
+        public ICommand SellerProductCommand { get; set; }
 		public ICommand SellerOrderCommand { get; set; }
 		public ICommand SellerAccountCommand { get; set; }
 		public ICommand NavigateToDetailCommand { get; set; }
@@ -64,8 +66,14 @@ namespace Aplikasi_EX.ViewModel
 				CurrentView = new AllProductsVM(category);
 			}
 		}
-
-		public void NavigateToDetailProduct(Product product)
+        private void NavigateToSearchProduct(object obj)
+		{
+            if (obj is string search)
+            {
+                CurrentView = new AllProductsVM(search, true);
+            }
+        }
+        public void NavigateToDetailProduct(Product product)
 		{
 			CurrentView = new DetailProductVM(product);
 		}
@@ -81,7 +89,8 @@ namespace Aplikasi_EX.ViewModel
 					AccountCommand = new RelayCommand(Account);
 					//AllProductCommand = new RelayCommand(AllProduct);
 					AllProductCommand = new RelayCommand(NavigateToAllProduct);
-					NavigateToDetailCommand = new RelayCommand(param => NavigateToDetailProduct((Product)param));
+					SearchProductCommand = new RelayCommand(NavigateToSearchProduct);
+                    NavigateToDetailCommand = new RelayCommand(param => NavigateToDetailProduct((Product)param));
 					CurrentView = new HomePageVM();
 
 				}

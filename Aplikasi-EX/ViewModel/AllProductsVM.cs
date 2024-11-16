@@ -35,13 +35,23 @@ namespace Aplikasi_EX.ViewModel
 			InitializeAsync(category);
 			NavigateToDetailCommand = new RelayCommand(param => NavigateToDetail((Product)param));
 		}
+        public AllProductsVM(string search, bool isSearch)
+        {
+            _productRepository = new ProductRepository();
+            InitializeAsync(search, isSearch);
+            NavigateToDetailCommand = new RelayCommand(param => NavigateToDetail((Product)param));
+        }
 
-		private async void InitializeAsync(string category)
+        private async void InitializeAsync(string category)
 		{
 			await LoadProducts(category);
 		}
+		private async void InitializeAsync(string search, bool isSearch)
+        {
+            await SearchProducts(search);
+        }
 
-		private async Task LoadProducts(string category)
+        private async Task LoadProducts(string category)
 		{
 			var productsFromDb = await _productRepository.GetProductsByCategoryAsync(category);
 			foreach (var product in productsFromDb)
@@ -50,8 +60,17 @@ namespace Aplikasi_EX.ViewModel
 			}
 			Products = new ObservableCollection<Product>(productsFromDb);
 		}
+		private async Task SearchProducts(string search)
+        {
+            var productsFromDb = await _productRepository.GetProductsBySearchAsync(search);
+            foreach (var product in productsFromDb)
+            {
+                product.Image = ConvertBase64ToImage(product.ImagePath);
+            }
+            Products = new ObservableCollection<Product>(productsFromDb);
+        }
 
-		private BitmapImage ConvertBase64ToImage(string base64String)
+        private BitmapImage ConvertBase64ToImage(string base64String)
 		{
 			byte[] binaryData = Convert.FromBase64String(base64String);
 
