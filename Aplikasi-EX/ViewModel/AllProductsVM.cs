@@ -17,17 +17,29 @@ namespace Aplikasi_EX.ViewModel
 	{
 		private readonly ProductRepository _productRepository;
 		private ObservableCollection<Product> _products;
-		public ObservableCollection<Product> Products
-		{
-			get => _products;
-			set
-			{
-				_products = value;
-				OnPropertyChanged();
-			}
-		}
+        public ObservableCollection<Product> Products
+        {
+            get => _products;
+            set
+            {
+                _products = value;
+                OnPropertyChanged();
+                ProductCount = _products?.Count ?? 0; // Update ProductCount setiap kali Products diubah
+            }
+        }
 
-		public ICommand NavigateToDetailCommand { get; }
+        private int _productCount;
+        public int ProductCount
+        {
+            get => _productCount;
+            private set
+            {
+                _productCount = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public ICommand NavigateToDetailCommand { get; }
 
 		public AllProductsVM(string category)
 		{
