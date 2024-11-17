@@ -10,13 +10,13 @@ using System.Windows;
 using System;
 using System.IO;
 using System.Windows.Media.Imaging;
+using CommunityToolkit.Mvvm.Messaging;
 
 namespace Aplikasi_EX.ViewModel
 {
     class SellerProductVM : Utilities.ViewModelBase
     {
         public ICommand OpenAddProductCommand { get; }
-        public ICommand OpenEditProductCommand { get; }
         private readonly ProductRepository _productRepository;
         private ObservableCollection<Product> _products;
         public ObservableCollection<Product> Products
@@ -42,14 +42,12 @@ namespace Aplikasi_EX.ViewModel
                 CurrentUser = UserSession.CurrentUser;
                 InitializeAsync();
             }
-            OpenAddProductCommand = new RelayCommand(OpenAddProduct);
-            OpenEditProductCommand = new RelayCommand(obj =>
+            WeakReferenceMessenger.Default.Register<ProductUpdatedMessage>(this, (r, m) =>
             {
-                if (obj is int productId)
-                {
-                    OpenEditProduct(productId);
-                }
+                // Muat ulang produk ketika menerima pesan
+                LoadProducts();
             });
+            OpenAddProductCommand = new RelayCommand(OpenAddProduct);
 
         }
         private async void InitializeAsync()
@@ -89,22 +87,7 @@ namespace Aplikasi_EX.ViewModel
             // Show the popup as a dialog
             addProductWindow.ShowDialog();
         }
-
-        void OpenEditProduct(int ProductID)
-        {
-            // Create an instance of the popup window
-            var editProductPopUpVM = new EditProductPopUpVM(ProductID);
-            editProductPopUpVM.ProductUpdated += OnProductUpdated;
-            var editProductWindow = new EditProductPopUp(ProductID);
-
-            // Show the popup as a dialog
-            editProductWindow.ShowDialog();
-        }
         private async void OnProductAdded(object sender, EventArgs e)
-        {
-            await LoadProducts();
-        }
-        private async void OnProductUpdated(object sender, EventArgs e)
         {
             await LoadProducts();
         }

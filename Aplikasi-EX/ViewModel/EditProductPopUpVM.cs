@@ -14,6 +14,7 @@ using System.Xml.Linq;
 using Aplikasi_EX.View;
 using System.Collections.ObjectModel;
 using System.Windows.Media.Imaging;
+using CommunityToolkit.Mvvm.Messaging;
 
 namespace Aplikasi_EX.ViewModel
 {
@@ -85,7 +86,7 @@ namespace Aplikasi_EX.ViewModel
         public ICommand DeleteCommand { get; }
         public ICommand UploadFileCommand { get; }
 
-        public event EventHandler ProductUpdated;
+        public event Action ProductUpdated;
         public EditProductPopUpVM(int ProductID)
         {
             _productrepository = new ProductRepository();
@@ -148,13 +149,9 @@ namespace Aplikasi_EX.ViewModel
             {
                 // Update produk di database melalui repository
                 await _productrepository.UpdateProductAsync(CurrentProduct);
-
+                WeakReferenceMessenger.Default.Send(new ProductUpdatedMessage(CurrentProduct.ProductID));
                 // Berikan notifikasi sukses
                 MessageBox.Show("Produk berhasil diperbarui.", "Berhasil", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                // Trigger event jika diperlukan
-                ProductUpdated?.Invoke(this, EventArgs.Empty);
-
                 // Tutup jendela
                 Close(parameter);
             }
@@ -197,11 +194,6 @@ namespace Aplikasi_EX.ViewModel
             byte[] imageBytes = File.ReadAllBytes(imagePath);
             return Convert.ToBase64String(imageBytes);
         }
-
-
-
-
-
     }
 
 }
