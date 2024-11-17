@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using Aplikasi_EX.View;
 using System.ComponentModel;
+using CommunityToolkit.Mvvm.Messaging;
 
 namespace Aplikasi_EX.ViewModel
 {
@@ -114,8 +115,10 @@ namespace Aplikasi_EX.ViewModel
                     Password = Password, // Pastikan Password juga ter-update jika diperlukan
                     PhoneNumber = PhoneNumber
                 };
+                UserSession.CurrentUser = user;
 
                 await _userRepository.UpdateDataAccount(user);
+                WeakReferenceMessenger.Default.Send(new AccountUpdatedMessage(user));
 
                 MessageBox.Show("Data berhasil diperbarui", "Sukses", MessageBoxButton.OK, MessageBoxImage.Information);
                 Close(parameter);

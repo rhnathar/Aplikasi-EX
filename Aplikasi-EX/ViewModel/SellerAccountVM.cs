@@ -6,6 +6,7 @@ using Aplikasi_EX.Utilities;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Aplikasi_EX.View;
+using CommunityToolkit.Mvvm.Messaging;
 
 namespace Aplikasi_EX.ViewModel
 {
@@ -109,6 +110,23 @@ namespace Aplikasi_EX.ViewModel
             }
 
             OpenEditAccountCommand = new RelayCommand(OpenEditAccount);
+            WeakReferenceMessenger.Default.Register<AccountUpdatedMessage>(this, (r, m) =>
+            {
+                // Muat ulang produk ketika menerima pesan
+                OnAccountUpdated(m);
+            });
+        }
+        private void OnAccountUpdated(AccountUpdatedMessage message)
+        {
+            // Perbarui data akun
+            CurrentUser = message.UpdatedUser;
+            OnPropertyChanged(nameof(CurrentUser));
+            OnPropertyChanged(nameof(Greeting));
+            OnPropertyChanged(nameof(FullName));
+            OnPropertyChanged(nameof(Address));
+            OnPropertyChanged(nameof(Email));
+            OnPropertyChanged(nameof(Username));
+            OnPropertyChanged(nameof(PhoneNumber));
         }
 
         void OpenEditAccount(object parameter)

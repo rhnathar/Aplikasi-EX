@@ -1355,23 +1355,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ASUS\\.nuget\\packages\\": {},
+    "C:\\Users\\reiha\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ASUS\\source\\repos\\Aplikasi-EX\\Aplikasi-EX\\Aplikasi-EX.csproj",
+      "projectUniqueName": "C:\\Users\\reiha\\junpro\\Aplikasi-EX\\Aplikasi-EX\\Aplikasi-EX.csproj",
       "projectName": "Aplikasi-EX",
-      "projectPath": "C:\\Users\\ASUS\\source\\repos\\Aplikasi-EX\\Aplikasi-EX\\Aplikasi-EX.csproj",
-      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ASUS\\source\\repos\\Aplikasi-EX\\Aplikasi-EX\\obj\\",
+      "projectPath": "C:\\Users\\reiha\\junpro\\Aplikasi-EX\\Aplikasi-EX\\Aplikasi-EX.csproj",
+      "packagesPath": "C:\\Users\\reiha\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\reiha\\junpro\\Aplikasi-EX\\Aplikasi-EX\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\reiha\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1396,9 +1396,8 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+        "auditMode": "direct"
+      }
     },
     "frameworks": {
       "net6.0-windows7.0": {
@@ -1444,7 +1443,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
