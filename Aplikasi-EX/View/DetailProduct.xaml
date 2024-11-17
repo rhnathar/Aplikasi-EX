@@ -5,8 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="1280"
-             Style="{StaticResource Page_Style}"
-             DataContext="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DetailProductVM}">
+             Style="{StaticResource Page_Style}">
 	<Grid Background="#F5F7FF">
 		<ScrollViewer VerticalScrollBarVisibility="Auto">
 			<!-- Main Grid for product details layout -->
@@ -37,8 +36,8 @@
 							<!-- Main Product Image -->
 							<Grid Grid.Column="0" Width="456" Height="307" VerticalAlignment="Top" HorizontalAlignment="Center">
 								<Border CornerRadius="6" BorderBrush="Gray" BorderThickness="1" Margin="0 32 0 0">
-									<Image Source="{Binding ProductPhoto}" Stretch="Uniform"/>
-								</Border>
+                                    <Image Source="{Binding ProductPhoto}" Stretch="Uniform"/>
+                                </Border>
 							</Grid>
 
 							<Grid Grid.Column="1">
@@ -73,7 +72,7 @@
 												<StackPanel>
 													<StackPanel Orientation="Horizontal">
 														<TextBlock Text="Stok:" FontSize="14px" Foreground="#191C1F"/>
-														<TextBlock Text="{Binding Quantity}" Margin="4 0 0 0" FontSize="14" FontWeight="SemiBold"/>
+														<TextBlock x:Name="txtStock" Text="{Binding Stock}" Margin="4 0 0 0" FontSize="14" FontWeight="SemiBold"/>
 													</StackPanel>
 	
 												</StackPanel>
@@ -100,6 +99,7 @@
 											</StackPanel>
 										</Border>
 										<Button Content="BELI SEKARANG" Style="{StaticResource buttonMain}" 
+                                                Command="{Binding BuyCommand}"
                                                 VerticalAlignment="Top" Margin="16 0 0 0"
                                                 Foreground="White" Width="251" Height="56" FontSize="16"/>
 									</StackPanel>

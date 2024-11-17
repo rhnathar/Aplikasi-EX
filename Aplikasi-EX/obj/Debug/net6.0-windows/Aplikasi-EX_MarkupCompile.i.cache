@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\reiha\junpro\Aplikasi-EX\Aplikasi-EX\obj\Debug\net6.0-windows\
+C:\Users\ASUS\source\repos\Aplikasi-EX\Aplikasi-EX\obj\Debug\net6.0-windows\
 Aplikasi_EX
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\reiha\junpro\Aplikasi-EX\Aplikasi-EX\App.xaml
+C:\Users\ASUS\source\repos\Aplikasi-EX\Aplikasi-EX\App.xaml
 24-657320885
 
 54-1498484831
-207-519489466
+207987616451
 MainWindow.xaml;ProductInfoWindow.xaml;SellerMainWindow.xaml;SignInWindow.xaml;SignUpWindow.xaml;Styles\button.xaml;Styles\dataGrid.xaml;Styles\imgClose.xaml;Styles\inputBox.xaml;Styles\PageStyle.xaml;Styles\radioButton.xaml;Utilities\DataTemplate.xaml;View\Account.xaml;View\AddProductPopUp.xaml;View\AllProducts.xaml;View\DetailProduct.xaml;View\EditAccountPopUp.xaml;View\EditProductPopUp.xaml;View\HomePage.xaml;View\ProductCard.xaml;View\ProductCardSeller.xaml;View\SellerAccount.xaml;View\SellerOrderView.xaml;View\SellerProduct.xaml;
 
-False
+True
 

@@ -45,12 +45,15 @@ namespace Aplikasi_EX.View
 
         private void increaseButton_CLick(object sender, RoutedEventArgs e)
         {
+            
             // Parse the current quantity from the TextBlock
-            if (int.TryParse(QuantityTextBlock.Text, out int quantity))
+            if (int.TryParse(QuantityTextBlock.Text, out int quantity) && int.TryParse(txtStock.Text, out int stock))
             {
-                // Increase the quantity by 1
-                quantity++;
-                QuantityTextBlock.Text = quantity.ToString();
+                if(quantity < stock)
+                {
+                    quantity++;
+                    QuantityTextBlock.Text = quantity.ToString();
+                }
             }
         }
     }

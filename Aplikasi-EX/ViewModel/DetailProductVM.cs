@@ -64,23 +64,24 @@ namespace Aplikasi_EX.ViewModel
             get => _description;
             set { _description = value; OnPropertyChanged(nameof(Description)); }
         }
-        private string _productPhoto;
-        public string ProductPhoto
+        private BitmapImage _productPhoto;
+        public BitmapImage ProductPhoto
         {
             get => _productPhoto;
             set { _productPhoto = value; OnPropertyChanged(nameof(ProductPhoto)); }
         }
-        private string _selectedCategory;
-        public string SelectedCategory
+        private string _category;
+        public string Category
         {
-            get => _selectedCategory;
-            set { _selectedCategory = value; OnPropertyChanged(nameof(SelectedCategory)); }
+            get => _category;
+            set { _category = value; OnPropertyChanged(nameof(Category)); }
         }
 
         public ICommand BuyCommand { get; }
+        public ICommand UploadFileCommand { get; }
 
         public DetailProductVM(int ProductID)
-		{
+        {
             _productRepository = new ProductRepository();
             if (UserSession.IsUserLoggedIn)
             {
@@ -88,8 +89,7 @@ namespace Aplikasi_EX.ViewModel
                 _ = LoadProductAsync(ProductID);
             }
             BuyCommand = new RelayCommand(async (parameter) => await Buy(parameter));
-		}
-
+        }
         private async Task LoadProductAsync(int ProductID)
         {
             try
@@ -102,7 +102,9 @@ namespace Aplikasi_EX.ViewModel
                     Price = CurrentProduct.Price;
                     Stock = CurrentProduct.Quantity;
                     Description = CurrentProduct.Description;
-                    ProductPhoto = CurrentProduct.ImagePath;
+                    Condition = CurrentProduct.Condition;
+                    Category = CurrentProduct.Category;
+                    ProductPhoto = ConvertBase64ToImage(CurrentProduct.ImagePath);
                     MessageBox.Show($"Produk dengan ID {ProductID} ditemukan");
                 }
                 else
@@ -129,7 +131,6 @@ namespace Aplikasi_EX.ViewModel
             {
                 await _productRepository.BuyProductAsync(CurrentProduct);
                 MessageBox.Show("Produk berhasil dibeli, Silahkan Menunggu.", "Berhasil", MessageBoxButton.OK, MessageBoxImage.Information);
-                Close(parameter);
             }
             catch (Exception ex)
             {
@@ -142,10 +143,16 @@ namespace Aplikasi_EX.ViewModel
             Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive)?.Close();
         }
 
-        public string ConvertImageToBase64(string imagePath)
+        private BitmapImage ConvertBase64ToImage(string base64String)
         {
-            byte[] imageBytes = File.ReadAllBytes(imagePath);
-            return Convert.ToBase64String(imageBytes);
+            byte[] binaryData = Convert.FromBase64String(base64String);
+
+            BitmapImage bi = new BitmapImage();
+            bi.BeginInit();
+            bi.StreamSource = new MemoryStream(binaryData);
+            bi.EndInit();
+
+            return bi;
         }
     }
 }
