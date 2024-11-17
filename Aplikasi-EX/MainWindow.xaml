@@ -50,6 +50,12 @@
                   Height="40" Foreground="Black" FontSize="16"
                   Padding="10,7,0,0">
                     <ComboBoxItem Content="Semua Kategori" IsSelected="True"/>
+                    <ComboBoxItem>Computer</ComboBoxItem>
+                    <ComboBoxItem>Handphone</ComboBoxItem>
+                    <ComboBoxItem>Keyboard</ComboBoxItem>
+                    <ComboBoxItem>Camera</ComboBoxItem>
+                    <ComboBoxItem>TV</ComboBoxItem>
+                    <ComboBoxItem>Gaming</ComboBoxItem>
                 </ComboBox>
 
                 <!-- TextBox for 'Cari di EX' -->

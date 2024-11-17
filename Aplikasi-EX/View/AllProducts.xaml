@@ -68,8 +68,12 @@
                             <TextBlock VerticalAlignment="Center" Text="Kategori:" FontSize="14"/>
                             <ComboBox Margin="10 0 0 0" VerticalAlignment="Center" Height="35" Width="150" 
                                       Padding="10,7,0,0" FontSize="14">
-                                <ComboBoxItem Content="Computer" IsSelected="True"/>
-                                <!-- Add other category items here -->
+                                <ComboBoxItem IsSelected="True">Computer</ComboBoxItem>
+                                <ComboBoxItem>Handphone</ComboBoxItem>
+                                <ComboBoxItem>Keyboard</ComboBoxItem>
+                                <ComboBoxItem>Camera</ComboBoxItem>
+                                <ComboBoxItem>TV</ComboBoxItem>
+                                <ComboBoxItem>Gaming</ComboBoxItem>
                             </ComboBox>
                         </StackPanel>
                     </Grid>
@@ -97,7 +101,7 @@
                 </Grid>
 
                 <!--Fetch area-->
-                <Grid Margin="200 60 200 0" Grid.Row="2">
+                <Grid Margin="200 60 200 40" Grid.Row="2">
                     <ScrollViewer VerticalScrollBarVisibility="Auto">
                         <ItemsControl ItemsSource="{Binding Products}">
                             <ItemsControl.ItemsPanel>
