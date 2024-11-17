@@ -235,5 +235,27 @@ namespace Aplikasi_EX.DataAccess
                 throw new Exception("Error during update product: " + ex.Message, ex);
             }
         }
+
+        public async Task BuyProductAsync(Product product)
+        {
+            try
+            {
+                using (var conn = new NpgsqlConnection(_connectionString))
+                {
+                    await conn.OpenAsync();
+                    string query = "SELECT buyproduct(@productID, @quantity)";
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@productID", product.ProductID);
+                        cmd.Parameters.AddWithValue("@quantity", product.Quantity);
+                        await cmd.ExecuteNonQueryAsync();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error during buy product: " + ex.Message, ex);
+            }
+        }
     }
 }

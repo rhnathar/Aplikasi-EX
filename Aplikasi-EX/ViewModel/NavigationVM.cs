@@ -92,9 +92,9 @@ namespace Aplikasi_EX.ViewModel
 				NavigateToSearchProduct(searchText);
 			}
 		}
-		public void NavigateToDetailProduct(Product product)
+		public void NavigateToDetailProduct(int productID)
 		{
-			CurrentView = new DetailProductVM(product);
+			CurrentView = new DetailProductVM(productID);
 		}
 
 		public NavigationVM()
@@ -109,8 +109,14 @@ namespace Aplikasi_EX.ViewModel
 					//AllProductCommand = new RelayCommand(AllProduct);
 					AllProductCommand = new RelayCommand(NavigateToAllProduct);
 					SearchProductCommand = new RelayCommand(NavigateToSearchProduct);
-                    NavigateToDetailCommand = new RelayCommand(param => NavigateToDetailProduct((Product)param));
-					SearchBarCommand = new RelayCommand(SearchBar);
+                    NavigateToDetailCommand = new RelayCommand(param =>
+                    {
+                        if (param is Product product)
+                        {
+                            NavigateToDetailProduct(product.ProductID);
+                        }
+                    });
+                    SearchBarCommand = new RelayCommand(SearchBar);
 					CurrentView = new HomePageVM();
 
 				}
