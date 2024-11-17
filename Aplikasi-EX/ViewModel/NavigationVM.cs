@@ -63,9 +63,11 @@ namespace Aplikasi_EX.ViewModel
 		public ICommand SellerAccountCommand { get; set; }
 		public ICommand NavigateToDetailCommand { get; set; }
 		public ICommand SearchBarCommand {get; set; }
+		public ICommand BackToHomeCommand { get; set; }
 
 
-		private void HomePage(object obj) => CurrentView = new HomePageVM();
+
+        public void HomePage(object obj) => CurrentView = new HomePageVM();
 		private void Account(object obj) => CurrentView = new AccountVM();
 		// private void AllProduct(object obj) => CurrentView = new AllProductsVM();
 		private void SellerProduct(object obj) => CurrentViewSeller = new SellerProductVM();
@@ -97,7 +99,12 @@ namespace Aplikasi_EX.ViewModel
 			CurrentView = new DetailProductVM(productID);
 		}
 
-		public NavigationVM()
+		public void BackToHome(object obj)
+		{
+			CurrentView = new HomePageVM();
+		}
+
+        public NavigationVM()
 		{
 			if (UserSession.IsUserLoggedIn)
 			{
@@ -117,7 +124,9 @@ namespace Aplikasi_EX.ViewModel
                         }
                     });
                     SearchBarCommand = new RelayCommand(SearchBar);
-					CurrentView = new HomePageVM();
+                    BackToHomeCommand = new RelayCommand(BackToHome);
+
+                    CurrentView = new HomePageVM();
 
 				}
 				else if (CurrentUser.Type == "Penjual")

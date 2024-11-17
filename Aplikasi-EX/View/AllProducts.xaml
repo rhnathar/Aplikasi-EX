@@ -4,29 +4,36 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Aplikasi_EX.Utilities"
-            xmlns:vm="clr-namespace:Aplikasi_EX.ViewModel"
+             xmlns:vm="clr-namespace:Aplikasi_EX.ViewModel"
              xmlns:view="clr-namespace:Aplikasi_EX.View"
              xmlns:utils="clr-namespace:Aplikasi_EX.Utilities"
              Background="#F5F7FF"
-            mc:Ignorable="d" 
-            d:DesignHeight="650" d:DesignWidth="1280"
-            Style="{StaticResource Page_Style}"
-            >
-    <UserControl.Resources>
-        <utils:ByteArrayToImageConverter x:Key="ByteArrayToImageConverter"/>
-    </UserControl.Resources>
-    
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="1280"
+             Style="{StaticResource Page_Style}">
+
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
+                <!--back to home-->
+                <Grid Grid.Row="0" Margin="200 40 200 20">
+                    <Button Background="Transparent" BorderThickness="0" HorizontalAlignment="Left"
+                            Command="{Binding DataContext.BackToHomeCommand, RelativeSource={RelativeSource AncestorType=Window}}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/img/icon/ArrowButton.png" Width="20" Height="20"/>
+                            <TextBlock Text="Back to home" FontWeight="SemiBold" FontSize="14" Margin="10 0 0 0"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
 
                 <!--Header-->
-                <Grid Grid.Row="0" Margin="200 40 200 0">
+                <Grid Grid.Row="1" Margin="200 0 200 0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="4*"/>
                         <ColumnDefinition Width="2*"/>
@@ -35,7 +42,6 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-
 
                     <!-- Search Box -->
                     <Grid Grid.Column="0">
@@ -68,7 +74,6 @@
                         </StackPanel>
                     </Grid>
 
-
                     <!-- Sorting Dropdown -->
                     <Grid Grid.Row="1" Grid.Column="0" Margin="0 20 0 0">
                         <StackPanel Orientation="Horizontal">
@@ -80,22 +85,19 @@
                         </StackPanel>
                     </Grid>
 
-
                     <!-- Result Count -->
                     <Grid Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Margin="0 20 0 0">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Right"
-                       FontWeight="Bold" FontSize="16" Text="65,867"/>
+                                       FontWeight="Bold" FontSize="16" Text="65,867"/>
                             <TextBlock Margin="4,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Right"
-                       FontWeight="Medium" FontSize="16" Text="Hasil Ditemukan." Foreground="Gray"/>
+                                       FontWeight="Medium" FontSize="16" Text="Hasil Ditemukan." Foreground="Gray"/>
                         </StackPanel>
                     </Grid>
-
-
                 </Grid>
 
                 <!--Fetch area-->
-                <Grid Margin="200 60 200 0" Grid.Row="1">
+                <Grid Margin="200 60 200 0" Grid.Row="2">
                     <ScrollViewer VerticalScrollBarVisibility="Auto">
                         <ItemsControl ItemsSource="{Binding Products}">
                             <ItemsControl.ItemsPanel>
