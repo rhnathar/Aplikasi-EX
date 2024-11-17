@@ -94,7 +94,7 @@
 											<StackPanel Orientation="Horizontal">
 												<!--decrease button-->
 												<Button x:Name="decreaseButton" Width="43" Height="56" HorizontalAlignment="Left" Content="-" FontSize="42" VerticalContentAlignment="Top" Background="{x:Null}" BorderThickness="0" FontWeight="SemiBold" FontFamily="Inter" Click="decreaseButton_Click"/>
-												<TextBlock x:Name="QuantityTextBlock" Width="43" Text="01" TextAlignment="Center" Height="22" FontFamily="Inter" FontSize="16" Foreground="#475156"/>
+												<TextBlock x:Name="QuantityTextBlock" Width="43" Text="{Binding QuantityToBuy}" TextAlignment="Center" Height="22" FontFamily="Inter" FontSize="16" Foreground="#475156"/>
 												<Button x:Name="increaseButton" Width="43" Height="56" Margin="0,0,0,0" HorizontalAlignment="Left" Content="+" FontSize="33" VerticalContentAlignment="Top" Background="{x:Null}" BorderThickness="0" Click="increaseButton_CLick"/>
 											</StackPanel>
 										</Border>

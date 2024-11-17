@@ -31,30 +31,21 @@ namespace Aplikasi_EX.View
 
         private void decreaseButton_Click(object sender, RoutedEventArgs e)
         {
-            // Parse the current quantity from the TextBlock
-            if (int.TryParse(QuantityTextBlock.Text, out int quantity))
+            var viewModel = DataContext as DetailProductVM;
+            if (viewModel != null && viewModel.QuantityToBuy > 1)
             {
-                // Decrease the quantity by 1, ensuring it doesn't go below 1
-                if (quantity > 1)
-                {
-                    quantity--;
-                    QuantityTextBlock.Text = quantity.ToString();
-                }
+                viewModel.QuantityToBuy--; // Decrease quantity from ViewModel
             }
         }
 
         private void increaseButton_CLick(object sender, RoutedEventArgs e)
         {
-            
-            // Parse the current quantity from the TextBlock
-            if (int.TryParse(QuantityTextBlock.Text, out int quantity) && int.TryParse(txtStock.Text, out int stock))
+            var viewModel = DataContext as DetailProductVM;
+            if (viewModel != null && viewModel.QuantityToBuy < viewModel.Stock) // Check if it doesn't exceed stock
             {
-                if(quantity < stock)
-                {
-                    quantity++;
-                    QuantityTextBlock.Text = quantity.ToString();
-                }
+                viewModel.QuantityToBuy++; // Increase quantity in ViewModel
             }
         }
+
     }
 }

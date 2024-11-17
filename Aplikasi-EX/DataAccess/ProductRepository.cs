@@ -236,18 +236,19 @@ namespace Aplikasi_EX.DataAccess
             }
         }
 
-        public async Task BuyProductAsync(Product product)
+        public async Task BuyProductAsync(int ProductID, int Quantity, int BuyerID)
         {
             try
             {
                 using (var conn = new NpgsqlConnection(_connectionString))
                 {
                     await conn.OpenAsync();
-                    string query = "SELECT buyproduct(@productID, @quantity)";
+                    string query = "SELECT buyproduct(@productID, @quantity, @buyerID)";
                     using (var cmd = new NpgsqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@productID", product.ProductID);
-                        cmd.Parameters.AddWithValue("@quantity", product.Quantity);
+                        cmd.Parameters.AddWithValue("@productID", ProductID);
+                        cmd.Parameters.AddWithValue("@quantity",Quantity);
+                        cmd.Parameters.AddWithValue("@buyerID", BuyerID);
                         await cmd.ExecuteNonQueryAsync();
                     }
                 }

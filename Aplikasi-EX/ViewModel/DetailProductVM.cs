@@ -18,7 +18,24 @@ namespace Aplikasi_EX.ViewModel
 	public class DetailProductVM : Utilities.ViewModelBase
 	{
 		private readonly ProductRepository _productRepository;
-		private Product _currentProduct;
+        private int _quantityToBuy = 1; // Default nilai 1
+        public int QuantityToBuy
+        {
+            get => _quantityToBuy;
+            set
+            {
+                if (value > Stock) // Tidak boleh lebih dari stok yang tersedia
+                {
+                    MessageBox.Show("Jumlah melebihi stok yang tersedia!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                _quantityToBuy = value;
+                OnPropertyChanged(nameof(QuantityToBuy));
+            }
+        }
+
+        private Product _currentProduct;
 		public Product CurrentProduct
 		{
 			get => _currentProduct;
@@ -125,11 +142,22 @@ namespace Aplikasi_EX.ViewModel
                 MessageBox.Show("Produk tidak ditemukan. Silakan muat ulang.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            CurrentProduct.Quantity = Stock;
+            if (QuantityToBuy <= 0)
+            {
+                MessageBox.Show("Jumlah pembelian harus lebih dari 0.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            if (Stock < QuantityToBuy)
+            {
+                MessageBox.Show("Stok tidak mencukupi untuk pembelian ini.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
             try
             {
-                await _productRepository.BuyProductAsync(CurrentProduct);
+                await _productRepository.BuyProductAsync(CurrentProduct.ProductID, QuantityToBuy, CurrentUser.UserID);
+                Stock -= QuantityToBuy;
                 MessageBox.Show("Produk berhasil dibeli, Silahkan Menunggu.", "Berhasil", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)
