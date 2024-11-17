@@ -6,10 +6,6 @@
         ResizeMode="NoResize" WindowStyle="SingleBorderWindow" ShowInTaskbar="False"
         >
 
-    <Window.DataContext>
-        <vm:EditProductPopUpVM/>
-    </Window.DataContext>
-
     <Grid Margin="20">
         <!-- Title -->
         <TextBlock Text="Edit Produk" FontSize="20" FontWeight="Bold" VerticalAlignment="Top"  Foreground="#1E4AE9"/>
@@ -18,7 +14,7 @@
             <StackPanel VerticalAlignment="Top" Margin="0,50,0,0">
                 <!-- Nama Produk -->
                 <TextBlock Text="Nama Produk" FontWeight="SemiBold" FontSize="14"/>
-                <TextBox Text="{Binding Product.ProductName}" Background="#E8E8E8" 
+                <TextBox Text="{Binding ProductName}" Background="#E8E8E8" 
                          Margin="0 4 0 0" Width="540" Height="35" Padding="8"
                          HorizontalAlignment="Left"/>
 
@@ -27,7 +23,8 @@
                            FontSize="14" Margin="0 8 0 0"/>
                 <ComboBox Width="540" HorizontalAlignment="Left" Height="35"
                           Margin="0 4 0 0" Padding="8"
-                          SelectedItem="{Binding Product.Category}"
+                          SelectedValue="{Binding SelectedCategory, Mode=TwoWay}"
+                          SelectedValuePath="Content"
                           >
                     <ComboBoxItem>Computer</ComboBoxItem>
                     <ComboBoxItem>Handphone</ComboBoxItem>
@@ -53,14 +50,14 @@
 
                         <StackPanel Grid.Column="0" >
                             <TextBlock Text="Harga" FontWeight="SemiBold" FontSize="14"/>
-                            <TextBox Text="{Binding Product.Price}" Width="260" Margin="0 4 0 0" 
+                            <TextBox Text="{Binding Price}" Width="260" Margin="0 4 0 0" 
                                      Height="35" Background="#E8E8E8" Padding="8"
                                      HorizontalAlignment="Left"
                          />
                         </StackPanel>
                         <StackPanel Grid.Column="1" >
                             <TextBlock Text="Jumlah Stok" FontWeight="SemiBold" FontSize="14"/>
-                            <TextBox Text="{Binding Product.Quantity}"
+                            <TextBox Text="{Binding Stock}"
                                      Width="260" Margin="0 4 0 0" Height="35"
                                      Background="#E8E8E8" Padding="8"
                                      HorizontalAlignment="Left"
@@ -72,7 +69,7 @@
 
                 <!-- Deskripsi -->
                 <TextBlock Text="Deskripsi" Margin="0 8 0 0" FontWeight="SemiBold" FontSize="14"/>
-                <TextBox Text="{Binding Product.Description}" Height="60" 
+                <TextBox Text="{Binding Description}" Height="60" 
                          Margin="0 4 0 0" Width="540" HorizontalAlignment="Left"
                          Background="#E8E8E8"
                          TextWrapping="Wrap" AcceptsReturn="True"/>
@@ -84,7 +81,7 @@
                         Height="35" Width="100" Foreground="White" FontWeight="SemiBold"
                         HorizontalAlignment="Left" Margin="0 4 0 0"
                         />
-                <TextBlock Text="{Binding ProductPhoto}" 
+                <TextBlock Text="{Binding ProductPhoto, Mode=TwoWay}" 
                            Margin="0 4 0 0"
                            />
 

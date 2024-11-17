@@ -51,7 +51,8 @@
                 <Button Content="Edit Product" BorderThickness="1.25" HorizontalAlignment="Left" Background="White" BorderBrush="#1E4AE9" Foreground="#1E4AE9"
                         VerticalAlignment="Bottom" Width="80" Height="24"
                         Command="{Binding Source={StaticResource ProductCardSellerVMInstance}, Path=OpenEditProductCommand}"
-                        />  
+                        CommandParameter="{Binding Tag, RelativeSource={RelativeSource Self}}"
+                        Tag="{Binding ProductID}"/>
             </Grid>
         </Grid>
     </Border>

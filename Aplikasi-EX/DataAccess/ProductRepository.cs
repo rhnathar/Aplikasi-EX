@@ -165,5 +165,75 @@ namespace Aplikasi_EX.DataAccess
             }
             return products;
         }
+
+        public async Task<Product> GetProductsByIDAsync(int productID)
+        {
+            var product = new Product();
+            try
+            {
+                using (var conn = new NpgsqlConnection(_connectionString))
+                {
+                    await conn.OpenAsync();
+                    string query = "SELECT * FROM getproductbyid(@productID)";
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@productID", productID);
+                        using (NpgsqlDataReader reader = await cmd.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                product = new Product
+                                {
+                                    ProductID = reader.GetInt32(0),
+                                    ProductName = reader.GetString(1),
+                                    Price = reader.GetInt32(2),
+                                    DateAdded = reader.GetDateTime(3),
+                                    Description = reader.GetString(4),
+                                    SellerID = reader.GetInt32(5),
+                                    Quantity = reader.GetInt32(6),
+                                    Condition = reader.GetString(7),
+                                    Category = reader.GetString(8),
+                                    ImagePath = reader.GetString(9)
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error retrieving seller products: " + ex.Message, ex);
+            }
+            return product;
+        }
+
+        public async Task UpdateProductAsync(Product product)
+        {
+            try
+            {
+                using (var conn = new NpgsqlConnection(_connectionString))
+                {
+                    await conn.OpenAsync();
+                    string query = "SELECT updateproduct(@productID, @product_name, @price, @date_added, @description, @quantity, @condition, @category, @product_image)";
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@productID", product.ProductID);
+                        cmd.Parameters.AddWithValue("@product_name", product.ProductName);
+                        cmd.Parameters.AddWithValue("@price", product.Price);
+                        cmd.Parameters.AddWithValue("@date_added", product.DateAdded);
+                        cmd.Parameters.AddWithValue("@description", product.Description);
+                        cmd.Parameters.AddWithValue("@quantity", product.Quantity);
+                        cmd.Parameters.AddWithValue("@condition", product.Condition);
+                        cmd.Parameters.AddWithValue("@category", product.Category);
+                        cmd.Parameters.AddWithValue("@product_image", product.ImagePath);
+                        await cmd.ExecuteNonQueryAsync();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error during update product: " + ex.Message, ex);
+            }
+        }
     }
 }

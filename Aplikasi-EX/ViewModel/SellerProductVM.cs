@@ -16,6 +16,7 @@ namespace Aplikasi_EX.ViewModel
     class SellerProductVM : Utilities.ViewModelBase
     {
         public ICommand OpenAddProductCommand { get; }
+        public ICommand OpenEditProductCommand { get; }
         private readonly ProductRepository _productRepository;
         private ObservableCollection<Product> _products;
         public ObservableCollection<Product> Products
@@ -42,6 +43,14 @@ namespace Aplikasi_EX.ViewModel
                 InitializeAsync();
             }
             OpenAddProductCommand = new RelayCommand(OpenAddProduct);
+            OpenEditProductCommand = new RelayCommand(obj =>
+            {
+                if (obj is int productId)
+                {
+                    OpenEditProduct(productId);
+                }
+            });
+
         }
         private async void InitializeAsync()
         {
@@ -49,7 +58,7 @@ namespace Aplikasi_EX.ViewModel
         }
         private async Task LoadProducts()
         {
-            if (CurrentUser!=null)
+            if (CurrentUser != null)
             {
                 var productsFromDb = await _productRepository.GetSellerProductsAsync(CurrentUser.UserID);
                 foreach (var product in productsFromDb)
@@ -80,7 +89,22 @@ namespace Aplikasi_EX.ViewModel
             // Show the popup as a dialog
             addProductWindow.ShowDialog();
         }
+
+        void OpenEditProduct(int ProductID)
+        {
+            // Create an instance of the popup window
+            var editProductPopUpVM = new EditProductPopUpVM(ProductID);
+            editProductPopUpVM.ProductUpdated += OnProductUpdated;
+            var editProductWindow = new EditProductPopUp(ProductID);
+
+            // Show the popup as a dialog
+            editProductWindow.ShowDialog();
+        }
         private async void OnProductAdded(object sender, EventArgs e)
+        {
+            await LoadProducts();
+        }
+        private async void OnProductUpdated(object sender, EventArgs e)
         {
             await LoadProducts();
         }

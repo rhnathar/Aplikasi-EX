@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Aplikasi_EX.ViewModel;
+using Aplikasi_EX.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,10 @@ namespace Aplikasi_EX.View
     /// </summary>
     public partial class EditProductPopUp : Window
     {
-        public EditProductPopUp()
+        public EditProductPopUp(int ProductID)
         {
             InitializeComponent();
+            DataContext = new EditProductPopUpVM(ProductID);
         }
     }
 }

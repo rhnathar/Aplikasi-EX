@@ -24,9 +24,10 @@ namespace Aplikasi_EX.ViewModel
 
         void OpenEditProduct(object parameter)
         {
-            var EditProductWindow = new EditProductPopUp();
-            EditProductWindow.ShowDialog();
-        }
+            if (parameter is int ProductID) {
+                var EditProductWindow = new EditProductPopUp(ProductID);
+                EditProductWindow.ShowDialog();
+            } }
 
     }
 
