@@ -68,7 +68,8 @@
                             <TextBlock VerticalAlignment="Center" Text="Kategori:" FontSize="14"/>
                             <ComboBox Margin="10 0 0 0" VerticalAlignment="Center" Height="35" Width="150" 
                                       Padding="10,7,0,0" FontSize="14">
-                                <ComboBoxItem IsSelected="True">Computer</ComboBoxItem>
+                                <ComboBoxItem IsSelected="True">Semua Kategori</ComboBoxItem>
+                                <ComboBoxItem>Computer</ComboBoxItem>
                                 <ComboBoxItem>Handphone</ComboBoxItem>
                                 <ComboBoxItem>Keyboard</ComboBoxItem>
                                 <ComboBoxItem>Camera</ComboBoxItem>
