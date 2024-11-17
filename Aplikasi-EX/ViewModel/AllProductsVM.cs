@@ -33,13 +33,25 @@ namespace Aplikasi_EX.ViewModel
 		{
 			_productRepository = new ProductRepository();
 			InitializeAsync(category);
-			NavigateToDetailCommand = new RelayCommand(param => NavigateToDetail((Product)param));
-		}
+			NavigateToDetailCommand = new RelayCommand(param =>
+            {
+                if (param is Product product)
+                {
+                    NavigateToDetail(product.ProductID);
+                }
+            });
+        }
         public AllProductsVM(string search, bool isSearch)
         {
             _productRepository = new ProductRepository();
             InitializeAsync(search, isSearch);
-            NavigateToDetailCommand = new RelayCommand(param => NavigateToDetail((Product)param));
+            NavigateToDetailCommand = new RelayCommand(param =>
+            {
+                if (param is Product product)
+                {
+                    NavigateToDetail(product.ProductID);
+                }
+            });
         }
 
         private async void InitializeAsync(string category)
@@ -82,10 +94,10 @@ namespace Aplikasi_EX.ViewModel
 			return bi;
 		}
 
-		private void NavigateToDetail(Product product)
+		private void NavigateToDetail(int productID)
 		{
 			var navigationVM = (NavigationVM)App.Current.MainWindow.DataContext;
-			navigationVM.NavigateToDetailProduct(product);
+			navigationVM.NavigateToDetailProduct(productID);
 		}
 
 		public AllProductsVM()
