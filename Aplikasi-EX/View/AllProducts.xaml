@@ -38,60 +38,36 @@
                         <ColumnDefinition Width="4*"/>
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-
-                    <!-- Search Box -->
-                    <Grid Grid.Column="0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="50" />
-                        </Grid.ColumnDefinitions>
-
-                        <!-- TextBox for 'Cari di EX' -->
-                        <TextBox Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" 
-                                 Height="40" FontSize="16" Foreground="Gray" Text="Cari di EX" 
-                                 Padding="10,7,0,0" />
-
-                        <!-- Search Button with an icon -->
-                        <Button Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" 
-                                Width="40" Height="40" Background="White">
-                            <Image Source="/img/icon/search-icon.png" Width="20" Height="20" />
-                        </Button>
-                    </Grid>
 
                     <!-- Category Dropdown -->
-                    <Grid Grid.Column="1" HorizontalAlignment="Right">
+                    <Grid Grid.Column="0" HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock VerticalAlignment="Center" Text="Kategori:" FontSize="14"/>
-                            <ComboBox Margin="10 0 0 0" VerticalAlignment="Center" Height="35" Width="150" 
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="0,0,0,0" VerticalAlignment="Center" Text="Urutkan:" FontSize="14"/>
+                                <ComboBox Margin="10,0,0,0" VerticalAlignment="Center" Height="35" Width="150" FontSize="14" Padding="10,7,0,0">
+                                    <ComboBoxItem Content="Paling Murah" IsSelected="True" />
+                                    <!-- Add other sorting options here -->
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="10 0 0 0">
+                                <TextBlock VerticalAlignment="Center" Text="Kategori:" FontSize="14"/>
+                                <ComboBox Margin="10 0 0 0" VerticalAlignment="Center" Height="35" Width="150" 
                                       Padding="10,7,0,0" FontSize="14">
-                                <ComboBoxItem IsSelected="True">Semua Kategori</ComboBoxItem>
-                                <ComboBoxItem>Computer</ComboBoxItem>
-                                <ComboBoxItem>Handphone</ComboBoxItem>
-                                <ComboBoxItem>Keyboard</ComboBoxItem>
-                                <ComboBoxItem>Camera</ComboBoxItem>
-                                <ComboBoxItem>TV</ComboBoxItem>
-                                <ComboBoxItem>Gaming</ComboBoxItem>
-                            </ComboBox>
+                                    <ComboBoxItem IsSelected="True">Semua Kategori</ComboBoxItem>
+                                    <ComboBoxItem>Computer</ComboBoxItem>
+                                    <ComboBoxItem>Handphone</ComboBoxItem>
+                                    <ComboBoxItem>Keyboard</ComboBoxItem>
+                                    <ComboBoxItem>Camera</ComboBoxItem>
+                                    <ComboBoxItem>TV</ComboBoxItem>
+                                    <ComboBoxItem>Gaming</ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
                         </StackPanel>
                     </Grid>
 
-                    <!-- Sorting Dropdown -->
-                    <Grid Grid.Row="1" Grid.Column="0" Margin="0 20 0 0">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Margin="0,0,0,0" VerticalAlignment="Center" Text="Urutkan:" FontSize="14"/>
-                            <ComboBox Margin="10,0,0,0" VerticalAlignment="Center" Height="35" Width="150" FontSize="14" Padding="10,7,0,0">
-                                <ComboBoxItem Content="Paling Murah" IsSelected="True" />
-                                <!-- Add other sorting options here -->
-                            </ComboBox>
-                        </StackPanel>
-                    </Grid>
 
                     <!-- Result Count -->
-                    <Grid Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Margin="0 20 0 0">
+                    <Grid Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Right"
                                        FontWeight="Bold" FontSize="16" Text="{Binding ProductCount}"/>

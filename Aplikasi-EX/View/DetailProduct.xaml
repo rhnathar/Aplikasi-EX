@@ -83,7 +83,7 @@
 											</Grid>
 										</Grid>
 
-										<TextBlock Text="{Binding Price, StringFormat=C}" FontSize="24" FontWeight="SemiBold" Foreground="Blue"/>
+                                        <TextBlock Text="{Binding Price, StringFormat=Rp {0:N0}}" FontSize="24" FontWeight="SemiBold" Foreground="Blue"/>
 										<StackPanel Margin="0 20 0 0">
 											<TextBlock Text="Deskripsi" FontSize="16" FontWeight="SemiBold"/>
 											<TextBlock Margin="0 16 0 0" Text="{Binding Description}" TextWrapping="Wrap" Foreground="Gray"/>

@@ -14,7 +14,7 @@
 				<Image Source="{Binding Image}" Width="180" Height="150" Stretch="Uniform"/>
 				<TextBlock Text="{Binding ProductName}" FontWeight="Bold" Margin="0,5,0,0" />
 				<TextBlock Text="{Binding Description}" FontSize="12" TextWrapping="Wrap" Margin="0,5,0,0" />
-				<TextBlock Text="{Binding Price, StringFormat=C}" FontWeight="Bold" Foreground="#1E4AE9" Margin="0,5,0,10" />
+                <TextBlock Text="{Binding Price, StringFormat=Rp {0:N0}}" FontWeight="Bold" Foreground="#1E4AE9" Margin="0,5,0,10" />
 			</StackPanel>
 		</Button>
 
