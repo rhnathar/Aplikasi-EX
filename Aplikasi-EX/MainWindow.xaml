@@ -48,7 +48,9 @@
                 <!-- ComboBox for 'Semua Kategori' -->
                 <ComboBox Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" 
                   Height="40" Foreground="Black" FontSize="16"
-                  Padding="10,7,0,0">
+                  Padding="10,7,0,0"
+                  SelectedValue="{Binding SelectedCategory, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedValuePath="Content">
                     <ComboBoxItem Content="Semua Kategori" IsSelected="True"/>
                     <ComboBoxItem>Computer</ComboBoxItem>
                     <ComboBoxItem>Handphone</ComboBoxItem>
@@ -66,7 +68,8 @@
                 <!-- Search Button with an icon -->
                 <Button Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" 
                 Width="40" Height="40" Background="White"
-						Command="{Binding SearchBarCommand}" CommandParameter="{Binding SearchText}"
+						Command="{Binding SearchBarCommand}"
+                        CommandParameter="{Binding SearchText}"
 						>
                     <Image Source="/img/icon/search-icon.png" Width="20" Height="20" />
                 </Button>

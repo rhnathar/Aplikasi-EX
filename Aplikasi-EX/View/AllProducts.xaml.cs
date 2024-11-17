@@ -25,5 +25,12 @@ namespace Aplikasi_EX.View
         {
             InitializeComponent();
         }
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataContext is AllProductsVM viewModel)
+            {
+                viewModel.SortProducts();
+            }
+        }
     }
 }

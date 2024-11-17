@@ -10,6 +10,7 @@ using System.IO;
 using System.Windows.Media.Imaging;
 using System.Windows.Input;
 using Aplikasi_EX.Utilities;
+using System.Windows;
 
 namespace Aplikasi_EX.ViewModel
 {
@@ -38,10 +39,22 @@ namespace Aplikasi_EX.ViewModel
                 OnPropertyChanged();
             }
         }
+        private string _selectedSortOption;
+        public string SelectedSortOption
+        {
+            get => _selectedSortOption;
+            set
+            {
+                _selectedSortOption = value;
+                OnPropertyChanged();
+                SortProducts();
+            }
+        }
 
         public ICommand NavigateToDetailCommand { get; }
+        public ICommand SortCommand { get; }
 
-		public AllProductsVM(string category)
+        public AllProductsVM(string category)
 		{
 			_productRepository = new ProductRepository();
 			InitializeAsync(category);
@@ -65,12 +78,28 @@ namespace Aplikasi_EX.ViewModel
                 }
             });
         }
+        public AllProductsVM(string search, string category)
+        {
+            _productRepository = new ProductRepository();
+            InitializeAsync(search, category);
+            NavigateToDetailCommand = new RelayCommand(param =>
+            {
+                if (param is Product product)
+                {
+                    NavigateToDetail(product.ProductID);
+                }
+            });
+        }
 
         private async void InitializeAsync(string category)
 		{
 			await LoadProducts(category);
 		}
-		private async void InitializeAsync(string search, bool isSearch)
+		private async void InitializeAsync(string search, string category)
+        {
+            await SearchProducts(search, category);
+        }
+        private async void InitializeAsync(string search, bool isSearch)
         {
             await SearchProducts(search);
         }
@@ -84,7 +113,16 @@ namespace Aplikasi_EX.ViewModel
 			}
 			Products = new ObservableCollection<Product>(productsFromDb);
 		}
-		private async Task SearchProducts(string search)
+		private async Task SearchProducts(string search, string category)
+        {
+            var productsFromDb = await _productRepository.GetProductsBySearchAndCategoryAsync(search, category);
+            foreach (var product in productsFromDb)
+            {
+                product.Image = ConvertBase64ToImage(product.ImagePath);
+            }
+            Products = new ObservableCollection<Product>(productsFromDb);
+        }
+        private async Task SearchProducts(string search)
         {
             var productsFromDb = await _productRepository.GetProductsBySearchAsync(search);
             foreach (var product in productsFromDb)
@@ -111,8 +149,18 @@ namespace Aplikasi_EX.ViewModel
 			var navigationVM = (NavigationVM)App.Current.MainWindow.DataContext;
 			navigationVM.NavigateToDetailProduct(productID);
 		}
-
-		public AllProductsVM()
+        public void SortProducts()
+        {
+            if (SelectedSortOption == "Paling Murah")
+            {
+                Products = new ObservableCollection<Product>(Products.OrderBy(p => p.Price));
+            }
+            else if (SelectedSortOption == "Paling Mahal")
+            {
+                Products = new ObservableCollection<Product>(Products.OrderByDescending(p => p.Price));
+            }
+        }
+        public AllProductsVM()
 		{
 		}
 	}

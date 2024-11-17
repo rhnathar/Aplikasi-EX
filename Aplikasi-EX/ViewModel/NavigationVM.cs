@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Navigation;
 
@@ -52,9 +53,20 @@ namespace Aplikasi_EX.ViewModel
 				OnPropertyChanged();
 			}
 		}
+        private string _selectedCategory;
+        public string SelectedCategory
+        {
+            get => _selectedCategory;
+            set
+            {
+                _selectedCategory = value;
+                OnPropertyChanged(nameof(SelectedCategory));
+            }
+        }
+        public ICommand SearchCommand { get; }
 
-		//buyer POV
-		public ICommand HomePageCommand { get; set; }
+        //buyer POV
+        public ICommand HomePageCommand { get; set; }
 		public ICommand AccountCommand { get; set; }
 		public ICommand AllProductCommand { get; set; }
         public ICommand SearchProductCommand { get; set; }
@@ -83,17 +95,30 @@ namespace Aplikasi_EX.ViewModel
 		}
         private void NavigateToSearchProduct(object obj)
 		{
-            if (obj is string search)
+            string category = SelectedCategory;
+            string searchText = SearchText;
+
+            if (string.IsNullOrWhiteSpace(searchText))
             {
-                CurrentView = new AllProductsVM(search, true);
+                searchText = "";
+                if (category == "Semua Kategori")
+                {
+                    CurrentView = new AllProductsVM(searchText, true);
+                }
+                else
+                {
+                    CurrentView = new AllProductsVM(category);
+                }
+            }
+			// Navigasikan ke halaman pencarian dengan kategori dan teks pencarian
+			else
+			{
+                CurrentView = new AllProductsVM(searchText, category);
             }
         }
 		private void SearchBar(object obj)
 		{
-			if (obj is string searchText)
-			{
-				NavigateToSearchProduct(searchText);
-			}
+			NavigateToSearchProduct(SearchText);
 		}
 		public void NavigateToDetailProduct(int productID)
 		{
@@ -135,6 +160,8 @@ namespace Aplikasi_EX.ViewModel
                     SearchBarCommand = new RelayCommand(SearchBar);
                     BackToHomeCommand = new RelayCommand(BackToHome);
                     NavigateBackToAllProductsCommand = new RelayCommand(NavigateBackToAllProducts);
+
+                    SelectedCategory = "Semua Kategori";
 
                     CurrentView = new HomePageVM();
 

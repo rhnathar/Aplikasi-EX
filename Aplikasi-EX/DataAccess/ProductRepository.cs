@@ -165,6 +165,47 @@ namespace Aplikasi_EX.DataAccess
             }
             return products;
         }
+        public async Task<List<Product>> GetProductsBySearchAndCategoryAsync(string search, string category)
+        {
+            var products = new List<Product>();
+            try
+            {
+                using (var conn = new NpgsqlConnection(_connectionString))
+                {
+                    await conn.OpenAsync();
+                    string query = "SELECT * FROM getproductbysearchncategory(@search, @category)";
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@search", search);
+                        cmd.Parameters.AddWithValue("@category", category);
+                        using (NpgsqlDataReader reader = await cmd.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                products.Add(new Product
+                                {
+                                    ProductID = reader.GetInt32(0),
+                                    ProductName = reader.GetString(1),
+                                    Price = reader.GetInt32(2),
+                                    DateAdded = reader.GetDateTime(3),
+                                    Description = reader.GetString(4),
+                                    ImagePath = reader.GetString(5),
+                                    SellerID = reader.GetInt32(6),
+                                    Quantity = reader.GetInt32(7),
+                                    Condition = reader.GetString(8),
+                                    Category = reader.GetString(9)
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error retrieving seller products: " + ex.Message, ex);
+            }
+            return products;
+        }
 
         public async Task<Product> GetProductsByIDAsync(int productID)
         {

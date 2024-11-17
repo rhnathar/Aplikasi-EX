@@ -9,6 +9,7 @@ public interface IProductRepository
     Task<List<Product>> GetSellerProductsAsync(int sellerID);
     Task<List<Product>> GetProductsByCategoryAsync(string category);
     Task<List<Product>> GetProductsBySearchAsync(string search);
+    Task<List<Product>> GetProductsBySearchAndCategoryAsync(string search, string category);
     Task<Product> GetProductByIdAsync(int id);
     Task UpdateProductAsync(Product product);
     Task BuyProductAsync(int ProductID, int Quantity, int BuyerID);
