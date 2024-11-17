@@ -258,5 +258,25 @@ namespace Aplikasi_EX.DataAccess
                 throw new Exception("Error during buy product: " + ex.Message, ex);
             }
         }
+        public async Task DeleteProductAsync(int ProductID)
+        {
+            try
+            {
+                using (var conn =new NpgsqlConnection(_connectionString))
+                {
+                    await conn.OpenAsync();
+                    string query = "SELECT deleteproduct(@productID)";
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@productID", ProductID);
+                        await cmd.ExecuteNonQueryAsync();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error during delete product: " + ex.Message, ex);
+            }
+        }
     }
 }
