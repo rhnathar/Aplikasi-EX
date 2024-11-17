@@ -174,10 +174,55 @@ namespace Aplikasi_EX.ViewModel
             Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive)?.Close();
         }
 
-        private void Delete(object parameter)
+        private async void Delete(object parameter)
         {
-            //handle action
+            if (CurrentProduct == null)
+            {
+                MessageBox.Show("Produk tidak ditemukan. Silakan muat ulang.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            // Menampilkan MessageBox konfirmasi sebelum menghapus
+            var result = MessageBox.Show("Apakah Anda yakin ingin menghapus produk ini?",
+                                         "Konfirmasi Penghapusan",
+                                         MessageBoxButton.YesNo,
+                                         MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.No)
+            {
+                // Jika pengguna memilih 'No', batalkan penghapusan
+                return;
+            }
+
+            // Jika pengguna memilih 'Yes', lanjutkan dengan penghapusan
+
+            // Perbarui CurrentProduct berdasarkan data input pengguna
+            CurrentProduct.ProductName = ProductName;
+            CurrentProduct.Price = Price;
+            CurrentProduct.Quantity = Stock;
+            CurrentProduct.Description = Description;
+            CurrentProduct.ImagePath = ProductPhoto;
+            CurrentProduct.Condition = Condition;
+            CurrentProduct.Category = SelectedCategory;
+
+            try
+            {
+                await _productrepository.DeleteProductAsync(CurrentProduct.ProductID);
+                WeakReferenceMessenger.Default.Send(new ProductUpdatedMessage(CurrentProduct.ProductID));
+
+                // Berikan notifikasi sukses
+                MessageBox.Show("Produk berhasil dihapus.", "Berhasil", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                // Tutup jendela
+                Close(parameter);
+            }
+            catch (Exception ex)
+            {
+                // Berikan notifikasi error
+                MessageBox.Show($"Terjadi kesalahan saat menghapus produk: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
+
 
         private void UploadFile(object parameter)
         {
