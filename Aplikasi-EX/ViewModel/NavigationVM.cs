@@ -64,6 +64,7 @@ namespace Aplikasi_EX.ViewModel
 		public ICommand NavigateToDetailCommand { get; set; }
 		public ICommand SearchBarCommand {get; set; }
 		public ICommand BackToHomeCommand { get; set; }
+		public ICommand NavigateBackToAllProductsCommand { get; set; }
 
 
 
@@ -104,6 +105,14 @@ namespace Aplikasi_EX.ViewModel
 			CurrentView = new HomePageVM();
 		}
 
+        private void NavigateBackToAllProducts(object obj)
+        {
+            if (obj is string category)
+            {
+                CurrentView = new AllProductsVM(category);
+            }
+        }
+
         public NavigationVM()
 		{
 			if (UserSession.IsUserLoggedIn)
@@ -125,6 +134,7 @@ namespace Aplikasi_EX.ViewModel
                     });
                     SearchBarCommand = new RelayCommand(SearchBar);
                     BackToHomeCommand = new RelayCommand(BackToHome);
+                    NavigateBackToAllProductsCommand = new RelayCommand(NavigateBackToAllProducts);
 
                     CurrentView = new HomePageVM();
 

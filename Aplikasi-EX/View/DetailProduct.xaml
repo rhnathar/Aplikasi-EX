@@ -15,12 +15,16 @@
 					<RowDefinition Height="540"/>
 				</Grid.RowDefinitions>
 
-				<!-- Back Button -->
-				<Grid Height="48" Width="48" VerticalAlignment="Top" HorizontalAlignment="Left">
-					<Image Source="/img/icon/ArrowButton.png"/>
-				</Grid>
+                <!-- Back Button -->
+                <Grid Height="48" Width="48" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <Button Background="Transparent" BorderThickness="0"
+							Command="{Binding DataContext.NavigateBackToAllProductsCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+							CommandParameter="{Binding Category}">
+                        <Image Source="/img/icon/ArrowButton.png"/>
+                    </Button>
+                </Grid>
 
-				<!-- Product Detail Content -->
+                <!-- Product Detail Content -->
 				<Grid Grid.Row="1">
 					<Border CornerRadius="6" Background="White" BorderBrush="LightGray" BorderThickness="1">
 						<Border.Effect>
