@@ -99,10 +99,17 @@
 
                                             <!-- Edit Button -->
                                             <Grid Grid.Row="2" Margin="30 20 0 20">
+                                                <StackPanel Orientation="Horizontal">
                                                 <Button Content="Edit Akun" Width="100" Height="32" BorderThickness="1.25" HorizontalAlignment="Left" 
                                                         Background="White" BorderBrush="#1E4AE9" Foreground="#1E4AE9"
                                                         Command="{Binding OpenEditAccountCommand}"
                                                         />
+                                                 <!--Button Content="Keluar" Width="100" Height="32" BorderThickness="1.25" HorizontalAlignment="Left"
+                                                         Background="White" BorderBrush="#1E4AE9" Foreground="#1E4AE9"
+                                                         Margin="6 0 0 0"
+                                                            Command="{Binding LogoutCommand}"
+                                                         -->
+                                                </StackPanel>
                                             </Grid>
                                         </Grid>
                                     </Grid>

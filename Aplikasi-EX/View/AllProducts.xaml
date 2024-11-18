@@ -54,7 +54,7 @@
                                     <ComboBoxItem Content="Paling Mahal" IsSelected="True"/>
                                 </ComboBox>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal" Margin="10 0 0 0">
+                            <!--StackPanel Orientation="Horizontal" Margin="10 0 0 0">
                                 <TextBlock VerticalAlignment="Center" Text="Kategori:" FontSize="14"/>
                                 <ComboBox Margin="10 0 0 0" VerticalAlignment="Center" Height="35" Width="150" 
                                       Padding="10,7,0,0" FontSize="14">
@@ -66,7 +66,7 @@
                                     <ComboBoxItem>TV</ComboBoxItem>
                                     <ComboBoxItem>Gaming</ComboBoxItem>
                                 </ComboBox>
-                            </StackPanel>
+                            </StackPanel-->
                         </StackPanel>
                     </Grid>
 

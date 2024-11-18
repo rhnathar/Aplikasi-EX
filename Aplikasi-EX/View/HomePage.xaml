@@ -89,7 +89,7 @@
                                     Tag="Handphone" Grid.Column="1">
                                 <StackPanel>
                                     <Image Source="/img/mainpage/smartphone.png" Margin="20"/>
-                                    <TextBlock Text="Smartphone" FontWeight="SemiBold" TextAlignment="Center"/>
+                                    <TextBlock Text="Handphone" FontWeight="SemiBold" TextAlignment="Center"/>
                                 </StackPanel>
                             </Button>
 

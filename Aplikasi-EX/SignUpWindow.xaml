@@ -25,7 +25,7 @@
         </Grid.ColumnDefinitions>
 
         <Border CornerRadius="10 0 0 10" Background="#fff">
-            <StackPanel VerticalAlignment="Center" Margin="0 0 0 0">
+            <StackPanel VerticalAlignment="Center" Margin="0 0 0 80">
                 <Image Source="/img/Logo.png" Width="40" Height="40" Margin="-310 0 0 0"/>
                 <TextBlock Text="Bergabung ke EX Platform" FontSize="24" FontWeight="Bold" Margin="60 0 0 0" Foreground="#1E4AE9"/>
                 
@@ -47,7 +47,7 @@
                        MouseUp="close_app"
                        />
 
-                <StackPanel VerticalAlignment="Center"  Margin="0 0 0 -60">
+                <StackPanel VerticalAlignment="Center"  Margin="0 65 0 0">
                     <TextBlock Text="Password" FontSize="16" Margin="60 10 0 0" FontWeight="SemiBold"/>
                     <TextBox x:Name="txtPassword" Text="{Binding Password}" Style="{StaticResource StyledTextBox}"/>
                     

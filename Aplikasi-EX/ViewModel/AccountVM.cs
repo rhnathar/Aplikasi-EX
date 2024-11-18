@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using Aplikasi_EX.DataAccess;
 using Aplikasi_EX.Model;
 using Aplikasi_EX.Utilities;
 using Aplikasi_EX.View;
 using CommunityToolkit.Mvvm.Messaging;
+using System.Linq;
 
 namespace Aplikasi_EX.ViewModel
 {
@@ -100,6 +102,7 @@ namespace Aplikasi_EX.ViewModel
         }
 
         public ICommand OpenEditAccountCommand { get; }
+        //public ICommand LogoutCommand { get; }
 
         // Constructor 
         public AccountVM()
@@ -112,6 +115,7 @@ namespace Aplikasi_EX.ViewModel
             }
 
             OpenEditAccountCommand = new RelayCommand(OpenEditAccount);
+            //LogoutCommand = new RelayCommand(Logout);
             WeakReferenceMessenger.Default.Register<AccountUpdatedMessage>(this, (r, m) =>
             {
                 // Muat ulang produk ketika menerima pesan
@@ -148,5 +152,14 @@ namespace Aplikasi_EX.ViewModel
             // Show the popup as a dialog
             EditAccountWindow.ShowDialog();
         }
+
+        //void Logout(object parameter)
+        //{
+        //    SignInWindow signInWindow = new SignInWindow();
+        //    signInWindow.Show();
+            
+        //    // Close the current window
+        //    Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive)?.Close();         
+        //}
     }
 }

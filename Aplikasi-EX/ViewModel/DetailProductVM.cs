@@ -122,7 +122,7 @@ namespace Aplikasi_EX.ViewModel
                     Condition = CurrentProduct.Condition;
                     Category = CurrentProduct.Category;
                     ProductPhoto = ConvertBase64ToImage(CurrentProduct.ImagePath);
-                    MessageBox.Show($"Produk dengan ID {ProductID} ditemukan");
+                    //MessageBox.Show($"Produk dengan ID {ProductID} ditemukan");
                 }
                 else
                 {
