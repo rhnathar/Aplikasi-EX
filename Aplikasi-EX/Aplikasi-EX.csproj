@@ -31,6 +31,8 @@
     <None Remove="img\icon\BsReceipt.png" />
     <None Remove="img\icon\cart.png" />
     <None Remove="img\icon\home.png" />
+    <None Remove="img\icon\iconAdd.png" />
+    <None Remove="img\icon\iconEdit.png" />
     <None Remove="img\icon\order.png" />
     <None Remove="img\icon\product.png" />
     <None Remove="img\icon\search-icon.png" />
@@ -41,6 +43,8 @@
     <None Remove="img\mainpage\ads1.png" />
     <None Remove="img\mainpage\ads1new.png" />
     <None Remove="img\mainpage\ads2.png" />
+    <None Remove="img\mainpage\adsKananAtas.png" />
+    <None Remove="img\mainpage\adsSony.png" />
     <None Remove="img\mainpage\camera.png" />
     <None Remove="img\mainpage\computer.png" />
     <None Remove="img\mainpage\gaming.png" />
@@ -88,6 +92,12 @@
     <Resource Include="img\icon\home.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="img\icon\iconAdd.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\icon\iconEdit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="img\icon\order.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -113,6 +123,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="img\mainpage\ads2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\mainpage\adsKananAtas.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\mainpage\adsSony.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="img\mainpage\camera.png">

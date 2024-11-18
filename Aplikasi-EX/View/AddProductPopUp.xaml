@@ -4,6 +4,7 @@
         xmlns:vm="clr-namespace:Aplikasi_EX.ViewModel"
         Title="Tambah Produk" Height="620" Width="600" WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize" WindowStyle="SingleBorderWindow" ShowInTaskbar="False"
+        Icon="/img/icon/iconAdd.png"
         >
 
     <Window.DataContext>

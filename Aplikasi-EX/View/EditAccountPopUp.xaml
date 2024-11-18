@@ -4,6 +4,7 @@
         xmlns:vm="clr-namespace:Aplikasi_EX.ViewModel"
         Title="Edit Account" Height="540" Width="600" WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize" WindowStyle="SingleBorderWindow" ShowInTaskbar="False"
+        Icon="/img/icon/iconEdit.png"
         >
 
     <Window.DataContext>

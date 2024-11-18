@@ -42,9 +42,15 @@
                         </Button>
                     </Grid>
                     <Grid Grid.Column="1" Margin="0 40 40 0">
-                        <Button Command="{Binding AllProductCommand}" CommandParameter="{Binding Tag, RelativeSource={RelativeSource Self}}" Tag="Gaming"  Background="Transparent" BorderThickness="0" Width="602">
-                            <Image Source="/img/mainpage/ads2.png" HorizontalAlignment="Left" Width="460" VerticalAlignment="Top"/>
-                        </Button>
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="/img/mainpage/adsKananAtas.png" Width="460" HorizontalAlignment="Left"/>
+                            <Button Command="{Binding AllProductCommand}" CommandParameter="{Binding Tag, RelativeSource={RelativeSource Self}}" Tag="Gaming"  
+                                    Background="Transparent" BorderThickness="0" Width="460" HorizontalAlignment="Left"
+                                    Margin="0 10 0 0"
+                                    >
+                                <Image Source="/img/mainpage/adsSony.png" HorizontalAlignment="Left" Width="460" VerticalAlignment="Top"/>
+                            </Button>
+                        </StackPanel>
                     </Grid>
                 </Grid>
 
