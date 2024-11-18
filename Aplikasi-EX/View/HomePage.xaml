@@ -37,10 +37,14 @@
                     </Grid.ColumnDefinitions>
 
                     <Grid Margin="40 40 0 0">
-                        <Image Source="/img/mainpage/ads1new.png" HorizontalAlignment="Right" VerticalAlignment="Top" Width="602"/>
+                        <Button Command="{Binding AllProductCommand}" CommandParameter="{Binding Tag, RelativeSource={RelativeSource Self}}" Tag="Handphone"  Background="Transparent" BorderThickness="0" Width="602">
+                            <Image Source="/img/mainpage/ads1new.png" HorizontalAlignment="Right" VerticalAlignment="Top" Width="602"/>
+                        </Button>
                     </Grid>
                     <Grid Grid.Column="1" Margin="0 40 40 0">
-                        <Image Source="/img/mainpage/ads2.png" HorizontalAlignment="Left" Width="460" VerticalAlignment="Top"/>
+                        <Button Command="{Binding AllProductCommand}" CommandParameter="{Binding Tag, RelativeSource={RelativeSource Self}}" Tag="Gaming"  Background="Transparent" BorderThickness="0" Width="602">
+                            <Image Source="/img/mainpage/ads2.png" HorizontalAlignment="Left" Width="460" VerticalAlignment="Top"/>
+                        </Button>
                     </Grid>
                 </Grid>
 
