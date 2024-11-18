@@ -6,16 +6,24 @@
     <RootNamespace>Aplikasi_EX</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <PublishSingleFile>true</PublishSingleFile>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Converters\**" />
     <Compile Remove="Fonts\**" />
+    <EmbeddedResource Remove="Converters\**" />
     <EmbeddedResource Remove="Fonts\**" />
+    <None Remove="Converters\**" />
     <None Remove="Fonts\**" />
+    <Page Remove="Converters\**" />
     <Page Remove="Fonts\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="db\appsettings.json" />
     <None Remove="img\accountPage\info.png" />
     <None Remove="img\accountPage\user-avatar.png" />
     <None Remove="img\crossClose.png" />
@@ -42,6 +50,12 @@
     <None Remove="img\mainpage\smartphone.png" />
     <None Remove="img\mainpage\tv.png" />
     <None Remove="img\rtx.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="db\appsettings.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
@@ -125,16 +139,6 @@
     <Resource Include="img\rtx.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="db\appsettings.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Converters\" />
   </ItemGroup>
 
 </Project>
