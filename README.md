@@ -8,11 +8,12 @@ Ketua Kelompok: **Muhammad Fajrulfalaq Izzulfirdausyah Suryaprabandaru**
 - Anggota 3: Syaifullah Hilmi Ma'arij - 22/497775/TK/54568
 
 ## Published Application
+> [!NOTE]
+> Aplikasi ini akan terdeteksi sebagai virus di windows, tetapi tenang saja, aplikasi ini 100% aman
+
 Download aplikasi melalui [Google Drive Berikut](https://drive.google.com/drive/folders/1k3OS3MckD9MT_3TQ6qCjZG9SzSVRz9db?usp=drive_link).
 
-
-> [!IMPORTANT]
-> Step cara penggunaan
+### Langkah tata cara penggunaan
 1. **Unduh dan Ekstrak File**  
    Unduh file **Aplikasi_EX.zip** dan ekstrak ke dalam folder di perangkat Anda.
 
