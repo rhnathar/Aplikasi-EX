@@ -113,7 +113,14 @@ namespace Aplikasi_EX.ViewModel
 			// Navigasikan ke halaman pencarian dengan kategori dan teks pencarian
 			else
 			{
-                CurrentView = new AllProductsVM(searchText, category);
+				if(category == "Semua Kategori")
+				{
+					CurrentView = new AllProductsVM(searchText, true);
+                }
+				else
+				{
+                    CurrentView = new AllProductsVM(searchText, category);
+                }
             }
         }
 		private void SearchBar(object obj)
